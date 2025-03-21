@@ -31,3 +31,5 @@ Los códigos hechos en p5 pueden incluso iniciar en un escritorio sin internet, 
 El "<script>" en el index es necesario para que github aprenda el lenguaje de p5. 
 
 "Robar" códigos es super fácil, solo hay que guardar. El mundo de la programasión es muy evolutivo y probablemente sea por esta accesibilidad.
+
+Hay que grabar videos, tomar fotos, guardar el momento cuando funcione, no solo sirve enviar el link del resultado. Las webs se pueden romper, nada me asegura su funcionalidad en el tiempo.
