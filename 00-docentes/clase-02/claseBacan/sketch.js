@@ -1,7 +1,8 @@
 function setup() {
-  createCanvas(400, 400);
-}
+  noCanvas();
 
-function draw() {
-  background(0);
+  // Create the video capture.
+  createCapture(VIDEO);
+
+  // describe('A video stream from the webcam.');
 }
