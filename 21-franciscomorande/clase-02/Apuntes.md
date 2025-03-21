@@ -8,9 +8,10 @@
 
 ## Repositorio FAU
 
-1. <https://github.com/fau-uchile> [Github FAU-UCH](https://github.com/fau-uchile)
-2. <https://github.com/FAU-UChile/audiv027-2025-1>
-3. <https://github.com/franciscomorande/audiv027-2025-1>
+1. <https://github.com/fau-uchile>
+2. [Github FAU-UCH](https://github.com/fau-uchile)
+3. <https://github.com/FAU-UChile/audiv027-2025-1>
+4. <https://github.com/franciscomorande/audiv027-2025-1>
 
 ## Markdown cheatsheets
 1. <https://github.github.com/gfm/>
