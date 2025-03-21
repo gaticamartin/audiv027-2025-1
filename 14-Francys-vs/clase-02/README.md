@@ -8,4 +8,8 @@
 1. Revisión github markdown.
    <p>asdf testeo 1</p> # creación párrafo
    <h1>este es para títulos "head" o h testeo 2</h1>
-# H1
+2. Revisión markdown cheatsheet
+*italic*
+**bold**
+**com_binado**
+~~rayado~~
