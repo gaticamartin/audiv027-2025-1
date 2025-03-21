@@ -36,4 +36,5 @@ Opción 1 | Opción 2 | Opción 3
 
 ![alt text](https://http2.mlstatic.com/D_NQ_NP_742699-MLM31217559556_062019-O.webp)
 
-
+Considerar que la web es fragil, considerar la toma de fotos o videos para respaldar que alguna vez funcinó el código
+Gene Kogan y su estudiante Andreas Refsgaard
