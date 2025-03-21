@@ -9,5 +9,8 @@
 .html = Hyper Text Markup Lenguage  
 
 ## Apuntes para escritura en .md  
-1. Para un salto de línea haz dos espacios al final
-2. 
+- Para un salto de línea haz dos espacios al final  
+Negrita: __string__ o tambien **string**, Cursiva: _string_ o *string*, Tachado: ~~string~~
+## Numeraciones y viñetas
+- Hola " - "
+1. Hola "1. "
