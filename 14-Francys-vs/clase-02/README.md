@@ -6,4 +6,4 @@
 
 <p>Hola!! *brillitos* *brillitos*</p> 
 1. Revisión github markdown.
-   <p>asdf</p> # creación párrafo
+   <p>asdf testeo 1</p> # creación párrafo <p>texto</p>
