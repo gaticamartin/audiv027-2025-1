@@ -1,4 +1,4 @@
-# clase-02 21-03-2025
+# Clase-02 21-03-2025
 
 ## Evaluaciones
 
@@ -20,7 +20,7 @@
 2. [Markdown cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
 3. [Sintaxis de escritura y formato básicos](https://docs.github.com/es/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)
 
-##
+## Herramientas JavaScript
 
 1. [ML5JS referencias](https://docs.ml5js.org/#/)
 2. [P5JS Editor]()
