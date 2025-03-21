@@ -18,6 +18,11 @@ function setup() {
 
 ### *Codigo para lectura de manos* 
 
+// *Editado:* 
+// Forma: Cuadrados
+// Color: Rojo
+// Dimensiones: 400 x 620
+
 /*
  * 👋 Hello! This is an ml5.js example made and shared with ❤️.
  * Learn more about the ml5.js project: https://ml5js.org/
@@ -36,10 +41,10 @@ function preload() {
 }
 
 function setup() {
-  createCanvas(640, 480);
+  createCanvas(400, 620);
   // Create the webcam video and hide it
   video = createCapture(VIDEO);
-  video.size(640, 480);
+  video.size(400, 620);
   video.hide();
   // start detecting hands from the webcam video
   handPose.detectStart(video, gotHands);
@@ -54,9 +59,10 @@ function draw() {
     let hand = hands[i];
     for (let j = 0; j < hand.keypoints.length; j++) {
       let keypoint = hand.keypoints[j];
-      fill(0, 255, 0);
+      fill(255, 15, 100);
       noStroke();
-      circle(keypoint.x, keypoint.y, 10);
+      
+      square(keypoint.x, keypoint.y, 10);
     }
   }
 }
