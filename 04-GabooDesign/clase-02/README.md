@@ -10,7 +10,7 @@
 
 ## Apuntes para escritura en .md  
 - Para un salto de línea haz dos espacios al final del parrafo. "  "  
-- Negrita: __string__ o tambien **string**, Cursiva: _string_ o *string*, Tachado: ~~string~~
+- Negrita: __string__  " __ " o tambien **string** " ** ", Cursiva: _string_ " _ "o *string* " * ", Tachado: ~~string~~ " ~~ "
 ## Numeraciones y viñetas
 - " - "
 1. "1. "
