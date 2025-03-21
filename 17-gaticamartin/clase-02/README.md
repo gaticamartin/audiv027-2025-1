@@ -59,3 +59,7 @@
                                               I88__
                                               I88"""
                                               I88
+
+6. p5 link perfil <https://editor.p5js.org/gaticamartin>
+7. referencias p5 <https://p5js.org/reference/>
+8. 
