@@ -4,12 +4,12 @@
 2. <https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet>
 3. <https://docs.github.com/es/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax>
 
-<p>Hola!! *brillitos* *brillitos* cada linea es un testeo de código</p> 
+Hola!! *brillitos* *brillitos* cada linea es un testeo de código
 1. Revisión github markdown.
    <p>asdf testeo 1</p> # creación párrafo
    <h1>este es para títulos "head" o h testeo 2</h1>
 2. Revisión markdown cheatsheet
-<p>*italic*
+*italic*
 **bold**
 **com_binado**
 ~~rayado~~
