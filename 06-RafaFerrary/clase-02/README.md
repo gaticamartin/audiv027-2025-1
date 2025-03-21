@@ -4,7 +4,7 @@
 2. <https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet>
 3. <https://docs.github.com/es/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax>
 
-#*Codigo para uso de webcam:*
+ #*Codigo para uso de webcam:*
 
 function setup() {
   noCanvas();
