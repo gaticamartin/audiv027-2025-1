@@ -7,9 +7,9 @@
 Hola!! *brillitos* *brillitos* cada linea es un testeo de código
 1. Revisión github markdown.
    <p>asdf testeo 1</p>   
-# creación párrafo
    <h1>testeo 2</h1>
 2. Revisión markdown cheatsheet <p></p>
 *italic*
 **bold**
 ~~rayado~~
+
