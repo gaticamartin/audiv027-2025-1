@@ -21,3 +21,13 @@ Cómo van a ser las proximas entregas, cómo deben subirse:
 5. Verificar que esté subido a la web.
 
 [^1] .zip es como "arrugar" el codigo de p5, aca odiamos .zip
+
+<https://p5js.org/reference/> Lugar oficial que ayuda a ver que cosas se pueden codificar
+
+<https://docs.ml5js.org/#/reference/overview> Ml5js trae ya muchas plantillas como base, la página esta entregando de por sí una infinidad de opciones
+
+Los códigos hechos en p5 pueden incluso iniciar en un escritorio sin internet, lo cual es una evidencia de su privacidad. No me quiero imaginar cuales serían los resultados más bizarros que se han hecho.
+
+El "<script>" en el index es necesario para que github aprenda el lenguaje de p5. 
+
+"Robar" códigos es super fácil, solo hay que guardar. El mundo de la programasión es muy evolutivo y probablemente sea por esta accesibilidad.
