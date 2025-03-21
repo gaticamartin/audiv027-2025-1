@@ -6,4 +6,5 @@
 
 <p>Hola!! *brillitos* *brillitos*</p> 
 1. Revisión github markdown.
-   <p>asdf testeo 1</p> # creación párrafo <p>texto</p>
+   <p>asdf testeo 1</p> # creación párrafo
+   <h1>este es para títulos "head" o h</h1>
