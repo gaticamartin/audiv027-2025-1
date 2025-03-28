@@ -17,7 +17,9 @@ La **declaracion** se puede hacer solo 1 vez.
 ![image](https://github.com/user-attachments/assets/a82bcaab-a679-4ca9-973d-408fc681438b)
 
 
-La asignacion de valores se hace con el signo = y la sintaxis es **nombreValor = nuevoValor**;
+La asignacion de valores se hace con el signo = 
+
+y la sintaxis es **nombreValor = nuevoValor**;
 
 ![image](https://github.com/user-attachments/assets/feaaae99-ca0c-411b-9422-5c84142f2fad)
 
