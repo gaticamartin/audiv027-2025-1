@@ -9,5 +9,6 @@ La asignación de valores se hace con el signo = y la sintaxis es nombreValor = 
 funcion es cuando le enseñas a hablar al computador, se le pone un nombre y obligatoriamente lleva parentesis\
 Cuando le digno funcion algo, es por que le enesñando a hacer algo <3\
 Si la vairiable esta fuera de los corches es una variable global que aplica a toda la web\
-Las variables 
+Preload se utiliza como buenos modales, apoyo para el proceso de carga\
+https://teachablemachine.withgoogle.com/
 
