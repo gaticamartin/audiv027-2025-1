@@ -3,6 +3,8 @@ Apuntes:
 Console.log(); = escribe en lugar "consola" algo, sirve para escribir una bitacora en la consola
 "?" = dentro de las comillas lo trata como texto
 no se puede poner letras desordenadas eje: JBACP, por que no existe
+
+codigo 1
 let salaG35;
 
 
@@ -15,6 +17,7 @@ function draw() {
   background(220);
 }
 
+codigo 2
 // let sirve para declarar variables
 // la declaracion se puede hacer solo 1 vez
 // la sintaxis es
@@ -42,7 +45,7 @@ function draw() {
   console.log(salaG35);
 }
 
-
+codigo 3
 // let sirve para declarar variables
 // la declaracion se puede hacer solo 1 vez
 // la sintaxis es
@@ -71,7 +74,7 @@ function draw() {
   console.log(salaG35);
 }
 
-
+codigo 4
 // let sirve para declarar variables
 // la declaracion se puede hacer solo 1 vez
 // la sintaxis es
