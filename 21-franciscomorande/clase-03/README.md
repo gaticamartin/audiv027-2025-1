@@ -14,8 +14,8 @@
 
 ## trabajo en clase
 
-[P5JS, prueba de comandos](https://editor.p5js.org/francisco.morande/sketches/zNkYUIiqS)
-[P5JS, prueba de clasificador de imagenes](https://editor.p5js.org/francisco.morande/sketches/5TtWHqwk4)
+1. [P5JS, prueba de comandos](https://editor.p5js.org/francisco.morande/sketches/zNkYUIiqS)
+2. [P5JS, prueba de clasificador de imagenes](https://editor.p5js.org/francisco.morande/sketches/5TtWHqwk4)
 
 ## Links importantes
 [Teachable machine](https://teachablemachine.withgoogle.com/)
