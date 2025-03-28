@@ -38,7 +38,36 @@ lista de fotografías:<br/>
    - [x] ni idea pero este objetivo se "logró"
 3. página de códigos de emoji:<https://github.com/ikatyang/emoji-cheat-sheet/blob/master/README.md?plain=1><br/>
 :cowboy_hat_face: :ghost: :smiley_cat: :wave: :nail_care: :nail_care: :nail_care: :nail_care: :fairy_woman::fairy_woman::fairy_woman::fairy_woman::mushroom::mushroom::mushroom::mushroom::mushroom::mushroom::star2::star2::star2::star2::star2:
-:star2::star2::star2::star2::star2:
+:star2::star2::star2::star2::star2: <br/>
+> [!NOTE]
+> algo a considerar en cuenta.
+
+> [!TIP]
+> un datito.
+
+> [!IMPORTANT]
+> pa tomarlo en cuenta.
+
+> [!WARNING]
+> ya si es urgente mano, borra todo el código.
+
+> [!CAUTION]
+> anda con cuidado, quizás se borre solo la línea.
+
+vamos a hacer una tabla<br/>
+| cosa | cosa 2        |
+|-----:|---------------|
+|     1| mago hámster  |
+|     2| mago gato     |
+|     3| mago rana     |
+
+y para citar: <br/>
+
+---
+> Tangananica, nica, nica, nica...Tangananá.
+* Hermanos Guarennes.
+* donde se aprendió esto: <https://docs.github.com/es/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/quickstart-for-writing-on-github> 
+
 
 
 
