@@ -14,3 +14,5 @@ Existen las constantes NOSE que son aún.
  function "algo" es la orden de lo que se pide. por ejemplo "function draw" 
 para luego usarla // draw();
 
+//MobileNet es para algoritmos básicos.
+//preload = precargar, funcion para hacer más rápido la vista de imagenes, etc.
