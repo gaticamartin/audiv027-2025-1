@@ -68,7 +68,7 @@ y para citar: <br/>
 * Hermanos Guarennes.
 * donde se aprendió esto: <https://docs.github.com/es/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/quickstart-for-writing-on-github> 
 
-
+* **página de práctica que hice de kirby, testeo1.html en carpetas, recordatorio de arreglarlo estéticamente**
 
 
 
