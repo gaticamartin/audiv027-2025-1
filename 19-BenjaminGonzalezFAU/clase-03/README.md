@@ -20,3 +20,9 @@ LAS VARIABLES TIENEN UN NOMBRE Y UN VALOR QUE PUEDE VARIAR
 * P5 reconoce automáticamente si aplica "setup" una única vez y "draw" muchas veces, normalmente nosotros deberiamos hacerlo
 
 ## ML5.JS
+* "ml5.imageClassifier": dentro de la carpeta "ml5" búscame la subcarpeta "imageClassifier"
+* "preload": sirve para cargar antes del inicio, normalmente cosas complejas/pesadas, cuando llegue el aviso de su carga completa el código continúa
+* Al computador le gusta partir contando desde el 0
+* "if": poner condiciones para hacer algo
+* <https://teachablemachine.withgoogle.com/> Herramienta para crear modelos con aprendizaje automático, le permite identificar distintas clases al computador comparando sus semejanzas o diferencias a nivel de un pixel. De esta manera cada uno puede crear su propio clasificador
+
