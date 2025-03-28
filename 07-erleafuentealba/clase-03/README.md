@@ -10,5 +10,7 @@ funcion es cuando le enseñas a hablar al computador, se le pone un nombre y obl
 Cuando le digno funcion algo, es por que le enesñando a hacer algo <3\
 Si la vairiable esta fuera de los corches es una variable global que aplica a toda la web\
 Preload se utiliza como buenos modales, apoyo para el proceso de carga\
-https://teachablemachine.withgoogle.com/
+https://teachablemachine.withgoogle.com/ \
+https://editor.p5js.org/erlea.fuentealba/sketches/p15WviLcU \
+https://editor.p5js.org/erlea.fuentealba/sketches/bnwH-o8xo \
 
