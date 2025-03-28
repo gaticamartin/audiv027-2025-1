@@ -8,4 +8,4 @@ console.log(""); = permite escrbir "" en la consola de abajo. sirve para dar men
 
 ## trabajo en clase
 
-https://editor.p5js.org/francisco.morande/sketches/zNkYUIiqS
+[P5JS, prueba de comandos](https://editor.p5js.org/francisco.morande/sketches/zNkYUIiqS)
