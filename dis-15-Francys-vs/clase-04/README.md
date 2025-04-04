@@ -6,10 +6,6 @@ link 3: <https://blog.tensorflow.org/2018/05/real-time-human-pose-estimation-in.
 link 4: <https://www.tensorflow.org/hub/tutorials/movenet?hl=es-419></p>
 link 5: <https://ai.google.dev/edge/mediapipe/solutions/vision/pose_landmarker?hl=es-419></p>
 link 6(movimiento cuerpo y detección)[ver desde el celu]: <https://editor.p5js.org/francys.vasquez/full/h1o1qFSnU></p>
-link 7: <></p>
-link 8: <></p>
-link 9: <></p>
-
 
 ```para compartir los códigos
 function setup() { //demostración de función
