@@ -3,13 +3,10 @@
 _Darle una posicion y donde moverse:_
 
 let posX = 50;
-
-function draw() {
-  background(220);
+  
   ellipse(posX, 50, 80, 80);
   
   posX = posX + 1;
-}
 
 ----------------------------
 
