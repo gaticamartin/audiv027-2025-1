@@ -56,3 +56,47 @@ Array utiliza []
 Push es para tomar un valor y ponerlo al final del valor anterior
 Hay que agregar un comando (syntaxis) para que pare
 Para hacer q posX.push se repita se pone dentro de for
+
+#  ERROR
+// Quiero hacer cinco elipses
+// esas elipses quiero que partan 
+// en lugares aleatorios 
+// y que se muevan
+// aleatoriamente por el lienzo
+
+// Cantidad de elipses dentro del código
+let numElipses = 5;
+
+// posX y posY son arreglos vacíos
+
+let posX = [];
+let posY = [];
+
+
+// Se define el setup, pero aún no se llama
+function setup() {
+  createCanvas(400, 400);
+  
+  
+// Para que posX.push se repita so pone dentro de for
+// Para que el código se detenga se uiliza i < 5 o i < numElipses
+// Condiciones iniciales de posX y posY de todas las elipses
+  for (let i = 0; i < numElipses; i++) {
+    posX.push(random(0, 400));
+    posY.push(random(0, 400));
+  }
+}
+
+// El orden es importante, primero crea la elipse y luego pinta el canva
+function draw() {
+  background(185, 157, 167);
+ 
+  for (let i = 0; i < numElipses; i++) {
+    ellipse(posX[i], posY[i], 80, 90);
+  }
+  for (let i = 0; 1 < numElipses; i++) {
+    posX[i] = posX[i] + random (-2, 2);
+    posY[i] = posY[i] + random (-2, 2);
+  }
+}
+
