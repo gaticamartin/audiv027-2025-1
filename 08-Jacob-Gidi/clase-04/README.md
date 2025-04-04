@@ -20,3 +20,31 @@ function draw() {
   
   posX = posX + random(-2, 2); 
 }
+
+2
+// quiero hacer cinco elipses
+// esas elipses quiero que partan
+// en lugares aleatorios
+// y que despues se muevan
+// aleatoriamente por el lienzo
+
+let posX;
+let posY;
+
+function setup() {
+  createCanvas(400, 400);
+  
+  posX = random(0, 400);
+  posY = random(0, 400);
+  
+}
+
+function draw() {
+
+  background(220);
+  ellipse(posX, posY, 80, 80);
+  
+  posX = posX + random(-2, 2);
+  posY = posY + random(-2, 2);
+  
+}
