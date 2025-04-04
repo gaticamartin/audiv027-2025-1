@@ -78,6 +78,8 @@ function draw() {
 
   background(220);
   
+  // SUGERENCIA JULIO: FILL
+  
   ellipse(posX0, posY0, 80, 80);
   ellipse(posX1, posY1, 40 ,40);
   
