@@ -74,9 +74,9 @@ function draw() {
   
   
   // variamos la variable con aleatoridad
-```
   
   // posX = posX0 + random(-2, 2);
   // posY = posY0 + random(-2, 2);
   
 }
+```
