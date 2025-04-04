@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<head> 
+  <title> Testeo de HTML </title>
+  <style>
+     nav {
+       width: 100%;
+       text-align: center;
+       background-color: #FFBAF1;
+     } 
+     label {
+       padding:30px;
+       font-size: 2em;
+     }
+     body {
+       background-image: https://wallpaperaccess.com/full/2619798.jpg;
+       background-attachment:fixed;
+     }
+     section {
+       background-color:#FFFFFF;
+       width: 30%;
+       margin: auto;
+       margin-top: 100px;
+       font-size: 2em;
+     }
+  </style>
+</head>
+<body>
+  <nav>
+   <label><a href= "https://www.google.com/"> ir a Google </a></label>
+   <label><a href= "https://github.com/VicentilloTF"> ir a Github </a></label>
+   <label><a target="_blank" href= "https://docs.github.com/es/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax"> ir a Guía de Github </a></label>
+  </nav>
+  <section>
+  Garfield es lo mas grande, lo quiero mucho, si pudiera sería un gatito gordo comiendo lasaña. Que felicidad
+
+  <div style= "text-align: center;">
+     <img
+src= "https://th.bing.com/th/id/OIP.ELMx13jL3lwIQrPqglEyBgHaLo?w=955&h=1500&rs=1&pid=ImgDetMain" alt= "carita de garfield"/>
+  </div>
+    <iframe width="560" height="315" src="https://www.youtube.com/watch?v=MJmSmjBN-nU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+  </section>
+ </body>
+</html>
+//gracias a mi querida amiga francys x ayudarme :)
