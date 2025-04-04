@@ -1,0 +1,19 @@
+- array
+<https://lav.io/>
+
+random
+function setup() {
+  createCanvas(100, 100);
+
+  background(200);
+
+  // Get random coordinates between 0 and 100.
+  let x = random(0, 100);
+  let y = random(0, 100);
+
+  // Draw a point.
+  strokeWeight(5);
+  point(x, y);
+
+  describe('A black dot appears in a random position on a gray square.');
+}
