@@ -28,15 +28,48 @@ posY = posY + random(-2, 2);
 
 -----------------------------
 
-_Para dar mas de un valor a distintas formas:_
+_Para dar mas de un valor:_
 
   for (algo; otra; ultima) {  
     posX.push(random(0, 400));
     
-  for (let i = 0; i < 5; i = i++) {  
+  for (let i = 0; i < 5; i++) {  
     posX.push(random(0, 400));
     
 ---------------------------
 ```javascript
+//hacer 5 elipses
+//que partan de lugares aleatorios
+//y que despues se muevan aleatoriamente por el lienzo
 
+let numElipses = 5;
+
+//posX y posY son arreglos vacios
+let posX = [];
+let posY = [];
+
+function setup() {
+  createCanvas(400, 400);
+  
+//creo condiciones iniciales para posX y posY de todas las elipses
+  for (let i = 0; i < numElipses; i++) {  
+    posX.push(random(0, 400));
+    posY.push(random(0, 400));
+  }
+}
+
+function draw() {
+  background(220);
+  
+  for (let i = 0; i < numElipses; i++) {  
+    ellipse(posX[i], posY[i], 80, 80);
+  }
+  
+  //ellipse(posX, posY, 80, 80);
+  //ellipse(posX, posY, 40, 40)
+  
+  //posX = posX + random(-2, 2);
+  //posY = posY + random(-2, 2);
+}
+```
 
