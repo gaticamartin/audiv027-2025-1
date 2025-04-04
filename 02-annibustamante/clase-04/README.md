@@ -1,6 +1,7 @@
 # clase-04
 
 _Darle una posicion y donde moverse:_
+
 let posX = 50;
 
 function draw() {
@@ -12,6 +13,7 @@ function draw() {
 ----------------------------
 
 _Que se mueva en direccion random:_
+
 posX = posX + random(-2, 2);
 
 ----------------------------
