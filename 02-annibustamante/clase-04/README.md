@@ -26,8 +26,17 @@ posX = posX + random(-2, 2);
 
 posY = posY + random(-2, 2);
 
-----------------------------
-//hacer 5 elipses
-//que partan de lugares aleatorios
-//y que despues se muevan aleatoriamente por el lienzo
+-----------------------------
+
+_Para dar mas de un valor a distintas formas:_
+
+  for (algo; otra; ultima) {  
+    posX.push(random(0, 400));
+    
+  for (let i = 0; i < 5; i = i++) {  
+    posX.push(random(0, 400));
+    
+---------------------------
+```javascript
+
 
