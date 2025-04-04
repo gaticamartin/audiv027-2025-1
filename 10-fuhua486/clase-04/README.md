@@ -2,16 +2,16 @@
 
 simbolo backtick: `
 
-para escribir codigo en github:
+**Para escribir codigo en github:**
 
-Tres veces el simbolo ` + lenguaje de programacion
+Tres veces el simbolo ` + **lenguaje de programacion**
 
 (codigos)
 
 y usa tres veces el simbolo` en el final.
 
 
-Importante: El orden de codigo
+**Importante: El orden de codigo**
 
 El siguiente ejemplo no se ve elipse debido al problema de orden en el codigo, porque lo primero que hace el computador es el codigo ellipse(50, 50, 80, 80); pero el siguiente codigo background(220); esta tapado el codigo anterior, es decir, la elipse,y por eso solo se ve el fondo y no la elipse.
 
