@@ -10,6 +10,7 @@ function draw() {
   
   posX = posX + 1;
 }
+
 ----------------------------
 
 _Que se mueva en direccion random:_
