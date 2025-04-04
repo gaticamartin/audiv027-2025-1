@@ -1,5 +1,7 @@
 # clase-04
 
+demostración de que sin arreglos la vida es muy dura
+
 ```javascript
 // quiero hacer cinco elipses
 // esas elipses quiero que partan
@@ -40,3 +42,5 @@ function draw() {
   
 }
 ```
+
+muy pronto: ARREGLOS!!
