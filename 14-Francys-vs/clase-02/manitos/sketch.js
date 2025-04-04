@@ -35,7 +35,7 @@ function draw() {
     let hand = hands[i];
     for (let j = 0; j < hand.keypoints.length; j++) {
       let keypoint = hand.keypoints[j];
-      fill(100, 200, 125); //estos son los puntos verdes con los que se delinea la mano
+      fill(0, 150, 200); //estos son los puntos verdes con los que se delinea la mano
       noStroke(); //no dibuja el borde los circulos
       circle(keypoint.x, keypoint.y, 10); //se crea el circulo
     }
@@ -47,3 +47,10 @@ function gotHands(results) {
   // save the output to the hands variable
   hands = results;
 }
+// Colores (R, G, B)
+// (0, 200, 200) = celeste
+// (50, 200, 200) = turquesa
+// (50, 150, 200) = azul
+// (200, 0, 0) = rojo
+// (0, 200, 0) = verde
+// (0, 0 , 200) = azul
