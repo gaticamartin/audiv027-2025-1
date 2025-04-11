@@ -34,10 +34,42 @@ function draw() {
 Ejercicio en Clases: la idea es que haya un circulo en el centro del canvas, y al apresionar con mouse, el fondo cambia de color (uno esperaría que cambie el circulo, pero cambia el fondo)/
 (No funciona :'C)/
 ```javascript
-  rojo.push(random (0, 255));
-  verde.push(random (0, 255));
-  azul.push(random(0, 255))
+let rojo = [];
+let verde = [];
+let azul = [];
+
+function setup() {
+  createCanvas(500, 500);
+
+  background(0);
+
+  circle(250, 250, 100);
+  
+  if (mouseIsPressed) {
+    background (
+     rojo.push(random (0, 255)),
+     verde.push(random (0, 255)),
+     azul.push(random(0, 255))
+    )
+    
   }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
