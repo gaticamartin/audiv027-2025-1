@@ -35,3 +35,10 @@ Backtick
 ```
 
 noStoke = no dibujar el contorno de la figura
+
+common speach
+
+# Sound Classifier 
+!== 
+if == compara la palabra "yes" o "no" con la palabra dada
+las dos operaciones booleanas comienzan siendo falsas, así no comienza a detectar antes las palabras, para luego compararse con las variables (yes o no)
