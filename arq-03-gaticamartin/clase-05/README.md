@@ -59,3 +59,7 @@ if (frameCount % 2 == 0) {
   - https://earthquake.usgs.gov/fdsnws/event/1/
   - https://www.getambee.com/api/earthquake
   - https://www.sismologia.cl/sismicidad/catalogo/2025/04/20250411.html
+
+https://commonvoice.mozilla.org/en <- web entrenar reconocimiento de voz personalizado
+
+https://editor.p5js.org/montoyamoraga/sketches/5zLOhCZta <- link modelo reconocimiento voz don francisco
