@@ -10,3 +10,6 @@
 2. funcion setup en el cual se crea el canvas y se establecen la aleatoridad de las variables
 3. funcion draw en la cual se dibujan las elipses y se establece el movimiento de las elipses
 4. [ejemplo de esto](https://editor.p5js.org/francisco.morande/sketches/NhBE36EFN)
+
+### notas
+preguntar como poder hacer que las elipses no se salgan del canvas y que estas no puedas superponerse
