@@ -19,3 +19,4 @@ Historia sobre los profesores de la fau últimamente. Anécdota de porque es imp
 * "noStroke" no dibujar los contornos
 * "!==" el signo de exclamación se refiere a lo contrario
 * en el ejemplo don francisco, parte definiendo la variable booleana como false y luego con la condicion "if" le cambia la naturaleza
+<https://editor.p5js.org/benjamin.gonzalez.d/full/5NwTsz15H>
