@@ -8,3 +8,6 @@ ACCION SI VALOR ES VERDADERO
 } else {  
 Que hacer si es FALSO  
 }  
+
+Hice este código continuando lo de los circulos chistosos y agregando mas cositas  
+https://editor.p5js.org/GabooDesign/full/7zvphFcnM
