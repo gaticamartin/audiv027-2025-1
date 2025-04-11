@@ -1,5 +1,7 @@
 # clase-05
 
+hoy vimos if y else en javascript.
+
 ```javascript
 function setup() {
   createCanvas(400, 400);
@@ -35,7 +37,14 @@ function draw() {
 }
 ```
 
-link al código
+## speechClassifier
+
+ml5.js tiene un clasificador de sonidos en <https://docs.ml5js.org/#/reference/sound-classifier>
+
+ese clasificador tiene una subsección de clasificador de 18 palabras típicas en inglés para comandos disponible en <https://editor.p5js.org/ml5/sketches/HUm7NYMW3>
+
+esto lo modifiqué para que muestre a diferentes DonFrancisco, según los comandos "yes" y "no", está vivo aquí y el código en sketch.js también lo copié a continuación.
+
 <https://editor.p5js.org/montoyamoraga/sketches/5zLOhCZta>
 
 ```javascript
