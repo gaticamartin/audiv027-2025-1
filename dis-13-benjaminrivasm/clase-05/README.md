@@ -1,6 +1,7 @@
 # clase-05
 ### Enlaces:
 - [p5.js etch a sketch](https://editor.p5js.org/benjaminrivasm/full/jUrpcQHh0)
+- [p5.js pixelart etch a sketch](https://editor.p5js.org/benjaminrivasm/full/mnrvnX9QN)
 - [p5.js automatic etch a sketch](https://editor.p5js.org/benjaminrivasm/full/V6j8WfjJmf)
 
 ### Apuntes:
