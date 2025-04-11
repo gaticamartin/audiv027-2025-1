@@ -11,7 +11,7 @@
 | [clase-02](00-docentes/clase-02/) | 2025-03-21 viernes      | artistas trabajando con ia, intro JavaScript  |
 | [clase-03](00-docentes/clase-03/) | 2025-03-28 viernes      | variables y funciones en JavaScript           |
 | [clase-04](00-docentes/clase-04/) | 2025-04-04 viernes      | arreglos y bucles for en JavaScript           |
-| [clase-05](00-docentes/clase-05/) | 2025-04-11 viernes      | TODO                                          |
+| [clase-05](00-docentes/clase-05/) | 2025-04-11 viernes      | condicionales if en JavaScript                          |
 | [clase-06](00-docentes/clase-06/) | 2025-04-18 viernes      | no hay clase, por día feriado                 |
 | [clase-07](00-docentes/clase-07/) | 2025-04-25 viernes      | trabajo grupal en proyecto-01                 |
 | [clase-08](00-docentes/clase-08/) | 2025-05-02 viernes      | presentaciones de proyecto-01                 |
