@@ -16,3 +16,6 @@ Historia sobre los profesores de la fau últimamente. Anécdota de porque es imp
 * "==true" es omitible
 * la segunda coordenada de fill es la transparencia del color "(0,x)"
 * cada vez que yo quiera dibujar algo es bueno definir el color un poquito antes, asi despues no utiliza algun otro valor de un comando siguiente
+* "noStroke" no dibujar los contornos
+* "!==" el signo de exclamación se refiere a lo contrario
+* en el ejemplo don francisco, parte definiendo la variable booleana como false y luego con la condicion "if" le cambia la naturaleza
