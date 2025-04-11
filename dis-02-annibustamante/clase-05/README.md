@@ -10,6 +10,8 @@ else _: usado para añadir otra condicion_
 
 frameRate(1); _: tiempo o ´cada algo´ para que suceda la condicion_
 
+!== _: usado para decir que algo es distinto_
+
 -------------------------------------------------------------
 
 ```javascript
@@ -42,3 +44,6 @@ function draw() {
   //}
 }
 ```
+-----------------------------
+
+
