@@ -71,3 +71,39 @@ function draw() {
   //}
   
 }
+
+codigo 4 Dire Wolf
+let img;
+let escala = 3; 
+// Load the image.
+function preload() {
+  img = loadImage('https://media.cnn.com/api/v1/images/stellar/prod/111790-scientistscreatedirewolf-thumb-clean.png?c=original');
+}
+
+function setup() {
+  createCanvas(600, 600);
+//  frameRate(1);
+  background(0);
+}
+
+function draw() {
+  
+  if (mouseIsPressed){
+    fill(130, 200, 255);
+    image(img, 0, 0, 1920/escala,1080/escala);
+   // ellipse(
+   //   random(width),
+   //   random(height),
+   //   random(30),
+   //   random(30)
+   //        );
+  } else {
+    fill(0, 10);
+    rect(0, 0, width, height);
+  }
+    
+  // Draw the image.
+  // image(img, 0, 0);
+
+  describe('An image of the underside of a white umbrella with a gridded ceiling above.');
+}
