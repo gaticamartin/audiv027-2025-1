@@ -29,3 +29,9 @@ mouseIsPressed, tiene dos valores, verdaero y falso
 
 Configurar los coleres de cada cosa, sino se toma el último que se utilizó
 
+Backtick 
+``` javascript
+
+```
+
+noStoke = no dibujar el contorno de la figura
