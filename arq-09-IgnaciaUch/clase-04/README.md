@@ -100,3 +100,7 @@ function draw() {
   }
 }
 
+Tensorflow
+
+# Bodypose
+La nariz es el cero, es un elemento secillo de identificar y ayuda a hacer "espejo"
