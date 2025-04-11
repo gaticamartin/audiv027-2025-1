@@ -61,6 +61,7 @@ if (frameCount % 2 == 0) {
   - https://www.sismologia.cl/sismicidad/catalogo/2025/04/20250411.html
 
 
+.
 
 https://commonvoice.mozilla.org/en <- web entrenar reconocimiento de voz personalizado
 
