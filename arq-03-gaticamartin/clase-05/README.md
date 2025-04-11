@@ -58,3 +58,4 @@ if (frameCount % 2 == 0) {
   **links**
   - https://earthquake.usgs.gov/fdsnws/event/1/
   - https://www.getambee.com/api/earthquake
+  - https://www.sismologia.cl/sismicidad/catalogo/2025/04/20250411.html
