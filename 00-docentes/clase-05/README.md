@@ -35,6 +35,9 @@ function draw() {
 }
 ```
 
+link al código
+<https://editor.p5js.org/montoyamoraga/sketches/5zLOhCZta>
+
 ```javascript
 /*
  * 👋 Hello! This is an ml5.js example made and shared with ❤️.
