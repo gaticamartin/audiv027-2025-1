@@ -3,13 +3,14 @@
 ```javascript
 function setup() {
   createCanvas(400, 400);
-  frameRate (1)
+  //frameRate (1)
 }
 
 function draw() {
   background(0);
   
   if (mouseIsPressed ) { 
+    noStroke ();
     ellipse (
     random (width),
     random (height),
@@ -30,6 +31,8 @@ function draw() {
 // }
   
 }
+
+
 
 Ejercicio en Clases: la idea es que haya un circulo en el centro del canvas, y al apresionar con mouse, el fondo cambia de color (uno esperaría que cambie el circulo, pero cambia el fondo)/
 (No funciona :'C)/
