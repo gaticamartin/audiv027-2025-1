@@ -48,7 +48,7 @@ function draw() {
 // este ejemplo hace que cuando el frame count sea par ((if (frameCount % 2 == 0) {)) la figura cambie de elipse a rec.
 
 
-IDEA INICIAL PROYECTO PROGRAMACION
+**IDEA INICIAL PROYECTO PROGRAMACION**
 -pagina pagina relacionada a sismologia nacional
 - conectar API´s con p5
 -desarrollar lenguaje grafico de interes
