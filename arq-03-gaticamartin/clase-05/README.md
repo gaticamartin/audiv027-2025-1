@@ -55,4 +55,6 @@ function draw() {
 
 -- idea grafica inicialfondo horizontal 1080x720 fondo negro,cada vez que se registra un sismo se dibuja en el centro de la pantalla una elipse de radio relacionado a la magnitud del sismo. esta circunferencia se desbanece lentamente hasta desaparecer 24 h despues. los limites de la pantalla son equivalentes a un sismo de grado considerable(?????)
 
-  
+  **limks**
+  - https://earthquake.usgs.gov/fdsnws/event/1/
+  - https://www.getambee.com/api/earthquake
