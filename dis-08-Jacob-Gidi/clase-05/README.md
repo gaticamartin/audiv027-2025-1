@@ -107,3 +107,39 @@ function draw() {
 
   describe('An image of the underside of a white umbrella with a gridded ceiling above.');
 }
+
+codigo 5 devil trigger
+let img;
+let escala = 3; 
+// Load the image.
+function preload() {
+  img = loadImage('https://static.wikia.nocookie.net/devilmaycry/images/7/76/Devil_Trigger_DMC4.png/revision/latest/scale-to-width-down/250?cb=20161126002539&path-prefix=es');
+}
+
+function setup() {
+  createCanvas(600, 600);
+//  frameRate(1);
+  background(200, 0, 0);
+}
+
+function draw() {
+  
+  if (mouseIsPressed){
+    fill(130, 200, 255);
+    image(img, 100, 100, 1000/escala,1332/escala);
+   // ellipse(
+   //   random(width),
+   //   random(height),
+   //   random(30),
+   //   random(30)
+   //        );
+  } else {
+    fill(0, 10);
+    rect(0, 0, width, height);
+  }
+    
+  // Draw the image.
+  // image(img, 0, 0);
+
+  describe('An image of the underside of a white umbrella with a gridded ceiling above.');
+}
