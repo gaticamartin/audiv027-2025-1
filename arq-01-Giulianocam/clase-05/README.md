@@ -1,5 +1,6 @@
 # clase-05
 #### if, condicionante de acciones, determina acciones en base a condiciones establecidas
+
 ```javascript
 // IF
 
