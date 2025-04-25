@@ -64,7 +64,7 @@ Grupo 1: StrayKids
             labelContainer.childNodes[i].innerHTML = classPrediction;
         }
     }
-</script>/
+</script>
 
 Grupo 2: Ateez
 ```javascript
