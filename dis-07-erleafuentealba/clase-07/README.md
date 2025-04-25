@@ -1,8 +1,8 @@
 # clase-07
-1. Creación de carpetas en drive, se hace una carpeta por grupo con subcarpetas por integrate de grupo\
+1. Creación de carpetas en drive, se hace una carpeta por grupo con subcarpetas por integrate de grupo/
 2. Recolección de 5 imagenes por integrante de cada grupo
 3. Creación de clases en Teacheble Machine. Una Clase por integrante de cada grupo.
-4. 4.Carga de imagenes en teacheble machine.\
+4. 4.Carga de imagenes en teacheble machine./
 
 Grupo 1: StrayKids
    ```javasript
@@ -64,7 +64,8 @@ Grupo 1: StrayKids
             labelContainer.childNodes[i].innerHTML = classPrediction;
         }
     }
-</script>
+</script>/
+
 Grupo 2: Ateez
 ```javascript
 <div>Teachable Machine Image Model</div>
