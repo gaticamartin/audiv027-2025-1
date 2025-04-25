@@ -21,3 +21,8 @@ https://www.youtube.com/watch?v=EA3-k9mnLHs
 para empezar nuestro proyecto tenemos que ir a ml5 y aprender sobre el reconocimiento facial, encontramos el siguiente material :)
 https://thecodingtrain.com/tracks/ml5js-beginners-guide/ml5/facemesh
 
+facemesh 
+https://docs.ml5js.org/#/reference/facemesh 
+
+código para aprender 
+https://editor.p5js.org/ml5/sketches/lCurUW1TT
