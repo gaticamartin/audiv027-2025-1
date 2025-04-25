@@ -23,5 +23,5 @@ Referentes ideas primarias:
 https://p5js.org/es/sketches/2174234/ <- patrones que varian segun movimiento de mouse. la tecla de espacio funciona como pausa.
 https://p5js.org/examples/games-snake/ <- codigo snake base
 https://github.com/yining1023/teachable-machine-p5 <- teachable machine
-https://p5js.org/sketches/2221968/ <theremin simulator
+https://p5js.org/sketches/2221968/ <- theremin simulator
 
