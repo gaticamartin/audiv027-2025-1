@@ -1,4 +1,5 @@
-# clase-06
+# clase-06 25-04-2052
+# falta editar dsp
 
 ## evaluacion
 1. aspectos formales 
@@ -19,5 +20,12 @@ deteccion del dedo indice, usar un puntero en su lugar, llegar a la figura estab
 ## proyecto
 
 ### descripcion
-
+editar dsp
 ### separacion de trabajo
+editar dsp
+
+### AAAAAAAAAAAA
+[p5js a trabajar dsp](https://editor.p5js.org/francisco.morande/sketches/qvAkPvUom)
+[Ej circle clicker](https://p5js.org/examples/games-circle-clicker/)
+
+tb buscar mouse commands
