@@ -26,6 +26,7 @@ editar dsp
 
 ### AAAAAAAAAAAA
 [p5js a trabajar dsp](https://editor.p5js.org/francisco.morande/sketches/qvAkPvUom)
+
 [Ej circle clicker](https://p5js.org/examples/games-circle-clicker/)
 
 tb buscar mouse commands
