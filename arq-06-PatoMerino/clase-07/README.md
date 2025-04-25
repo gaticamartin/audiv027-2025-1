@@ -15,3 +15,6 @@ Estatico: Amor, Casa, Familia
 Dinamico: Hola, Gracias, Si, No, Amigo, Perdon, Comida, Agua
 
 x hacer: arnar Modelo Handopose-> cachar como insertar las frases al modelo, entrenar para que pueda leer
+
+
+//entrenar con TEACHABLE MACHINE//
