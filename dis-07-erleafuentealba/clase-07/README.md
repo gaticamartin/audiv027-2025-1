@@ -65,5 +65,8 @@ Grupo 1: StrayKids
         }
     }
 </script>
+Grupo 2: Ateez
+```javascript
+
 
 
