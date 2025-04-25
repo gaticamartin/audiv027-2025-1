@@ -26,3 +26,6 @@ https://docs.ml5js.org/#/reference/facemesh
 
 código para aprender 
 https://editor.p5js.org/ml5/sketches/lCurUW1TT
+
+prueba de como funciona, salió bien :) 
+![Screenshot_20250425-165402](https://github.com/user-attachments/assets/2038ddf6-4646-45dd-b364-f4100c4b0a8a)
