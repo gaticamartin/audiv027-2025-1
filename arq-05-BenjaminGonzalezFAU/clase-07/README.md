@@ -37,4 +37,4 @@ Con "soundclassifier" detectaría el mensaje de español, combinando con "like t
 
 2.- Cuando la cara del queridismo profesor llegue a la sala (círculo) se definira como una condición verdadera. 
 
-3.- Cuando la condición sea verdadera, aumentará la puntuación, y creara otra sala (círculo).
+3.- Cuando la condición sea verdadera, aumentará la puntuación, y creara otra sala (círculo). Encargarse de intergaz.
