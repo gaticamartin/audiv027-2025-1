@@ -14,10 +14,10 @@
 | [clase-05](00-docentes/clase-05/) | 2025-04-11 viernes      | condicionales if en JavaScript                          |
 | [clase-06](00-docentes/clase-06/) | 2025-04-18 viernes      | no hay clase, por día feriado                 |
 | [clase-07](00-docentes/clase-07/) | 2025-04-25 viernes      | trabajo grupal en proyecto-01                 |
-| [clase-08](00-docentes/clase-08/) | 2025-05-02 viernes      | presentaciones de proyecto-01                 |
-| [clase-09](00-docentes/clase-09/) | 2025-05-09 viernes      | TODO                                          |
+| [clase-08](00-docentes/clase-08/) | 2025-05-02 viernes      |  no hay clase por interferiado                |
+| [clase-09](00-docentes/clase-09/) | 2025-05-09 viernes      |  presentaciones de proyecto-01                |
 | [clase-10](00-docentes/clase-10/) | 2025-05-16 viernes      | TODO                                          |
-| semana receso                | 2025-05-19 / 2025-05-23 | sin clases, sin evaluaciones                  |
+| semana receso                     | 2025-05-19 / 2025-05-23 | sin clases, sin evaluaciones                     |
 | [clase-11](00-docentes/clase-11/) | 2025-05-30 viernes      | TODO                                          |
 | [clase-12](00-docentes/clase-12/) | 2025-06-06 viernes      | trabajo grupal en proyecto-02                 |
 | [clase-13](00-docentes/clase-13/) | 2025-06-13 viernes      | trabajo grupal en proyecto-02                 |
