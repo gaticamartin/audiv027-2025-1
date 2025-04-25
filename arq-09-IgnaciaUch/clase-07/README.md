@@ -55,4 +55,7 @@ Idea 1: Juego de cículos
 - El juego consta de una serie de circulos que aparecen de manera aleatoria sobre la cámara del usuario y que el usuario al "tocarlos" con su mano o dedo, el circulo desaparece, contaría además con un ranking o contador y un tiempo límite que tiene el ususario para presionar el circulo en la pantalla.
 - El profe quiere algo más piola 
 - Al profe le gustó la idea, dijo que ibamos bien
-- 
+
+## Pasos
+- Detección del dedo
+- Definir como se detecta al circulo 
