@@ -1,6 +1,6 @@
 # clase-07
 
-GRUPO : 
+GRUPO : https://github.com/FAU-UChile/audiv027-2025-1/tree/main/arq-01-Giulianocam , https://github.com/FAU-UChile/audiv027-2025-1/tree/main/dis-08-Jacob-Gidi
 
 primeras aproximaciones PROYECTO 1:
 
