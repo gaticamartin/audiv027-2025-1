@@ -6,4 +6,7 @@ Basandose en un espejo (Cámara frontal) nuestro proyecto crea una situación en
 Usaremos la plantilla de ml5 de body pose para detectar la presencia de personas en el reflejo, mientras mas personas, mas se enojará el espejo y reflejará elementos psicodélicos o extraños, en un intento de espantarte y alejarte de él. Si llegas a hacer caso omiso al enojo del espejo, puede llegar a un final trágico, esperemos no llegues a ese punto. :(  
 
 Para organizar el trabajo con mi equipo hicimos un repositorio, este es el link  
-https://github.com/GabooDesign/EspejoAmargado
+https://github.com/GabooDesign/EspejoAmargado  
+
+El código fuente está siendo trabajado aquí:  
+https://editor.p5js.org/benjaminrivasm/sketches/mstglaHjN
