@@ -10,7 +10,6 @@ Integrantes: Valentina Abarcia, Annais Bustamante, Erlea Fuentealba
 
 ## Materiales
 1. https://teachablemachine.withgoogle.com/train/image\
-2. https://p5js.org/
 
 ### Codigo
 Código de Teacheble Machine de reconocimiento de imagenes, con imagenes de tres grupos de KPop: Ateez, Stray Kids, Aespa.
@@ -84,14 +83,11 @@ Código de Teacheble Machine de reconocimiento de imagenes, con imagenes de tres
 
 ### Registro de Funcionamiento
 1. Ateez
-2. Stray Kids
-3. Aespa
 
 ## Conclusiones
 
 
 ## Citas y Referentes
-
-https://lens.google/intl/es-419/howlensworks/\
+1. https://lens.google/intl/es-419/howlensworks/\
 
 
