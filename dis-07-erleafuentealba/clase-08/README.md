@@ -2,13 +2,12 @@
 
 no hay clase por interferiado.
 
-## bitácora de proceso
+## bitácora de proceso\
+___
 
+# Trabajo 1
 
-Integrantes: \
-_ Valentina Abarcia \
-_ Annais Bustamante \ 
-_ Erlea Fuentealba \
+Integrantes: Valentina Abarcia, Annais Bustamante, Erlea Fuentealba \
 
 ### Materiales
 https://teachablemachine.withgoogle.com/train/image \
