@@ -65,6 +65,7 @@ Grupo 1: StrayKids
         }
     }
 </script>
+´´´
 
 Grupo 2: Ateez
 ```javascript
@@ -127,7 +128,7 @@ Grupo 2: Ateez
         }
     }
 </script>
-
+´´´
 
 Grupo 3: Aespa
 ```javascript
@@ -190,9 +191,9 @@ Grupo 3: Aespa
         }
     }
 </script>
+´´´
 
-
-```javascript
+Subir imagen de prueba\
 
 
 
