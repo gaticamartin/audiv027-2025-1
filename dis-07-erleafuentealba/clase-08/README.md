@@ -6,14 +6,14 @@ no hay clase por interferiado.
 ___
 
 # Trabajo 1
-Integrantes: Valentina Abarcia, Annais Bustamante, Erlea Fuentealba\
+Integrantes: Valentina Abarcia, Annais Bustamante, Erlea Fuentealba
 
 ## Materiales
 1. https://teachablemachine.withgoogle.com/train/image\
 2. https://p5js.org/
 
 ### Codigo
-GRUPO 1: Ateez
+Código de Teacheble Machine de reconocimiento de imagenes, con imagenes de tres grupos de KPop: Ateez, Stray Kids, Aespa.
 ```javascript
 <div>Teachable Machine Image Model</div>
 <button type="button" onclick="init()">Start</button>
@@ -75,16 +75,17 @@ GRUPO 1: Ateez
     }
 </script>
 ```
-
-
-
 ## Capturas de pantalla
 ### Proceso
-1. Creación de Clases, cada clase es un integrante del grupo de Kpop.
+1. Creación de Clases en Teacheble Machine, cada clase es un integrante del grupo de Kpop.
+
+2. Carga de Documentación.
 
 
-
-2. 
+### Registro de Funcionamiento
+1. Ateez
+2. Stray Kids
+3. Aespa
 
 ## Conclusiones
 
