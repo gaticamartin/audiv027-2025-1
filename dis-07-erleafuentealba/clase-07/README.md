@@ -45,7 +45,8 @@ Grupo 1: StrayKids
         labelContainer = document.getElementById("label-container");
         for (let i = 0; i < maxPredictions; i++) { // and class labels
             labelContainer.appendChild(document.createElement("div"));
-        }
+        }![image](https://github.com/user-attachments/assets/49f984ce-1fbd-4d22-beb9-30d4d75981ed)
+
     }
 
     async function loop() {
