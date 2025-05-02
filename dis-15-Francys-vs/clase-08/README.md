@@ -247,7 +247,9 @@ function mouseClicked() { // Aquí realizamos cambios para adaptar que la cámar
   }
   return false;
 }
-// PREGUNTA:¿Cómo coloco la webcam en el canva sin dañar el formato de click? (a lo mejor no es ni necesario) ¿Cómo evitar que aparezca abajo?
+// PREGUNTA: ¿Cómo coloco la webcam en el canva sin dañar el formato de click? (a lo mejor no es ni necesario)¿Cómo evitar que aparezca abajo?
 ```
 ## Todos los códigos van a estar como archivos igual por si está malo el formato aquí :D :sparkles:
 #### P.D: También han habido intentos demasiados fallidos de introducir imágenes en los códigos pero no resultan muy bien (o no resultan en general) por lo que se exploran otras opciones compatibles :grin::thumbsup:
+link código principal: <https://editor.p5js.org/francys.vasquez/sketches/yKlzVXXfO></p>
+link código webcam + click: <https://editor.p5js.org/francys.vasquez/sketches/y7Smmo9op></p>
