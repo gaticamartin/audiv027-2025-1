@@ -17,6 +17,7 @@
 
 En la pantalla saldrán circulos en posiciones aleatorias, cuando se detecte que el dedo indice de la persona pase encima del circulo la puntuación aumenta en uno y se genera otro círculo. Potencial de poner tiempo límite y competir con amigos.
 <https://p5js.org/examples/games-circle-clicker/>
+<https://editor.p5js.org/re7l/full/pd-SZ8lfA>
 
 * Bateria
 
