@@ -9,3 +9,4 @@ Juego círculos - Ayuda al profesor Montoya a llegar a la Sala G-35
 1.- Detectar punta del dedo indice como una imágen del queridisimo profesor en la pantalla.
 2.- Cuando la cara del queridismo profesor llegue a la sala (círculo) se definira como una condición verdadera.
 3.- Cuando la condición sea verdadera, aumentará la puntuación, y creara otra sala (círculo). Encargarse de interfaz. (yo) 
+
