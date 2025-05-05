@@ -59,3 +59,9 @@ Idea 1: Juego de cículos
 ## Pasos
 - Detección del dedo
 - Definir como se detecta al circulo 
+- Cuando la condición sea verdadera,aumentará la puntuación y creará otra sala. Encargarse de la interfaz
+
+- Definir la foto "Sala_01" como variable (posición random que se rinicia cuando la condición de "toque/verdadero" se cumple
+- Definir su posición "aleatoria" dentro del canvas
+- Riniciar suposición si la variable "toque/verdadero" se cumple
+- 
