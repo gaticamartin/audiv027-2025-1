@@ -6,8 +6,9 @@ viernes 09 mayo 2025
 
 integrantes:
 
-* NOMBRE <LINK A GITHUB>
-* NOMBRE <LINK A GITHUB>
+* Valentina Abarcia <LINK [https://github.com/ValentinaAbarcia]>
+* Annais Bustamante <LINK [https://github.com/annibustamante]>
+* Erlea Fuentealba  <LINK [https://github.com/erleafuentealba]>
 
 ```md
 mi equipo de trabajo es <https://github.com/NOMBRE> y <https://github.com/NOMBRE>, entregamos en el repositorio en este enlace <https://github.com/ETC>.
