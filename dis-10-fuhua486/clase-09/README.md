@@ -2,20 +2,20 @@
 
 viernes 09 mayo 2025
 
-## NOMBREDELPROYECTO
+## TeachSeñas
 
 integrantes:
 
 * Fuhua Huang <LINK [A GITHUB](https://github.com/fuhua486) >
-* NOMBRE <LINK A GITHUB>
+* Ignacio Castro C. <LINK [A GITHUB](https://github.com/nachofau)>
 
 ```md
-mi equipo de trabajo es <https://github.com/fuhua486> y <https://github.com/NOMBRE>, entregamos en el repositorio en este enlace <https://github.com/ETC>.
+mi equipo de trabajo es <https://github.com/fuhua486> y <https://github.com/nachofau>, entregamos en el repositorio en este enlace <https://github.com/ETC>.
 ```
 
 ## acerca del proyecto
 
-Este proyecto se consiste en reconocer y entender palabras básicas de la Lengua de Señas Chilena (LSCh), como "Hola", "Gracias", "Sí", "No", "Casa","Amor","Amigo"y "Por favor". Ayudando a establecer una comunicacion basica entre persona que usa lengua de señas chilena y persona que no entiende nada acerca de esta lenguaje, tambien ayuda las personas a aprender señas esenciales de manera interactiva.(porque para interactuar, tiene que saber la lengua de seña chilena, no todos, pero en los ejemplos que usamos como base para el proyecto).  
+El proyecto TeachSeñas(Teach de Teachable Machine, Señas:Lengua de Señas Chilena) se consiste en reconocer y entender palabras básicas de la Lengua de Señas Chilena (LSCh), como "Hola", "Gracias", "Sí", "No", "Casa","Amor","Amigo"y "Por favor". Ayudando a establecer una comunicacion basica entre persona que usa lengua de señas chilena y persona que no entiende nada acerca de esta lenguaje, tambien ayuda las personas a aprender señas esenciales de manera interactiva.(porque para interactuar, tiene que saber la lengua de seña chilena, no todos, pero en los ejemplos que usamos como base para el proyecto).  
 El proyecto funciona a través de una cámara: el usuario hace una seña con las manos, y el sistema los reconoce en tiempo real y muestra su significado(en palabras) en la pantalla.
 
 Las herramientas que utilizamos son: **ml5.js**, **p5.js Web Editor** y **Teachable Machine**.
@@ -52,16 +52,9 @@ El modelo de imagen de Teachable Machine se ve afectado por muchos factores a la
 Intentamos todo eso de mostrar la lengua de señas chilena delante de la cámara: sí, no, gracias. El resultado es que Teachable Machine no puede reconocer con precisión el lenguaje de señas que expresamos(a una distancia que se puede ver el demostrador y el gesto que hace). Sólo puede reconocerlo cuando mostramos los gestos individualmente y estamos cerca de los gestos en lugar de la persona(el demostrador). Además, no es 100% exacto y hay algunas desviaciones. Por esta razón, terminamos eligiendo solo ocho frases para la capacitación: Hola, Gracias, Por favor, Si, No, Amigo/a, Casa y Amor.
 ![image](https://github.com/user-attachments/assets/d256dfee-dfc7-46fd-9392-276a2622cad3)
 
-
-//descripción breve del proyecto, qué hace, para qué sirve, cómo funciona, para un público no experto en inteligencia artificial.
-
-//el proyecto hace qué, cómo, cuándo, por qué, en qué contexto.
-
-//descripción de las herramientas utilizadas, la base que usaron, y cuáles fueron sus contribuciones a este campo.
-
 ## código del proyecto
 
-el código original que citamos es
+**el código original que citamos es**
 
 ```javascript
 // A variable to initialize the Image Classifier
@@ -109,9 +102,32 @@ function gotResult(results) {
 }
 ```
 
+**Modificaciones en el código:**
+```javascript
+// Aquí reemplazamos el enlace con el modelo de Teachable Machine que hemos entrenado
+let imageModelURL = "https://teachablemachine.withgoogle.com/models/0Gt6Qh-9H/";
+```
+
+```javascript
+  // En el fill modificamos el color de la letra: Naranjo
+  fill(241, 111, 36);
+  // Cambiar el tamaño de las letras(texto),de 35 a 50.
+  textSize(50);
+  //Aqui aprendemos en un tutorial que textAlign sirve para alinear texto
+  textAlign(CENTER,BOTTOM)
+  //Aquí aprendemos que podemos usar directamente la división y números específicos para cambiar la posición del texto.
+  text(label, width/2, height-10);
+
+```
+**Código final(Resultados):**
+```javascript
+
+
+```
+
 ## enlace del proyecto
 
-lo hicimos en editor de p5.js
+lo hicimos en editor de p5.js:
 
 ## documentación multimedia / audiovisual del proyecto funcionando
 
@@ -121,11 +137,10 @@ agregar callejones sin salida a los que llegaron y la manera en que se repartier
 
 ## bibliografía
 
-nos basamos en el tutorial de INSERTARLINK
+Nos basamos en el tutorial de [The Coding Train](https://youtu.be/kwcillcWOg0?si=LD4fNH_918367TAY) :
+Teachable Machine 1: Image Classification
 
-tomamos el código base alojado en INSERTARLINK
-
-usamos la biblioteca p5.js vX.Y.Z. y la biblioteca ml5.js blablabla
+Usamos el modelo **ml5 + Teachable Machine: Image + Teachable Machine** en la biblioteca ml5.js, luego tomamos el código base en [p5.js](https://editor.p5js.org/ml5/sketches/VvGXajA36) para hacer el proyecto
 
 ## conclusiones
 
