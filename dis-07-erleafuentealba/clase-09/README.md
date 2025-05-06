@@ -2,7 +2,7 @@
 
 viernes 09 mayo 2025
 
-## NOMBREDELPROYECTO
+## IDENTIFICADOR DE PHOTOCARDS
 
 integrantes:
 
@@ -16,11 +16,11 @@ mi equipo de trabajo es <https://github.com/NOMBRE> y <https://github.com/NOMBRE
 
 ## acerca del proyecto
 
-descripción breve del proyecto, qué hace, para qué sirve, cómo funciona, para un público no experto en inteligencia artificial.
+El proyecto busca investigar el funcionamiento de la IA, más especificamente las IAs de Teacheble Machine, que tienen la cualidad de aprender. Todo esto con el objetivo de enternder como se puede utlizar la IA en la vida diaria y los hobbies.
 
-el proyecto hace qué, cómo, cuándo, por qué, en qué contexto.
+El proyecto busca lograr la identificación photocards de idosl de k-pop, como un apoyo para los coleccionistas de photocards.
 
-descripción de las herramientas utilizadas, la base que usaron, y cuáles fueron sus contribuciones a este campo.
+Se utilizó la herremienta de proyecto de imagen de Teacheble Machine, para ello se realizó una cara masiva de imagenes.
 
 ## código del proyecto
 
@@ -39,26 +39,32 @@ lo hicimos en editor de p5.js
 
 ## documentación multimedia / audiovisual del proyecto funcionando
 
-agregar imágenes, videos, gifs, etc.
+Fallas y funcionamientos con la carga del grupo ATEEZ
 
-agregar callejones sin salida a los que llegaron y la manera en que se repartieron el trabajo.
+El trabajo fue realizado mayormente de forma presencial y sincronica, por las tres integrantes del grupo. Los roles y tareas se fueron rotando a medida que se cumplian etapas del proyecto.
+1. Se realizó una busqueda de imagenes inicial, dos integrantes, y se realizó una carga masiva, una integrante.
+2. Se realizaron pruebas de imagen, tres integrantes.
+3. Se realizó un segunda  busqueda de imagenes, dos integrantes, y se realizó una segunda carga masiva, una integrante.
+4. Se realizaron pruebas de funcionamiento, dos integrantes, y anotaciones de conclusiones, una integrante.
+5. Traspaso de información al formato final, tres integrantes
+6. Correcciones de codigo, una integrante.
 
 ## bibliografía
 
 nos basamos en el tutorial de INSERTARLINK
 
-tomamos el código base alojado en INSERTARLINK
+tomamos el código base de https://teachablemachine.withgoogle.com/train/image
 
 usamos la biblioteca p5.js vX.Y.Z. y la biblioteca ml5.js blablabla
 
 ## conclusiones
 
-la IA sirve para X, pero no sirve para Y.
-
-esto nos pareció adecuado, esto nos pareción exclusivo
-
-esto nos causó alegría / incomodidad.
-
-posibles usos futuros que sean positivos, o negativos, o sociales, o personales.
+1. Teachable Machine empieza a reconocer los rostros a partir de las 30 imágenes.
+2. La luz y su reflejo afecta a la hora de reconocer los rostros, por ejemplo: poniendo la cámara a mirar los rostros a través de una pantalla.
+3. El rostro tiene que estar claramente visible sin un ruido visual para tener una mejor lectura.
+4. Entre mayor cantidad de imágenes reconoce mejor los rostros aunque no se vean en tan buena calidad.
+5. Mientras menos distancia haya entre la cámara y el rostro más acertado es.
+6. Puede llegar a confundirse de persona si se está muy cerca, pero a la vez puede acertar a la persona a una distancia adecuada.
+7. Puede reconocer a la persona por sus rasgos faciales, como los labios, si está lo suficientemente cerca.
 
 agregar dimensión ética.
