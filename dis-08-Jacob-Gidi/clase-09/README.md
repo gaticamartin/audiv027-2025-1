@@ -2,7 +2,7 @@
 
 viernes 09 mayo 2025
 
-## NOMBREDELPROYECTO
+## Arbitro de Pestañeo
 
 integrantes:
 
