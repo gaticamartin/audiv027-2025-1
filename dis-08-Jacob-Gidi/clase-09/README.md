@@ -6,7 +6,7 @@ viernes 09 mayo 2025
 
 integrantes:
 
-* NOMBRE <[arq-01-Giulianocam/clase-09](https://github.com/gaticamartin/audiv027-2025-1/tree/main/arq-01-Giulianocam/clase-08)>
+* NOMBRE <https://github.com/gaticamartin/audiv027-2025-1/tree/main/arq-01-Giulianocam/clase-08>
 * NOMBRE <arq-03-gaticamartin/clase-08>
 
 ```md
