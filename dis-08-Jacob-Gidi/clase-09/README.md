@@ -15,7 +15,7 @@ mi equipo de trabajo es <https://github.com/gaticamartin> y <https://github.com/
 
 ## acerca del proyecto
 
-Nuestro proyecto es IA de competencia de miradas, entre dos personas maximo, donde ambos ven a la cámara, conextada al computador, de frente y el programa IA, que puede distinguir sus rostros y sobre todo sus ojos, y ver quien parpadea primero para decir que este perdió y su contrincante gano.
+Nuestro proyecto es IA de competencia de miradas, entre dos personas maximo, donde ambos ven a la cámara, conextada al computador, de frente y el programa IA, que puede distinguir sus rostros y sobre todo sus ojos, y señalar quien parpadea primero para decir que este perdió y su contrincante gano.
 
 Se uso un programa que identifica el rostro de la persona, que fue modificado para que pueda identificar hasta dos personas, pero se centra más a los ojos e identificar quien de los cierra primero. Para ello se necesita una camara funcional y conextada a la computadora para que los dos usuarios puedan usar el programa.
 
