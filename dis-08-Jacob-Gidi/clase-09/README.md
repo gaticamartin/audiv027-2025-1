@@ -6,8 +6,8 @@ viernes 09 mayo 2025
 
 integrantes:
 
-* NOMBRE <LINK A GITHUB>
-* NOMBRE <LINK A GITHUB>
+* NOMBRE <arq-01-Giulianocam/clase-09>
+* NOMBRE <arq-03-gaticamartin/clase-08>
 
 ```md
 mi equipo de trabajo es <https://github.com/NOMBRE> y <https://github.com/NOMBRE>, entregamos en el repositorio en este enlace <https://github.com/ETC>.
