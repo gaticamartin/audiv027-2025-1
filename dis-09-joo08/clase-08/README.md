@@ -1,10 +1,6 @@
 # clase-08
 
 no hay clase por interferiado.
-
-## bitácora de proceso
-no hay clase por interferiado.
-
 ## bitácora de proceso
 
 cambiamos la idea original del proyecto, puesto que nos pareció más atractivo hacer un filtro que cambiara los accesorios cada vez que la persona parpadee
@@ -110,4 +106,6 @@ function dibujarAccesorio() {
   }
 }
 
-al ponerlo a prueba nos dimos cuenta que en lugar de cambiar el filtro cuando parpadeamos, cambia de accesorios al mover la cabeza, mejoraremos esto en las próximas versiones del código
+al ponerlo a prueba nos dimos cuenta que en lugar de cambiar el filtro cuando parpadeamos, cambia de accesorios al mover la cabeza, mejoraremos esto en las próximas versiones del código.
+
+dejo aquí el link para ver el código en mi biblioteca de P5.js: https://editor.p5js.org/joo08/sketches/Gei63zvlK
