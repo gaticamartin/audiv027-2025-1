@@ -107,5 +107,6 @@ function dibujarAccesorio() {
 }
 
 al ponerlo a prueba nos dimos cuenta que en lugar de cambiar el filtro cuando parpadeamos, cambia de accesorios al mover la cabeza, mejoraremos esto en las próximas versiones del código.
+Queremos dejar en claro que las imágenes de los accesorios son de prueba por el momento, para la entrega final estarán bien posicionados y dibujados a mano por nosotras.
 
 dejo aquí el link para ver el código en mi biblioteca de P5.js: https://editor.p5js.org/joo08/sketches/Gei63zvlK
