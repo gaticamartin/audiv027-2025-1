@@ -1,1 +1,12 @@
+#Ideas
+1) crear espacio 3d simple donde sea posible generar figuras geométricas a partir del reconocimiento de gestos vía webcam, indicando coordenadas, dimensiones y desplazamineto (?), todo a través de reconocimiento de las manos.
+2) Adaptar Snake Game a comandos de reconocimiento vía webcam.
+3) generación de patrones visuales a través de reconocimiento de gestos captados por webcam.
+4) utilizar gestos reconocidos por cámara web como control de reproducción de video o medios en general, aplicando controles básicos de reproducción, parada, pausa, retroceso y x2 (??)
+5) entrenar máquina enseñable para reconocimiento de todas las palabras presentes en una determinada frase corta (idealmente cultura pop) y que reproduzca imágenes que guarden relación con la palabra especifica asignada (se entiende ??)
+6) Theremin con reconocimiento vía webcam: la posición de la mano reproduce sonidos en función de donde se ubica dentro de la pantalla, simulando un theremin y su funcionamiento
 
+#referentes
+https://github.com/hphng/AsciiCam
+https://www.youtube.com/watch?v=ci-yB6EgVW4
+https://p5js.org/examples/games-snake/
