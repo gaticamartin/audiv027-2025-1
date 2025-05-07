@@ -131,9 +131,9 @@ lo hicimos en editor de p5.js:
 
 ## documentación multimedia / audiovisual del proyecto funcionando
 
-agregar imágenes, videos, gifs, etc.
+(link video)
 
-agregar callejones sin salida a los que llegaron y la manera en que se repartieron el trabajo.
+(link de procesog)
 
 ## bibliografía
 
