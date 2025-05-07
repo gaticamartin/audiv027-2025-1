@@ -6,11 +6,11 @@ viernes 09 mayo 2025
 
 integrantes:
 
-* NOMBRE <https://github.com/gaticamartin/audiv027-2025-1/tree/main/arq-01-Giulianocam/clase-08>
-* NOMBRE <arq-03-gaticamartin/clase-08>
+* NOMBRE Martín Gatica <https://github.com/Jacob-Gidi/audiv027-2025-1/tree/main/arq-03-gaticamartin/clase-09>
+* NOMBRE Giuliano <https://github.com/Jacob-Gidi/audiv027-2025-1/tree/main/arq-01-Giulianocam/clase-09>
 
 ```md
-mi equipo de trabajo es <https://github.com/NOMBRE> y <https://github.com/NOMBRE>, entregamos en el repositorio en este enlace <https://github.com/ETC>.
+mi equipo de trabajo es <https://github.com/gaticamartin> y <https://github.com/Giulianocam>, entregamos en el repositorio en este enlace <https://github.com/ETC>.
 ```
 
 ## acerca del proyecto
