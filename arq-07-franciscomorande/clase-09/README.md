@@ -6,9 +6,9 @@ viernes 09 mayo 2025
 
 integrantes:
 
-* Benjamin Gonzalez <LINK A GITHUB>
-* Ignacia <LINK A GITHUB>
-* Francisco Morande <LINK A GITHUB>
+* [Benjamin Gonzalez](https://github.com/FAU-UChile/audiv027-2025-1/tree/main/arq-05-BenjaminGonzalezFAU)
+* [Ignacia aa](https://github.com/FAU-UChile/audiv027-2025-1/tree/main/arq-09-IgnaciaUch)
+* [Francisco Morande](https://github.com/FAU-UChile/audiv027-2025-1/tree/main/arq-07-franciscomorande)
 
 md
 mi equipo de trabajo es <https://github.com/NOMBRE> y <https://github.com/NOMBRE>, entregamos en el repositorio en este enlace <https://github.com/ETC>.
