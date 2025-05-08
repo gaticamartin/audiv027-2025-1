@@ -349,10 +349,6 @@ Una vez finalizado se ensamblan las partes
    
 ## bibliografía
 
-nos basamos en el tutorial de INSERTARLINK
-
-tomamos el código base alojado en INSERTARLINK
-
 * Usamos la biblioteca p5.js v1.10.0. para hacer el código del proyecto, buscando ejemplos y/o referencias para el correcto funcionamiento; y la biblioteca ml5.js, sobre todo las secciones:
 1. [ml5js HandPose](https://docs.ml5js.org/#/reference/handpose)
 2. [p5js Mask](https://p5js.org/reference/p5.Image/mask/)
