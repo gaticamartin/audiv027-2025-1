@@ -49,9 +49,16 @@ https://github.com/user-attachments/assets/449354c5-ca0d-4d2a-b2d4-9844b38504bd
 
 Para resolver el problema de la colisión, se optó por realizar una función con una variable local de distancia, siendo las coordenadas posición del mouse X, posición del mouse Y, posición del círculo X, posición del círculo Y. 
 
+![Screenshot 2025-05-08 160113](https://github.com/user-attachments/assets/2182f413-45ed-47cd-b9e9-a984d70642d2)
+
+
 Una vez teniendo esta variable, se crea un “if” (en lugar del boolean), el cual en el caso de que la posición del mouse en la variable sea menor al radio del círculo respecto a su centro, está activaría la segunda función de generar un nuevo círculo.
 
-video mouse sobre circulo
+
+
+https://github.com/user-attachments/assets/9d811475-a153-4197-9749-78729df357d8
+
+
 
 Una vez resuelta la colisión entre mouse y círculo generado, el siguiente paso a trabajar sería en implementar el hitbox a la detección del dedo índice en lugar del mouse. Para esto, dentro de la variable de distancia se cambian las coordenadas del mouse por las del lerp siendo estas las siguientes coordenadas: smoothedX, smoothedY, posición del círculo X, posición del círculo Y. 
 
