@@ -32,7 +32,7 @@ Herramientas utilizadas
 ## Creacion del proyecto
 ### Deteccion de manos
 
-Partimos desde un ejemplo base de detección de manos. Adaptamos el modelo para seguir solo el dedo índice. Agregamos una imagen que se mueve suavemente con el dedo (suavizado con "lerp()"). Creamos un sistema de puntos al tocar objetivos ocultos que cambian de lugar, generando una dinámica tipo "búsqueda del tesoro". Todo esto fue hecho en referencia al juego "Circle Clicker" dentro de la libreria de p5.js <https://p5js.org/examples/games-circle-clicker/>
+Partimos desde un ejemplo base de detección de manos. Adaptamos el modelo para seguir solo el dedo índice. Agregamos una imagen que se mueve suavemente con el dedo (suavizado con "lerp()"). Creamos un sistema de puntos al tocar objetivos ocultos que cambian de lugar, generando una dinámica tipo "búsqueda del tesoro". 
 
 
 https://github.com/user-attachments/assets/f25f6fce-5a20-4ede-b292-0972b63ce162
