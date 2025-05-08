@@ -83,13 +83,19 @@ https://github.com/user-attachments/assets/70c423a9-a128-4189-b75e-f205b4125d98
 ### Pantalla de inicio y sistema de puntaje
 
 
+aaa
 
 
 
 
+
+
+## [enlace del proyecto](https://editor.p5js.org/Ignacia/full/dxyMKBXck)
+
+lo hicimos en editor de p5.js v1.10.0
 
 ## [código del proyecto](https://editor.p5js.org/Ignacia/sketches/dxyMKBXck)
-<Codigo>
+<details>
     
     //Configuración del moviemiento de las imagenes en la pantalla de inicio by Coding Adventures
     let config = {
@@ -330,11 +336,7 @@ https://github.com/user-attachments/assets/70c423a9-a128-4189-b75e-f205b4125d98
     salaG35 = imgCopy;
     }
 
-</Codigo>
-
-## [enlace del proyecto](https://editor.p5js.org/Ignacia/full/dxyMKBXck)
-
-lo hicimos en editor de p5.js v1.10.0
+</details>
 
 ## Reparticion de trabajo
 
