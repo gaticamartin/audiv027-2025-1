@@ -90,90 +90,90 @@ https://github.com/user-attachments/assets/70c423a9-a128-4189-b75e-f205b4125d98
 
 ## [código del proyecto](https://editor.p5js.org/Ignacia/sketches/dxyMKBXck)
 
-//Configuración del moviemiento de las imagenes en la pantalla de inicio by Coding Adventures
-let config = {
-  x: 50,
-  y: 50,
-  //Eje de movimiento de los profes en la pantalla inicial
-  w: 540,
-  h: 370,
-  //Cantidad de profes
-  noBalls: 22,
-  firstX: 0,
-  //Velocidad de movimiento del profe
-  speed: 2
-};
+    //Configuración del moviemiento de las imagenes en la pantalla de inicio by Coding Adventures
+    let config = {
+    x: 50,
+    y: 50,
+    //Eje de movimiento de los profes en la pantalla inicial
+    w: 540,
+    h: 370,
+    //Cantidad de profes
+    noBalls: 22,
+    firstX: 0,
+    //Velocidad de movimiento del profe
+    speed: 2
+    };
 
-//Imagen que reemplaza a las balls (inicio)
-let img;      
-//Imagen que sigue al dedo índice
-let dedoImg;     
-//Imagen objetivo en el juego
-let salaG35;     
-//Fondo durante el juego
-let titanic;     
+    //Imagen que reemplaza a las balls (inicio)
+    let img;      
+    //Imagen que sigue al dedo índice
+    let dedoImg;     
+    //Imagen objetivo en el juego
+    let salaG35;     
+    //Fondo durante el juego
+    let titanic;     
 
-//Modelo base sacado de "Index Finger draw" by re71
-let handPose;
-let video;
-let hands = [];
+    //Modelo base sacado de "Index Finger draw" by re71
+    let handPose;
+    let video;
+    let hands = [];
 
-//Let brushes = []; //for the trace of the brush
+    //Let brushes = []; //for the trace of the brush
 
-//Coordenadas suavizadas del dedo índice
-let smoothedX = 0;
-let smoothedY = 0;
+    //Coordenadas suavizadas del dedo índice
+    let smoothedX = 0;
+    let smoothedY = 0;
 
-//Posicion del circulo
-let circleX, circleY;
-let circleRadius = 70;
+    //Posicion del circulo
+    let circleX, circleY;
+    let circleRadius = 70;
 
-//Estado del juego
-let gameState = 'inicio'; 
+    //Estado del juego
+    let gameState = 'inicio'; 
 
-//Temporizador inicial
-let tiempoInicio;
-let tiempoRestante = 10; 
-let puntos = 0;
+    //Temporizador inicial
+    let tiempoInicio;
+    let tiempoRestante = 10; 
+    let puntos = 0;
 
-function preload() {
-  handPose = ml5.handPose();
-  img = loadImage("profesonriendo.png"); 
-  dedoImg = loadImage("profesonriendo.png");
-  salaG35 = loadImage("salaG35.png"); 
-  titanic = loadImage("titanic.png");
-}
+    function preload() {
+    handPose = ml5.handPose();
+    img = loadImage("profesonriendo.png"); 
+    dedoImg = loadImage("profesonriendo.png");
+    salaG35 = loadImage("salaG35.png"); 
+    titanic = loadImage("titanic.png");
+    }
 
-function setup() {
-  createCanvas(640, 480);
-  //Generar circulo
-  generateNewCircle();
-  //Generar captura de pantalla y ocultarla
-  video = createCapture(VIDEO);
-  video.size(640, 480);
-  //Ocultamos video
-  video.hide();
+    function setup() {
+    createCanvas(640, 480);
+    //Generar circulo
+    generateNewCircle();
+    //Generar captura de pantalla y ocultarla
+    video = createCapture(VIDEO);
+    video.size(640, 480);
+    //Ocultamos video
+    video.hide();
 
-  //Comenzar a detectar los puntos de las manos
-  handPose.detectStart(video, gotHands);
+    //Comenzar a detectar los puntos de las manos
+    handPose.detectStart(video, gotHands);
 
-// noStroke();
+    // noStroke();
   
-  //Detectar manos de forma periodica (cada 100 ms)
-  setInterval(() => {
+    //Detectar manos de forma periodica (cada 100 ms)
+    setInterval(() => {
     handPose.detect(video, gotHands);
-  }, 100);
+    }, 100);
   
-//Guardar tiempo de inicio *
-  tiempoInicio = millis(); 
-}
+    //Guardar tiempo de inicio *
+    tiempoInicio = millis(); 
+    }
 
-function gotHands(results) {
-  hands = results;
-}
+    function gotHands(results) {
+    hands = results;
+    }
 
-function draw() {
-  if (gameState === 'inicio') {
+    function draw() {
+    if (gameState === 'inicio') {
     mostrarPantallaInicio();
 
     let tiempoActual = millis();
@@ -187,89 +187,89 @@ function draw() {
     if (tiempoRestante <= 0) {
       gameState = 'juego';
     }
-  }
+      }
 
-  else if (gameState === 'juego') {
+    else if (gameState === 'juego') {
     jugar();
-  }
-}
+    }
+    }
 
 
-//Modelo base de la pantalla de inicio de "codeguppy" by Coding Adventures
-//Pantalla de inicio
+    //Modelo base de la pantalla de inicio de "codeguppy" by Coding Adventures
+    //Pantalla de inicio
 
-function mostrarPantallaInicio() {
-  background('black');
+    function mostrarPantallaInicio() {
+    background('black');
 
-  update();
-  display();
+    update();
+    display();
 
-  fill("white");
-  textSize(20);
-  textAlign(CENTER, CENTER);
-  text("Con tu dedo, ", width / 2, height / 2 + 10);
-  text("Lleva a Montoya a la sala G35", width / 2, height / 2 + 40);
+    fill("white");
+    textSize(20);
+    textAlign(CENTER, CENTER);
+    text("Con tu dedo, ", width / 2, height / 2 + 10);
+    text("Lleva a Montoya a la sala G35", width / 2, height / 2 + 40);
   
-  fill("white");
-  textSize(40);
-  textAlign(CENTER, CENTER);
-  text("Ayuda a Montoya", width / 2, height / 2 - 60);
-}
+    fill("white");
+    textSize(40);
+    textAlign(CENTER, CENTER);
+    text("Ayuda a Montoya", width / 2, height / 2 - 60);
+    }
 
-function update() {
-  let w = (config.w + config.h) * 2;
-  config.firstX = (config.firstX + config.speed) % w;
-}
+    function update() {
+    let w = (config.w + config.h) * 2;
+    config.firstX = (config.firstX + config.speed) % w;
+    }
 
-//Cara profe 
-function display() {
-  noStroke();
-  for (let i = 0; i < config.noBalls; i++) {
+    //Cara profe 
+    function display() {
+    noStroke();
+    for (let i = 0; i < config.noBalls; i++) {
     displayBall(i);
-  }
-}
+    }
+    }
 
-function displayBall(noBall) {
-  let space = (config.w + config.h) * 2 / config.noBalls;
-  let ballX = config.firstX + noBall * space;
-  let o = linearToRect(ballX, config.x, config.y, config.w, config.h);
+    function displayBall(noBall) {
+    let space = (config.w + config.h) * 2 / config.noBalls;
+    let ballX = config.firstX + noBall * space;
+    let o = linearToRect(ballX, config.x, config.y, config.w, config.h);
 
-  imageMode(CENTER);
-  image(img, o.x, o.y, 60, 60);
-}
+    imageMode(CENTER);
+    image(img, o.x, o.y, 60, 60);
+    }
 
-//Trayectoria/Movimiento de la cara del profe
-function linearToRect(linearX, rectX, rectY, rectW, rectH) {
-  let w = (rectW + rectH) * 2;
-  linearX = linearX % w;
+    //Trayectoria/Movimiento de la cara del profe
+      function linearToRect(linearX, rectX, rectY, rectW, rectH) {
+    let w = (rectW + rectH) * 2;
+    linearX = linearX % w;
 
-  if (linearX <= rectW)
+    if (linearX <= rectW)
     return { x: rectX + linearX, y: rectY };
-  if (linearX <= rectW + rectH)
+    if (linearX <= rectW + rectH)
     return { x: rectX + rectW, y: rectY + linearX - rectW };
-  if (linearX <= 2 * rectW + rectH)
+    if (linearX <= 2 * rectW + rectH)
     return { x: rectX + rectW - (linearX - rectH - rectW), y: rectY + rectH };
-  return { x: rectX, y: rectY + rectH - (linearX - 2 * rectW - rectH) };
-}
+      return { x: rectX, y: rectY + rectH - (linearX - 2 * rectW - rectH) };
+                }
 
-//Juego principal
+    //Juego principal
 
-function jugar() {
-  background(0);
-  image(titanic, 320, 240, width, height);
+    function jugar() {
+    background(0);
+    image(titanic, 320, 240, width, height);
 
-  push(); //Modo espejo a la cámara **
-  //Aplicar modo espejo a la cámara 
-  translate(width, 0);
-  scale(-1, 1);
+    push(); //Modo espejo a la cámara **
+    //Aplicar modo espejo a la cámara 
+    translate(width, 0);
+    scale(-1, 1);
 
-  // image(video, 0, 0, width, height);
-  // for (let everything of brushes) {
-  //  fill(everything.c);
-  //  circle(everything.x, everything.y, 20);
+    // image(video, 0, 0, width, height);
+    // for (let everything of brushes) {
+    //  fill(everything.c);
+    //  circle(everything.x, everything.y, 20);
   
-  //Comenzamos a detectar las manos
-  if (hands.length > 0) {
+    //Comenzamos a detectar las manos
+    if (hands.length > 0) {
     //Usamos solo la primera mano detectada
     let hand = hands[0];
     for (let keypoint of hand.keypoints) {
@@ -284,50 +284,50 @@ function jugar() {
         image(dedoImg, smoothedX, smoothedY, 80, 80);
       }
     }
-  }
+    }
 
-  pop(); //Fin del modo espejo **
+    pop(); //Fin del modo espejo **
 
-  //Sala G35 sin reflejo
-  if (salaG35) {
+    //Sala G35 sin reflejo
+    if (salaG35) {
     imageMode(CENTER);
     image(salaG35, circleX, circleY);
-  }
+    }
 
-  //=== DETECCIÓN DE COLISIÓN (calculada usando coordenadas reflejadas) === **
-  //Como el dedo está en espejo, debemos reflejar smoothedX para comparar correctamente
-  let mirroredX = width - smoothedX; //Reflejo horizontal
-  // d = distancia del mouse al centro del circulo
-  let d = dist(mirroredX, smoothedY, circleX, circleY);
-  //Si la distancia del mouse al centro del circulo es menor que su radio, estonces se genera un nuevo circulo
-  if (d < circleRadius) {
+    //=== DETECCIÓN DE COLISIÓN (calculada usando coordenadas reflejadas) === **
+    //Como el dedo está en espejo, debemos reflejar smoothedX para comparar correctamente
+    let mirroredX = width - smoothedX; //Reflejo horizontal
+    // d = distancia del mouse al centro del circulo
+    let d = dist(mirroredX, smoothedY, circleX, circleY);
+    //Si la distancia del mouse al centro del circulo es menor que su radio, estonces se genera un nuevo circulo
+    if (d < circleRadius) {
     puntos++;
     generateNewCircle();
-  }
+    }
 
-  //Puntuación dentro del juego
-  fill("black");
-  textSize(25);
-  textAlign(LEFT, TOP);
-  text("Puntos: " + puntos, 10, 10);
-}
+    //Puntuación dentro del juego
+    fill("black");
+    textSize(25);
+    textAlign(LEFT, TOP);
+    text("Puntos: " + puntos, 10, 10);
+    }
 
-function generateNewCircle() {
-  circleX = random(circleRadius, width - circleRadius);
-  circleY = random(circleRadius, height - circleRadius);
+    function generateNewCircle() {
+    circleX = random(circleRadius, width - circleRadius);
+    circleY = random(circleRadius, height - circleRadius);
 
-  //Se crea un mask para el circulo
-  let pgMask = createGraphics(circleRadius * 2, circleRadius * 2);
-  pgMask.ellipse(circleRadius, circleRadius, circleRadius * 2);
+    //Se crea un mask para el circulo
+    let pgMask = createGraphics(circleRadius * 2, circleRadius * 2);
+    pgMask.ellipse(circleRadius, circleRadius, circleRadius * 2);
 
-  //La imagen toma el tamaño del circulo
-  let imgCopy = salaG35.get();
-  imgCopy.resize(circleRadius * 2, circleRadius * 2);
-  imgCopy.mask(pgMask);
+    //La imagen toma el tamaño del circulo
+    let imgCopy = salaG35.get();
+        imgCopy.resize(circleRadius * 2, circleRadius * 2);
+            imgCopy.mask(pgMask);
 
-  //Se gusrda el mask
-  salaG35 = imgCopy;
-}
+    //Se gusrda el mask
+    salaG35 = imgCopy;
+    }
 
 
 
