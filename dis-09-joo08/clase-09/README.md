@@ -6,12 +6,8 @@ viernes 09 mayo 2025
 
 integrantes:
 
-* NOMBRE <LINK A GITHUB>
-* NOMBRE <LINK A GITHUB>
-
-```md
-mi equipo de trabajo es <https://github.com/NOMBRE> y <https://github.com/NOMBRE>, entregamos en el repositorio en este enlace <https://github.com/ETC>.
-```
+* Josefa Gutierrez <https://github.com/joo08>
+* Romina Cancino <https://github.com/Romicancino>
 
 ## acerca del proyecto
 
