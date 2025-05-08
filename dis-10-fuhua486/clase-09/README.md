@@ -186,9 +186,6 @@ lo hicimos en editor de p5.js: https://editor.p5js.org/fuhua486/sketches/mbhcL3r
 
 ## documentación multimedia / audiovisual del proyecto funcionando
 
-(link video)
-
-(link de procesog)
 
 ## bibliografía
 
@@ -197,14 +194,16 @@ Teachable Machine 1: Image Classification
 
 Usamos el modelo **ml5 + Teachable Machine: Image + Teachable Machine** en la biblioteca ml5.js, luego tomamos el código base en [p5.js](https://editor.p5js.org/ml5/sketches/VvGXajA36) para hacer el proyecto
 
+Fuentes de información sobre Lengua de Señas Chilena usada en nuestro proyecto: https://www.biobiochile.cl/noticias/servicios/toma-nota/2024/09/24/12-palabras-en-lengua-de-senas-chilena-que-deberias-aprender-te-sabes-alguna.shtml
+
 ## conclusiones
 
-la IA sirve para X, pero no sirve para Y.
+Machine era muy práctico, pero necesitábamos entrenar el modelo intensivamente para lograr los resultados que queríamos. Como explicamos en el proceso, los modelos “Imagen” y “Postura” de Teachable Machine se ven afectados por muchos factores durante el entrenamiento, lo que afectó en cierta medida nuestro estado de ánimo (el modelo de postura se utilizó por primera vez, pero no era adecuado para nuestro proyecto). Después de ser entrenado en miles de muestras de imagen, la precisión del modelo Imagen en el reconocimiento del lenguaje de señas ha mejorado enormemente.
 
-esto nos pareció adecuado, esto nos pareción exclusivo
+Creemos que el modelo puede seguir entrenándose hasta que pueda reconocer con precisión y rapidez más lengua de señas chilena, facilitando la comunicación entre personas que usan lengua de señas chilena y quienes no entienden lengua de señas, haciendo de la inteligencia artificial una herramienta para facilitarnos la vida. Al mismo tiempo, también debemos sopesar la relación entre “los usuarios necesitan adaptarse a las herramientas”  y  “las herramientas necesitan adaptarse a los usuarios”.
 
-esto nos causó alegría / incomodidad.
+No tuvimos muchos problemas con el ml5 y p5 porque nos proporcionó un modelo casi funcional desde el principio. Luego basamos el tutorial de **The Coding Train** aprendimos a usar Teachable Machine con ml5 y p5js. Con eso modificamos el código sobre la vinculación del modelo y el ajuste del texto, y se puede utilizar normalmente.
 
-posibles usos futuros que sean positivos, o negativos, o sociales, o personales.
+En general, disfrutamos mucho de este proyecto, especialmente el momento en que el modelo funcionó correctamente, y también aprendimos conocimientos nuevos y comprendimos la diversidad de la programación, como copiar el código de otras personas(en ausencia de infracción) y modificarlo en lugar de empezar desde cero.
 
-agregar dimensión ética.
+¡Muchas gracias!
