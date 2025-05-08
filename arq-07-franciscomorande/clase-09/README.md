@@ -41,7 +41,11 @@ https://github.com/user-attachments/assets/f25f6fce-5a20-4ede-b292-0972b63ce162
 
 El primer intento de realizar la colisión entre dedo (en pruebas iniciales el mouse) y círculo se hace mediante un boolean, sin embargo esto no nos resultó principalmente a la falta de encontrar una forma de detectar la colisión. Por otra parte, debido a la aleatoriedad el círculo inicial podría parcialmente generarse fuera del límite del canvas.
 
-video fallo
+
+
+https://github.com/user-attachments/assets/449354c5-ca0d-4d2a-b2d4-9844b38504bd
+
+
 
 Para resolver el problema de la colisión, se optó por realizar una función con una variable local de distancia, siendo las coordenadas posición del mouse X, posición del mouse Y, posición del círculo X, posición del círculo Y. 
 
