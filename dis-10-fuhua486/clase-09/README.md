@@ -50,7 +50,14 @@ Luego vamos a usar el modelo de imagen, probando diferentes lengua de seña. El 
 El modelo de imagen de Teachable Machine se ve afectado por muchos factores a la hora de distinguir el lenguaje de señas: la distancia del gesto, la apariencia del demostrador (mostrando solo el cuerpo o la persona completa), el entorno y el color de la ropa.
 
 Intentamos todo eso de mostrar la lengua de señas chilena delante de la cámara: sí, no, gracias. El resultado es que Teachable Machine no puede reconocer con precisión el lenguaje de señas que expresamos(a una distancia que se puede ver el demostrador y el gesto que hace). Sólo puede reconocerlo cuando mostramos los gestos individualmente y estamos cerca de los gestos en lugar de la persona(el demostrador). Además, no es 100% exacto y hay algunas desviaciones. Por esta razón, terminamos eligiendo solo ocho frases para la capacitación: Hola, Gracias, Por favor, Si, No, Amigo/a, Casa y Amor.
-![image](https://github.com/user-attachments/assets/d256dfee-dfc7-46fd-9392-276a2622cad3)
+
+![image](https://github.com/user-attachments/assets/fc883f9a-bb75-4b30-8e54-c0315d1e4a4e)
+
+
+Después de grabar las muestras de imagenes con el Webcam, entramos la face de preparación de modelo, y exportar el modelo para usarlo en nuestro proyecto.
+Cuando termina de exportar el modelo, Teachable Machine nos entregó un link, que sirve para usar en el modelo **Image + Teachable Machine** de ml5.
+
+![image](https://github.com/user-attachments/assets/c9e86160-c928-464e-84af-1cd531dadc69)
 
 ## código del proyecto
 
@@ -104,30 +111,78 @@ function gotResult(results) {
 
 **Modificaciones en el código:**
 ```javascript
-// Aquí reemplazamos el enlace con el modelo de Teachable Machine que hemos entrenado
+// Aquí reemplazamos el enlace original con el enlace del modelo Teachable Machine entrenado
 let imageModelURL = "https://teachablemachine.withgoogle.com/models/0Gt6Qh-9H/";
 ```
 
 ```javascript
-  // En el fill modificamos el color de la letra: Naranjo
+  // En el fill modificamos el color de texto a Naranjo
   fill(241, 111, 36);
-  // Cambiar el tamaño de las letras(texto),de 35 a 50.
+  // Cambiamos el tamaño de las letras(texto),de 35 a 50.
   textSize(50);
-  //Aqui aprendemos en un tutorial que textAlign sirve para alinear texto
+  //Aquí aprendimos en el tutorial que textAlign se usa para alinear texto.
   textAlign(CENTER,BOTTOM)
-  //Aquí aprendemos que podemos usar directamente la división y números específicos para cambiar la posición del texto.
+  //Aquí aprendimos que podemos usar directamente la división y números específicos para cambiar la posición del texto.
   text(label, width/2, height-10);
-
 ```
 **Código final(Resultados):**
 ```javascript
+// A variable to initialize the Image Classifier
+let classifier;
 
+// A variable to hold the video we want to classify
+let video;
+
+// Variable for displaying the results on the canvas
+let label = "Model loading...";
+
+// Aquí reemplazamos el enlace original con el enlace del modelo Teachable Machine entrenado
+let imageModelURL = "https://teachablemachine.withgoogle.com/models/0Gt6Qh-9H/";
+
+function preload() {
+  ml5.setBackend('webgl');
+  classifier = ml5.imageClassifier(imageModelURL + "model.json");
+}
+
+function setup() {
+  createCanvas(640, 480);
+
+  // Create the webcam video and hide it
+  video = createCapture(VIDEO, { flipped: true });
+  video.size(640, 480);
+  video.hide();
+
+  // Start detecting objects in the video
+  classifier.classifyStart(video, gotResult);
+  
+}
+
+function draw() {
+  // Each video frame is painted on the canvas
+  image(video, 0, 0);
+
+  // En el fill modificamos el color de texto a Naranjo
+  fill(241, 111, 36);
+  // Cambiamos el tamaño de las letras(texto),de 35 a 50.
+  textSize(50);
+  //Aquí aprendimos en el tutorial que textAlign se usa para alinear texto.
+  textAlign(CENTER,BOTTOM)
+  //Aquí aprendimos que podemos usar directamente la división y números específicos para cambiar la posición del texto.
+  text(label, width/2, height-10);
+  
+}
+
+// A function to run when we get the results
+function gotResult(results) {
+  // Update label variable which is displayed on the canvas
+  label = results[0].label;
+}
 
 ```
 
 ## enlace del proyecto
 
-lo hicimos en editor de p5.js:
+lo hicimos en editor de p5.js: https://editor.p5js.org/fuhua486/sketches/mbhcL3rEE
 
 ## documentación multimedia / audiovisual del proyecto funcionando
 
