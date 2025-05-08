@@ -95,9 +95,10 @@ aaa
 
 * Proyecto realizado en lenguaje JavaScript, mediante el editor de p5.js en version v1.10.0
 * [Proyecto](https://editor.p5js.org/Ignacia/full/dxyMKBXck)
-* [código del proyecto](https://editor.p5js.org/Ignacia/sketches/dxyMKBXck)
+* [Código del proyecto](https://editor.p5js.org/Ignacia/sketches/dxyMKBXck)
 
 <details>
+<summary> Código del proyecto </summary>
     
     //Configuración del moviemiento de las imagenes en la pantalla de inicio by Coding Adventures
     let config = {
