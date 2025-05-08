@@ -348,7 +348,7 @@ tomamos el código base alojado en INSERTARLINK
 
 * Usamos la biblioteca p5.js v1.10.0. para hacer el código del proyecto, buscando ejemplos y/o referencias para el correcto funcionamiento; y la biblioteca ml5.js, sobre todo la sección "handpose"
 
-* El código usado para la primera fase de detección es "HandPose-Draw with Index Finger" by re7l <https://editor.p5js.org/re7l/sketches/pd-SZ8lfA>
+* El código usado para la primera fase de detección es ["HandPose-Draw with Index Finger" by re7l](https://editor.p5js.org/re7l/sketches/pd-SZ8lfA)
 
 ## conclusiones
 
