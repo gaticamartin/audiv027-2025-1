@@ -92,7 +92,7 @@ aaa
 
 ## [enlace del proyecto](https://editor.p5js.org/Ignacia/full/dxyMKBXck)
 
-lo hicimos en editor de p5.js v1.10.0
+Projecto realizado en lenguaje JavaScript, mediante el editor de p5.js en version v1.10.0
 
 ## [código del proyecto](https://editor.p5js.org/Ignacia/sketches/dxyMKBXck)
 <details>
@@ -339,7 +339,11 @@ lo hicimos en editor de p5.js v1.10.0
 </details>
 
 ## Reparticion de trabajo
-
+El trabajo fue repartido en tres distintas partes siendo:
+1. Deteccion y optimizacion del dedo indice
+2. Generacion y colision del dedo indice con los circulos
+3. Interface y ambientacion de mundo del juego
+   
 ## bibliografía
 
 nos basamos en el tutorial de INSERTARLINK
