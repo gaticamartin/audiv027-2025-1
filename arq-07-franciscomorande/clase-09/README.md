@@ -89,7 +89,8 @@ https://github.com/user-attachments/assets/70c423a9-a128-4189-b75e-f205b4125d98
 
 
 ## [código del proyecto](https://editor.p5js.org/Ignacia/sketches/dxyMKBXck)
-
+<details>
+    
     //Configuración del moviemiento de las imagenes en la pantalla de inicio by Coding Adventures
     let config = {
     x: 50,
@@ -329,7 +330,7 @@ https://github.com/user-attachments/assets/70c423a9-a128-4189-b75e-f205b4125d98
     salaG35 = imgCopy;
     }
 
-
+</details>
 
 ## [enlace del proyecto](https://editor.p5js.org/Ignacia/full/dxyMKBXck)
 
