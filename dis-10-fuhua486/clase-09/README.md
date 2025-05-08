@@ -186,6 +186,11 @@ lo hicimos en editor de p5.js: https://editor.p5js.org/fuhua486/sketches/mbhcL3r
 
 ## documentación multimedia / audiovisual del proyecto funcionando
 
+Registro Teachable Machine:
+https://youtube.com/shorts/mPrGFbh1_Ns?feature=share
+
+Prueba de modelo p5js (Teachable machine+ modelo handpose) : 
+https://youtu.be/pjYUg1VZ7hY
 
 ## bibliografía
 
