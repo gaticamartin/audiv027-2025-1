@@ -4,7 +4,7 @@ viernes 09 mayo 2025
 
 ## AyudaAMontoya
 
-integrantes:
+Integrantes:
 
 * [Benjamin Gonzalez](https://github.com/FAU-UChile/audiv027-2025-1/tree/main/arq-05-BenjaminGonzalezFAU)
 * [Ignacia aa](https://github.com/FAU-UChile/audiv027-2025-1/tree/main/arq-09-IgnaciaUch)
