@@ -6,8 +6,9 @@ viernes 09 mayo 2025
 
 integrantes:
 
-* NOMBRE <LINK A GITHUB>
-* NOMBRE <LINK A GITHUB>
+* Benjamin Gonzalez <LINK A GITHUB>
+* Ignacia <LINK A GITHUB>
+* Francisco Morande <LINK A GITHUB>
 
 md
 mi equipo de trabajo es <https://github.com/NOMBRE> y <https://github.com/NOMBRE>, entregamos en el repositorio en este enlace <https://github.com/ETC>.
