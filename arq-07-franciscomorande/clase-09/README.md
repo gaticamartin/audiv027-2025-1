@@ -64,7 +64,7 @@ Una vez resuelta la colisión entre mouse y círculo generado, el siguiente paso
 
 
 
-video dedo sobre circulo
+https://github.com/user-attachments/assets/04484ba4-faa6-4318-9e2e-e8b55211a908
 
 
 
@@ -72,7 +72,13 @@ video dedo sobre circulo
 
 Aquí es donde empezamos a ensamblar el juego, combinando todos los elementos. Una vez terminado se comienza con la ambientación de mundo, colocando de fondo el titanic de la FAU y al círculo se le coloca un mask para reemplazar el color de relleno por la sala de clases G35
 
-foto 2
+![Screenshot 2025-05-08 162327](https://github.com/user-attachments/assets/be6744c2-aca8-4770-88a1-b6594abe440d)
+
+
+
+https://github.com/user-attachments/assets/70c423a9-a128-4189-b75e-f205b4125d98
+
+
 
 aca hablar sobre pantalla inicio y sistema de puntaje
 
