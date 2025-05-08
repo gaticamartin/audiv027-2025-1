@@ -11,7 +11,7 @@ integrantes:
 * [Francisco Morande](https://github.com/FAU-UChile/audiv027-2025-1/tree/main/arq-07-franciscomorande)
 
 md
-mi equipo de trabajo es <https://github.com/NOMBRE> y <https://github.com/NOMBRE>, entregamos en el repositorio en este enlace <https://github.com/ETC>.
+mi equipo de trabajo es <https://github.com/FAU-UChile/audiv027-2025-1/tree/main/arq-05-BenjaminGonzalezFAU> y <https://github.com/FAU-UChile/audiv027-2025-1/tree/main/arq-09-IgnaciaUch>, entregamos en el repositorio en este enlace <https://github.com/ETC>.
 
 
 ## acerca del proyecto
