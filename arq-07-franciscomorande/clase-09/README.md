@@ -344,6 +344,8 @@ El trabajo fue repartido en tres distintas partes siendo:
 1. Deteccion y optimizacion del dedo indice
 2. Generacion y colision del dedo indice con los circulos
 3. Interface y ambientacion de mundo del juego
+
+Una vez finalizado se ensamblan las partes
    
 ## bibliografía
 
@@ -351,9 +353,16 @@ nos basamos en el tutorial de INSERTARLINK
 
 tomamos el código base alojado en INSERTARLINK
 
-* Usamos la biblioteca p5.js v1.10.0. para hacer el código del proyecto, buscando ejemplos y/o referencias para el correcto funcionamiento; y la biblioteca ml5.js, sobre todo la sección "handpose"
+* Usamos la biblioteca p5.js v1.10.0. para hacer el código del proyecto, buscando ejemplos y/o referencias para el correcto funcionamiento; y la biblioteca ml5.js, sobre todo las secciones:
+1. [ml5js HandPose](https://docs.ml5js.org/#/reference/handpose)
+2. [p5js Mask](https://p5js.org/reference/p5.Image/mask/)
+3. [p5js circle](https://p5js.org/reference/p5/circle/)
+
+* Tambien inspiramos el codigo en el juego [Circle Clicker](https://p5js.org/examples/games-circle-clicker/)
 
 * El código usado para la primera fase de detección es ["HandPose-Draw with Index Finger" by re7l](https://editor.p5js.org/re7l/sketches/pd-SZ8lfA)
+  
+* Dentro de otras fuentes de informacion nos basamos en proyectos vistos en clases como lo fue el de Don Francisco (if/boolean) y tambien en preguntas realizadas en clases (colision de los circulos)
 
 ## conclusiones
 
