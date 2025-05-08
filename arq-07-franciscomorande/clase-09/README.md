@@ -93,9 +93,9 @@ aaa
 
 ## Datos del proyecto
 
-*Proyecto realizado en lenguaje JavaScript, mediante el editor de p5.js en version v1.10.0
-*[Proyecto](https://editor.p5js.org/Ignacia/full/dxyMKBXck)
-*[código del proyecto](https://editor.p5js.org/Ignacia/sketches/dxyMKBXck)
+* Proyecto realizado en lenguaje JavaScript, mediante el editor de p5.js en version v1.10.0
+* [Proyecto](https://editor.p5js.org/Ignacia/full/dxyMKBXck)
+* [código del proyecto](https://editor.p5js.org/Ignacia/sketches/dxyMKBXck)
 
 <details>
     
