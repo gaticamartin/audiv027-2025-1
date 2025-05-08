@@ -14,7 +14,7 @@ integrantes:
 Mi equipo de trabajo es <https://github.com/FAU-UChile/audiv027-2025-1/tree/main/arq-05-BenjaminGonzalezFAU> y <https://github.com/FAU-UChile/audiv027-2025-1/tree/main/arq-09-IgnaciaUch>, entregamos en el repositorio en este [enlace](https://github.com/franciscomorande/audiv027-2025-1/tree/main/arq-07-franciscomorande/clase-09).
 
 
-## acerca del proyecto
+## Acerca del proyecto
 
 El proyecto es un juego simple que se basa en 
 Este proyecto es una experiencia interactiva que utiliza inteligencia artificial y visión por computadora para permitir que las personas interactúen con la pantalla usando solo sus manos, sin necesidad de teclado ni mouse. El sistema detecta en tiempo real el dedo índice del usuario mediante una cámara web, y coloca sobre él la imagen de un profesor sonriente, simulando que el profesor se mueve con el dedo. El objetivo es encontrar y tocar con ese dedo una imagen de una sala secreta escondida en la universidad. Al lograrlo, se suma un punto y la sala cambia de lugar de forma aleatoria, creando un juego dinámico y entretenido.
