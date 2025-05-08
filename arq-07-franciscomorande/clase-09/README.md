@@ -27,9 +27,14 @@ Herramientas utilizadas
 * ml5.js: librería de inteligencia artificial accesible para artistas y principiantes, basada en TensorFlow.js. Se utilizó su modelo HandPose para detectar la posición de los dedos.
 * Cámara web: como sensor de entrada para captar el movimiento en tiempo real.
 * Imágenes personalizadas: se usaron imágenes propias (como la del profesor y la sala) para darle un toque humorístico y contextualizado al proyecto.
+
+## Creacion del proyecto
 ### Deteccion de manos
 
 Partimos desde un ejemplo base de detección de manos. Adaptamos el modelo para seguir solo el dedo índice. Agregamos una imagen que se mueve suavemente con el dedo (suavizado con "lerp()"). Creamos un sistema de puntos al tocar objetivos ocultos que cambian de lugar, generando una dinámica tipo "búsqueda del tesoro". Todo esto fue hecho en referencia al juego "Circle Clicker" dentro de la libreria de p5.js <https://p5js.org/examples/games-circle-clicker/>
+
+
+https://github.com/user-attachments/assets/70ee3140-5f9d-4a57-9d1a-358f700c7663
 
 
 ### Generacion de circulos y colision de objetos
