@@ -10,7 +10,7 @@ integrantes:
 * NOMBRE Giuliano <https://github.com/Jacob-Gidi/audiv027-2025-1/tree/main/arq-01-Giulianocam/clase-09>
 
 ```md
-mi equipo de trabajo es <https://github.com/gaticamartin> y <https://github.com/Giulianocam>, entregamos en el repositorio en este enlace <https://github.com/ETC>.
+mi equipo de trabajo es <https://github.com/gaticamartin> y <https://github.com/Giulianocam>, entregamos en el repositorio en este enlace <https://github.com/Jacob-Gidi/audiv027-2025-1/blob/main/dis-08-Jacob-Gidi/clase-09/README.md>.
 ```
 
 ## Acerca del proyecto
