@@ -36,17 +36,17 @@ Usa una variable tipo isBlinking para no contar múltiples veces un mismo pesta�
 
 https://www.youtube.com/watch?v=klSOBa_WDB0 tutorial inicial creacion de cronometro p5
 
-Seria bueno agregar controles de inicio, a partir de el que se genere un countDown 3, 2, 1 antes del comienzo de el cronometraje de el tiempo sin pestañear.
-Sonido Semaforo MarioKart ?? 
+Sería bueno agregar controles de inicio, a partir del que se genere un countDown 3, 2, 1 antes del comienzo del cronometraje del tiempo sin pestañear.
+¿Sonido Semáforo MarioKart?
 
 ![image](https://github.com/user-attachments/assets/e8f0655a-01c6-4de5-8a6a-fb8a215b4777)
 
-Hasta aqui este codigo sirve para crear un cronometro con los controles 
+Hasta aquí este código sirve para crear un cronómetro con los controles.
 - Start = *barra espaciadora*
 - Pausa = *p*
 - Reinicio = *c*
 
-  //definicion inicial de cronometro en pantalla
+  //Definición inicial de cronómetro en pantalla
 
 //function setup() {
   //createCanvas(414, 414); //tamaño del background formato cuadrado para Iphone?? iphone es 828 pero tiene resolucion x 2 por lo que en este caso se debe /2
@@ -113,7 +113,7 @@ function keyPressed() {
 
 ## ajustes de color al cronometro
 
-aqui hay otra version que principalmente agrega cambios de color al cronometro dependiendo de si esta andando o no.
+Aquí hay otra versión que principalmente agrega cambios de color al cronómetro dependiendo de si está andando o no.
 ![image](https://github.com/user-attachments/assets/d03a225a-89bb-4195-90d2-b667cbac65b1)
 
 Codigo:
