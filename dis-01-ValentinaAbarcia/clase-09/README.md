@@ -91,6 +91,8 @@ El código original que citamos es
 
 ## Enlace del proyecto
 
+https://teachablemachine.withgoogle.com/models/AJnFb0Ww3/
+
 Lo hicimos en editor de p5.js https://editor.p5js.org/erlea.fuentealba/full/0sa94OdNK 
 
 ## Documentación multimedia / audiovisual del proyecto funcionando
