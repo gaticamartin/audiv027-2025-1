@@ -394,6 +394,10 @@ Una vez finalizado se ensamblan las partes
 
 * El código usado para la primera fase de detección es ["HandPose-Draw with Index Finger" by re7l](https://editor.p5js.org/re7l/sketches/pd-SZ8lfA)
   
+* Apartado de optimizar y suavizar flujo de movimiento: [referencia código lerp() en repositorio p5](https://p5js.org/reference/p5/lerp/?utm_source=chatgpt.com)
+  
+* [Ejemplo de suavizar movimiento con código lerp() en repositorio p5](https://p5js.org/examples/calculating-values-interpolate/?utm_source=chatgpt.com)
+  
 * Dentro de otras fuentes de informacion nos basamos en proyectos vistos en clases como lo fue el de Don Francisco (if/boolean) y tambien en preguntas realizadas en clases (colision de los circulos)
 
 ## Conclusiones
