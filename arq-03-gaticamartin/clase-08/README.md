@@ -40,3 +40,7 @@ no hay clase por interferiado.
  Si el EAR < 0.2 por un par de frames → pestañeo.
  
  Usa una variable tipo isBlinking para no contar múltiples veces un mismo pestañeo.
+
+#Cronometro
+
+https://www.youtube.com/watch?v=klSOBa_WDB0 tutorial inicial creacion de cronometro p5
