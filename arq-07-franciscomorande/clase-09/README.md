@@ -138,7 +138,7 @@ https://github.com/user-attachments/assets/3f97b9d9-4692-4e9b-93fa-80f6e15a1deb
     firstX: 0,
     //Velocidad de movimiento del profe
     speed: 2
-  };
+    };
 
     //Imagen que reemplaza a las balls (inicio)
     let img;      
