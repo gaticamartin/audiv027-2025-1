@@ -21,6 +21,7 @@ Fragmentos de silencio para representar momentos sin sonido.
 
 
 Con estos datos, entrenamos un modelo que pudiera identificar cuál de los tres sonidos se estaba reproduciendo en tiempo real a través del micrófono del computador.
+![unnamed (3)](https://github.com/user-attachments/assets/406bbbf8-9b2b-42ed-845a-fc54d0bb3a9f)
 
 
 Una vez entrenado el modelo, descargamos los archivos generados seleccionando la opción TensorFlow.js, que permite integrarlo fácilmente en un proyecto de p5.js. En el código de p5, se definieron tres estados visuales para un personaje anciano (claramente sin ningún animo de ofender, pues esto es meramente humorístico) dibujado en el canvas: feliz, neutral y enojado, que se activan según la etiqueta (label) que entrega la IA. Por ejemplo:
@@ -34,6 +35,12 @@ Si el label es "silencio", el anciano aparece sin expresión.
 
 
 Esta lógica permite una interacción en tiempo real entre la música del entorno y la reacción humorística del personaje.
+
+
+![unnamed (1)](https://github.com/user-attachments/assets/05b4df28-882d-475d-9248-fa0ef9afb207) ![unnamed (2)](https://github.com/user-attachments/assets/f3b03982-1216-4d2e-b241-9fd47d9000f3)  ![Uploading unnamed.png…]()
+
+
+
 Luego de exportar el código de la Teachable Machine lo incluimos en nuestro panel de p5.
 
 Dentro de la carpeta index.html incluimos:
