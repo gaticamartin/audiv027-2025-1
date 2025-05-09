@@ -41,6 +41,6 @@ no hay clase por interferiado.
  
  Usa una variable tipo isBlinking para no contar múltiples veces un mismo pestañeo.
 
-#Cronometro
+##Cronometro
 
 https://www.youtube.com/watch?v=klSOBa_WDB0 tutorial inicial creacion de cronometro p5
