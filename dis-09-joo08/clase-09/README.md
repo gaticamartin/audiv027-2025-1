@@ -240,12 +240,22 @@ usamos la biblioteca p5.js v 1.11.5 y la biblioteca ml5.js v 0.12.2
 
 ## conclusiones
 
-la IA sirve para X, pero no sirve para Y.
+La inteligencia artificial en este proyecto sirve para crear experiencias interactivas, creativas y accesibles, permitiendo que cualquier persona, sin conocimientos técnicos, pueda divertirse con un filtro que responde a gestos simples como el parpadeo. Sin embargo, no sirve para detectar emociones reales, ya que su alcance está limitado a tareas específicas como identificar movimientos faciales,  y está entrenada para detectar los puntos del rostro.
 
-esto nos pareció adecuado, esto nos pareción exclusivo
+Nos pareció adecuado que la IA permite generar experiencias inclusivas y fáciles de usar, eliminando la necesidad de botones o comandos complejos. nos gustó que con una cámara y conexión a internet, nuestro trabajo puede funcionar y no requiere de grandes recursos.
 
-esto nos causó alegría / incomodidad.
+Este proyecto nos causó alegría, porque descubrimos cómo la tecnología puede ser divertida, creativa y sorprendente. Sin embargo, también sentimos cierta incomodidad, al reflexionar sobre el nivel de acceso que damos a nuestras imágenes y movimientos faciales a través de la cámara.
 
-posibles usos futuros que sean positivos, o negativos, o sociales, o personales.
+Posibles usos:
 
-agregar dimensión ética.
+Positivos: filtros para campañas de sensibilización social, herramientas educativas interactivas, o juegos que promuevan la creatividad y la autoexpresión.
+
+Negativos: mal uso en filtros que refuercen estereotipos o que recojan datos faciales sin consentimiento.
+
+Personales: entretenimiento, creación de contenido, exploración de la propia imagen de forma creativa.
+
+Dimensión ética
+
+El uso de inteligencia artificial en experiencias interactivas plantea preguntas éticas importantes, como el respeto a la privacidad, el consentimiento para el uso de datos faciales, y el riesgo de reforzar modelos de belleza poco realistas. Es fundamental que estos proyectos incluyan transparencia sobre qué datos se recopilan (aunque en este caso no se almacenan), pero sobre todo que fomenten un uso responsable.
+creemos que el uso de estas inteligencias artificiales son un beneficio para poder apoyar nuestro aprendizaje, experimentar y descubrir de como de un texto e imágen podemos hacer proyectos más diversos, completos y como estos interactúan con nuestro entorno. Al ser tecnologías entrenadas constantemente sabemos que los resultados que nos pueden brindar más a futuro podrían ser impresionantes por lo que sostenemos lo del principio: La IA es una herramienta que debe de usarse con responsabilidad.
+
