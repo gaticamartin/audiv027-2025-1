@@ -7,7 +7,7 @@ viernes 09 mayo 2025
 Integrantes:
 
 * [Benjamin Gonzalez](https://github.com/FAU-UChile/audiv027-2025-1/tree/main/arq-05-BenjaminGonzalezFAU)
-* [Ignacia aa](https://github.com/FAU-UChile/audiv027-2025-1/tree/main/arq-09-IgnaciaUch)
+* [Ignacia Sepulveda](https://github.com/FAU-UChile/audiv027-2025-1/tree/main/arq-09-IgnaciaUch)
 * [Francisco Morande](https://github.com/FAU-UChile/audiv027-2025-1/tree/main/arq-07-franciscomorande)
 
 
@@ -348,6 +348,8 @@ El trabajo fue repartido en tres distintas partes siendo:
 3. Interface y ambientacion de mundo del juego
 
 Una vez finalizado se ensamblan las partes
+
+* [proceso de trabajo](https://www.youtube.com/shorts/E-5cLjuRhV4)
    
 ## bibliografía
 
