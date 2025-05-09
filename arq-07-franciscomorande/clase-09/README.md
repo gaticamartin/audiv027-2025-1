@@ -83,9 +83,23 @@ https://github.com/user-attachments/assets/70c423a9-a128-4189-b75e-f205b4125d98
 
 ### Pantalla de inicio y sistema de puntaje
 
+Para poder desarrollar la pantalla de inicio tomamos como base el código de Coding Adventures en "codeguppy", este código genera una pantalla de inicio con un texto central y un marco interior con puntos en que siguen un movimiento rectangular. De este código se rescata el texto y el marco, el texto se cambia para que sean las instrucciones correspondientes a nuestro juego y los puntos del marco se cambian por imágenes del profestor.
 
-aaa
 
+En un primer lugar se desarrolla la pantalla de inicio en un código aparte para luego sumarlo al código del juego. En un primer momento los dos códigos funcionaban bien por separado, pero al generar la transición de la pantalla de inicio a la pantalla de juego, nuestra primera opción era que esto ocurriese en el momento en que que detectase el dedo. Esta primera opción no la pudimos ejecutar correctamente, es este momento se le consulto a algunas IA para intentar implementar correctamente esta opción, en resumen las 6 consultadas dijeron que el código estaba bien hecho, pero no estaba funcionando como queríamos. Finalmente no supimos identificar si el error correspondía a que el video no comenzaba en la pantalla de inicio, si no estaba identificando la mano o si se realizaba el cambio pero la pantalla de inicio no "desaparecía". 
+
+
+https://github.com/user-attachments/assets/47a97d3b-e644-4378-8cc9-c0348b360f21
+
+
+Debido a que no pudimos realizar nuestra primera opción, optamos por generar una cuesta regresiva para la pantalla de inicio, esto para que el jugador pueda leer las instrucciones y pueda prepararse para jugar. De esta forma solucionamos el problema de la transición por reconocimiento del dedo. 
+
+
+Implementando esta función en el código, no sabemos por qué pero dentro del juego la imagen de la Sala G35 y el contador se invirtiron, por lo que se implementó la función (push) para que el modo espejo afecto solo a el video y (pop) para que el modo espejo no afecte a la imagen de la Sala G35 y al contador. 
+
+
+
+https://github.com/user-attachments/assets/a36e8291-5545-4a1b-98fd-1b04edafb5a7
 
 
 
@@ -359,6 +373,8 @@ Una vez finalizado se ensamblan las partes
 3. [p5js circle](https://p5js.org/reference/p5/circle/)
 
 * Tambien inspiramos el codigo en el juego [Circle Clicker](https://p5js.org/examples/games-circle-clicker/)
+  
+* * Para la pantalla de inicio, nos basamos en un tutorial desarrollado por Coding Adventures en [Codeguppy](https://codeguppy.com/code.html?QlkPptXLAzVpXxnR3Qy7)  
 
 * El código usado para la primera fase de detección es ["HandPose-Draw with Index Finger" by re7l](https://editor.p5js.org/re7l/sketches/pd-SZ8lfA)
   
