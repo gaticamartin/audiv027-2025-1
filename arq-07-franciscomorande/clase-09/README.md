@@ -127,6 +127,7 @@ https://github.com/user-attachments/assets/3f97b9d9-4692-4e9b-93fa-80f6e15a1deb
     
     //Configuración del moviemiento de las imagenes en la pantalla de inicio by Coding Adventures
     let config = {
+    //Esquina del rectángulo
     x: 50,
     y: 50,
     //Eje de movimiento de los profes en la pantalla inicial
@@ -137,7 +138,7 @@ https://github.com/user-attachments/assets/3f97b9d9-4692-4e9b-93fa-80f6e15a1deb
     firstX: 0,
     //Velocidad de movimiento del profe
     speed: 2
-    };
+  };
 
     //Imagen que reemplaza a las balls (inicio)
     let img;      
@@ -222,7 +223,7 @@ https://github.com/user-attachments/assets/3f97b9d9-4692-4e9b-93fa-80f6e15a1deb
     if (tiempoRestante <= 0) {
       gameState = 'juego';
     }
-      }
+    }
 
     else if (gameState === 'juego') {
     jugar();
@@ -274,7 +275,7 @@ https://github.com/user-attachments/assets/3f97b9d9-4692-4e9b-93fa-80f6e15a1deb
     }
 
     //Trayectoria/Movimiento de la cara del profe
-      function linearToRect(linearX, rectX, rectY, rectW, rectH) {
+    function linearToRect(linearX, rectX, rectY, rectW, rectH) {
     let w = (rectW + rectH) * 2;
     linearX = linearX % w;
 
@@ -284,8 +285,8 @@ https://github.com/user-attachments/assets/3f97b9d9-4692-4e9b-93fa-80f6e15a1deb
     return { x: rectX + rectW, y: rectY + linearX - rectW };
     if (linearX <= 2 * rectW + rectH)
     return { x: rectX + rectW - (linearX - rectH - rectW), y: rectY + rectH };
-      return { x: rectX, y: rectY + rectH - (linearX - 2 * rectW - rectH) };
-                }
+    return { x: rectX, y: rectY + rectH - (linearX - 2 * rectW - rectH) };
+    }
 
     //Juego principal
 
@@ -308,9 +309,11 @@ https://github.com/user-attachments/assets/3f97b9d9-4692-4e9b-93fa-80f6e15a1deb
     //Usamos solo la primera mano detectada
     let hand = hands[0];
     for (let keypoint of hand.keypoints) {
-      //Buscamos el nombre "index_finger_tip" (ounta del dedo índice)
+      //Buscamos el nombre "index_finger_tip" (punta del dedo índice)
       if (keypoint.name === "index_finger_tip") {
-        //Usamos "lerp" para suevizar el movimiento (evita saltos y vibraciones)
+        //Usamos "lerp" para suavizar el movimiento (evita saltos y vibraciones)
+        //Lerp (start, stop, amt)
+        //Muevete un 20% hacia el nuevo punto
         smoothedX = lerp(smoothedX, keypoint.x, 0.2);
         smoothedY = lerp(smoothedY, keypoint.y, 0.2);
 
@@ -341,9 +344,9 @@ https://github.com/user-attachments/assets/3f97b9d9-4692-4e9b-93fa-80f6e15a1deb
     }
 
     //Puntuación dentro del juego
-    fill("black");
+    fill("red");
     textSize(25);
-    textAlign(LEFT, TOP);
+     textAlign(LEFT, TOP);
     text("Puntos: " + puntos, 10, 10);
     }
 
@@ -357,12 +360,13 @@ https://github.com/user-attachments/assets/3f97b9d9-4692-4e9b-93fa-80f6e15a1deb
 
     //La imagen toma el tamaño del circulo
     let imgCopy = salaG35.get();
-        imgCopy.resize(circleRadius * 2, circleRadius * 2);
-            imgCopy.mask(pgMask);
+    imgCopy.resize(circleRadius * 2, circleRadius * 2);
+    imgCopy.mask(pgMask);
 
     //Se gusrda el mask
     salaG35 = imgCopy;
     }
+
 
 </details>
 
