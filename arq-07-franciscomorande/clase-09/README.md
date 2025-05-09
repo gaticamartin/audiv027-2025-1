@@ -99,7 +99,7 @@ Implementando esta función en el código, no sabemos por qué pero dentro del j
 
 
 
-https://github.com/user-attachments/assets/a36e8291-5545-4a1b-98fd-1b04edafb5a7
+
 
 
 
