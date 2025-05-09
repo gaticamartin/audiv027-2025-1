@@ -366,12 +366,12 @@ El trabajo fue repartido en tres distintas partes siendo:
 3. Interface y ambientacion de mundo del juego
 
 Una vez finalizado se ensamblan las partes
-
 * [proceso de trabajo](https://www.youtube.com/shorts/E-5cLjuRhV4)
 <details>
-    <summary> video emergencia
-    </summary>
-    <https://youtu.be/pxopdv1Fab0>
+<summary> video emergencia </summary>
+    
+<https://youtu.be/pxopdv1Fab0?si=YjMt-wMbLhyrY8kR>
+
 </details>
    
 ## Bibliografía
