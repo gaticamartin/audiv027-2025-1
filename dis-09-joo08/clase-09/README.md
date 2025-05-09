@@ -224,7 +224,7 @@ lo hicimos en el editor de p5.js
 
 ## documentación multimedia / audiovisual del proyecto funcionando
 
-https://github.com/user-attachments/assets/e5387348-dbe6-4f0d-964a-433e8db38b33
+https://github.com/user-attachments/assets/e1a056be-8911-4e14-a0a7-80cc2e08bcae
 
 En la primera versión del código utilizamos el comando PoseNet, lo cual hacía que el filtro en lugar de detectar el parpadeo se cambiara con cualquier movimiento de la cara, ya para la versión final decidimos utilizar FaceMesh de ml5.js en lugar de PoseNet y esto nos ayudó a mejorar la precisión, sin embargo, aún no detectaba tal cual el pestañeo, por lo tanto agregamos el comando EAR (eye aspect ratio) que nos ayuda a integrar puntos referenciales de los ojos y utilizamos el comando earTreshold para ajustar la sensibilidad.
 
