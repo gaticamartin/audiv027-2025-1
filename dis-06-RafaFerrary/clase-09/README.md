@@ -27,10 +27,12 @@ Una playlist de reggaetón llamada "Mansión Reggaetón"
 
 
 Fragmentos de silencio para representar momentos sin sonido.
+
 ![unnamed (5)](https://github.com/user-attachments/assets/ef15acac-029a-4eed-bf7c-c2c75f6ed060)
 
 
 Con estos datos, entrenamos un modelo que pudiera identificar cuál de los tres sonidos se estaba reproduciendo en tiempo real a través del micrófono del computador.
+
 ![unnamed (3)](https://github.com/user-attachments/assets/406bbbf8-9b2b-42ed-845a-fc54d0bb3a9f)
 
 
