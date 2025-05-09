@@ -173,6 +173,14 @@ function keyPressed() {
     timerColor = color(0); //Negro al cancelar
   }
 }
+
+### Siguiente paso
+
+A esta altura me gustaría lograr que al apretar el espacio primero se iniciara una cuenta atrás desde tres segundos hasta cero antes de comenzar a contar el tiempo transcurrido.
+
+https://editor.p5js.org/marynotari/sketches/S1T2ZTMp- Countdown Timer definicion
+https://www.youtube.com/watch?app=desktop&v=rKhwDhp9dcs tutorial
+
 #### Funciona !
 
 let startTime;     
@@ -360,9 +368,9 @@ function keyPressed() {
 ### PROBLEMAS A SOLUCIONAR
 
 - hasta ahora no he logrado realmente ubicar el texto
-- me gustaria estilizar mas el countDown (ejemplo: que los numeros "3, 2, 1, !!!!" ocupen el tamaño maximo de la resolucion de la pantalla.
-- falta retomar anotaciones de los primeros codigos porque se pierde la claridad en la modificacion de variables.
-- a partir de ahora el comando ´p´ para señalar el fin del conteo deberia accionarse cuando el facemesh reconozca una distancia minima entre el punto de reconocimiento superior o inferior de cada cara.
+- me gustaría estilizar más el countDown (ejemplo: que los números "3, 2, 1,!!!!") ocupen el tamaño máximo de la resolución de la pantalla.
+- falta retomar anotaciones de los primeros códigos porque se pierde la claridad en la modificación de variables.
+- a partir de ahora el comando ´p´ para señalar el fin del conteo debería accionarse cuando el facemesh reconozca una distancia mínima entre el punto de reconocimiento superior o inferior de cada cara.
 
 ## se adjunta version hasta aqui
 
@@ -373,19 +381,18 @@ https://editor.p5js.org/gaticamartin/sketches/diJnuFXlO
 
 -distinguir los rostros y rastrear los puntos claves alrededor de los ojos.
 
--identificar el cierre de los ojos para determinar si alguno de los participanes ha pestañeado.
+-identificar el cierre de los ojos para determinar si alguno de los participantes ha pestañeado.
 
 -contar con 3 estados: el primero de default, donde se preparan los jugadores y se da la señal para el comienzo, el segundo ya comenzado el juego donde se 
- cronometre el tiempo de duracion hasta detectar un cierre de los ojos, y el tercero al cual se accede al ocurrir un cierre de ojos y donde se muestre el tiempo 
- tiempo cronometrado asi como tambien permita volver a el segundo estado para reestablecer el juego.
+ cronometre el tiempo de duración hasta detectar un cierre de los ojos, y el tercero al cual se accede al ocurrir un cierre de ojos y donde se muestre el tiempo cronometrado así como también permita volver al segundo estado para restablecer el juego.
 
--cronometrar ambos rostros detectados simultaneamente, pero tambien de manera independiente.
+-cronometrar ambos rostros detectados simultáneamente, pero también de manera independiente.
 
 ### Herramientas utilizadas
 
-Para desarrollar este proyecto se ocupo como base el modelo "FaceMesh" de "Ml5.js" debido a la capacidad de identificar los keypoints requeridos para este proyecto, setear el numero de rostros a analizar, y tambien poder adaptar la sensibilidad en el seguimiento de los keypoints claves. 
+Para desarrollar este proyecto se ocupó como base el modelo "FaceMesh" de "Ml5.js" debido a la capacidad de identificar los keypoints requeridos para este proyecto, setear el número de rostros a analizar, y también poder adaptar la sensibilidad en el seguimiento de los keypoints claves. 
 
-Ademas se utilizaron repositorio de informacion sobre el lenguaje javascript, tales como <https://www.w3schools.com/js/default.asp>, <https://p5js.org/reference/>, y <https://docs.ml5js.org/#/reference/facemesh>.
+Además se utilizaron repositorio de información sobre el lenguaje javascript, tales como <https://www.w3schools.com/js/default.asp>, <https://p5js.org/reference/>, y <https://docs.ml5js.org/#/reference/facemesh>.
 
 ## código del proyecto
 
@@ -545,27 +552,27 @@ fullscreen
 Estado de default, esperando que se presione el clic para empezar.
 
 ![foto2_deteccion_2rostros](https://github.com/user-attachments/assets/3185d11e-0739-4a1e-896d-b14da246cf86)
-Deteccion de multiples rostros.
+Detección de múltiples rostros.
 
 ![foto3_estado2](https://github.com/user-attachments/assets/20f6f448-7eb6-4b3c-9362-45527bb86b37)
-Estado 2, cronometros corriendo hasta que se detecte el cierre de un ojo.
+Estado 2, cronómetros corriendo hasta que se detecte el cierre de un ojo.
 
 ![foto4_estado2_1cronometro_detenido](https://github.com/user-attachments/assets/866afd0e-a274-4930-8250-b49b992609e6)
-Cronometros independientes permiten que uno siga corriendo mientras el otro ya se ha detenido.
+Cronómetros independientes permiten que uno siga corriendo mientras el otro ya se ha detenido.
 
 ![foto5_estado3](https://github.com/user-attachments/assets/2b5159f7-37c4-45a7-8147-51817462dc74)
 Estado 3, tiempos finales permiten dar con el ganador.
 
-Uno de los problemas que enfrentamos durante el desarrollo de este programa fue el de la capacidad computacional, ya que al ser el pestañeo un acto tan rapido, el procesamiento de los frames de una manera aletargada permitia pestañar sin que el programa alcanzara a detectarlo. esto es posible solucionarlo con mayor capacidad de computacion o un codigo mas eficiente (eliminando datos no utilizados, como por ejemplo keypoints del resto de la cara que no sean los ojos).
-Otro problema identificado fue el como hacer que los cronometros funcionaran independientemente, ya que tambien existia la opcion de desarrollar solamente un cronometro general, esta solucion es mas simple pero a la ves limita la capacidad del codigo de ser expandido como por ejemplo agregando mas jugadores (solamente se experimento con maximo 2)
+Uno de los problemas que enfrentamos durante el desarrollo de este programa fue el de la capacidad computacional, ya que al ser el pestañeo un acto tan rápido, el procesamiento de los frames de una manera aletargada permitía pestañear sin que el programa alcanzara a detectarlo. Esto es posible solucionarlo con mayor capacidad de computación o un código más eficiente (eliminando datos no utilizados, como por ejemplo keypoints del resto de la cara que no sean los ojos).
+Otro problema identificado fue el como hacer que los cronómetros funcionaran independientemente, ya que también existía la opción de desarrollar solamente un cronómetro general, esta solución es más simple, pero a la vez limita la capacidad del código de ser expandido como por ejemplo agregando más jugadores (solamente se experimentó con máximo 2)
 
 ## bibliografía
 
-tomamos el código base alojado en <https://editor.p5js.org/ml5/sketches/lCurUW1TT>
+Tomamos el código base alojado en <https://editor.p5js.org/ml5/sketches/lCurUW1TT>
 
-usamos la biblioteca ml5.js <https://docs.ml5js.org/#/reference/facemesh>
+Usamos la biblioteca ml5.js <https://docs.ml5js.org/#/reference/facemesh>
 
 ## conclusiones
 
 A lo largo del desarrollo de este proyecto, se ha avanzado desde la creación de un cronómetro básico en p5.js hasta la implementación de una cámara y un sistema de cuenta regresiva para el juego "Quién pestañea primero". El sistema ahora incluye controles de inicio, pausa y reinicio, junto con un diseño de texto mejorado para el cronómetro y la cuenta regresiva. Sin embargo, quedan pendientes desafíos clave, como la correcta detección de pestañeos mediante FaceMesh y la optimización del diseño visual. Los próximos pasos se centrarán en perfeccionar la detección facial y ajustar el diseño de texto para mejorar la experiencia visual y funcional del juego.
-la inteligencia artificial ha mostrado ser una herramienta muy eficiente para problemas de poca abstraccion y sin complejidad etica.
+La inteligencia artificial ha mostrado ser una herramienta muy eficiente para problemas de poca abstracción y sin complejidad ética.
