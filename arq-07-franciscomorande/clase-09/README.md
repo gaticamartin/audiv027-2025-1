@@ -41,7 +41,7 @@ https://github.com/user-attachments/assets/f25f6fce-5a20-4ede-b292-0972b63ce162
 ### Generacion de circulos y colision de objetos
 
   <details>
-<summary> video emergencia </summary>
+<summary> video presentacion </summary>
     
 <https://youtu.be/pxopdv1Fab0?si=YjMt-wMbLhyrY8kR>
 
@@ -373,7 +373,8 @@ El trabajo fue repartido en tres distintas partes siendo:
 3. Interface y ambientacion de mundo del juego
 
 Una vez finalizado se ensamblan las partes
-[proceso de trabajo](https://www.youtube.com/shorts/E-5cLjuRhV4)
+
+* [proceso de trabajo](https://www.youtube.com/shorts/E-5cLjuRhV4)
 
    
 ## Bibliografía
