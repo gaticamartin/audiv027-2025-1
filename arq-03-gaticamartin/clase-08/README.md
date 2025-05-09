@@ -381,3 +381,6 @@ function keyPressed() {
 - me gustaria estilizar mas el countDown (ejemplo: que los numeros "3, 2, 1, !!!!" ocupen el tamaño maximo de la resolucion de la pantalla.
 - falta retomar anotaciones de los primeros codigos porque se pierde la claridad en la modificacion de variables.
 - a partir de ahora el comando ´p´ para señalar el fin del conteo deberia accionarse cuando el facemesh reconozca una distancia minima entre el punto de reconocimiento superior o inferior de cada cara.
+
+## se adjunta version hasta aqui
+
