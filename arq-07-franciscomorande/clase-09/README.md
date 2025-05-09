@@ -369,7 +369,7 @@ Una vez finalizado se ensamblan las partes
 
 * [proceso de trabajo](https://www.youtube.com/shorts/E-5cLjuRhV4)
    
-## bibliografía
+## Bibliografía
 
 * Usamos la biblioteca p5.js v1.10.0. para hacer el código del proyecto, buscando ejemplos y/o referencias para el correcto funcionamiento; y la biblioteca ml5.js, sobre todo las secciones:
 1. [ml5js HandPose](https://docs.ml5js.org/#/reference/handpose)
@@ -384,7 +384,7 @@ Una vez finalizado se ensamblan las partes
   
 * Dentro de otras fuentes de informacion nos basamos en proyectos vistos en clases como lo fue el de Don Francisco (if/boolean) y tambien en preguntas realizadas en clases (colision de los circulos)
 
-## conclusiones
+## Conclusiones
 
 Para concluir, si bien la IA dentro del ambito del reconocimiento (en este caso el dedo indice) funciona, este no llega a ser lo suficientemente sofisticado como quisieramos. 
 Incluso al momento de tener realizado el codigo en su forma mas basica, el reconocimiento del dedo llega a ser algo precario en ciertas condiciones, por ejemplo en la luminocidad de la habitacion, la calidad de la camara, o incluso la confusion de la IA en reconocer otro dedo dentro de la vision. Tambien en temas de optimizacion notamos que hay veces que esta se estanca o da saltos, lo cual aun no sabemos con certeza si es debido a optimizacion o al reconocimiento del dedo en si. En conclusion, la IA pareciera funcionar bastante bien para lo que es un proyecto simple, pero presenta esta muchas imperfecciones lo cual genera un poco de dudas sobre si esta podria afinarse mas para proyectos futuros o mas complejos con exactitud.
