@@ -384,3 +384,5 @@ function keyPressed() {
 
 ## se adjunta version hasta aqui
 
+https://editor.p5js.org/gaticamartin/sketches/diJnuFXlO
+
