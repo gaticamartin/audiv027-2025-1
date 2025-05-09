@@ -189,17 +189,29 @@ fullscreen
 
 ## documentación multimedia / audiovisual del proyecto funcionando
 
-agregar imágenes, videos, gifs, etc.
+![foto1_estado_default](https://github.com/user-attachments/assets/1eaa293a-6dae-4967-be69-e75b2694b81c)
+Estado de default, esperando que se presione el clic para empezar.
 
-agregar callejones sin salida a los que llegaron y la manera en que se repartieron el trabajo.
+![foto2_deteccion_2rostros](https://github.com/user-attachments/assets/3185d11e-0739-4a1e-896d-b14da246cf86)
+Deteccion de multiples rostros.
+
+![foto3_estado2](https://github.com/user-attachments/assets/20f6f448-7eb6-4b3c-9362-45527bb86b37)
+Estado 2, cronometros corriendo hasta que se detecte el cierre de un ojo.
+
+![foto4_estado2_1cronometro_detenido](https://github.com/user-attachments/assets/866afd0e-a274-4930-8250-b49b992609e6)
+Cronometros independientes permiten que uno siga corriendo mientras el otro ya se ha detenido.
+
+![foto5_estado3](https://github.com/user-attachments/assets/2b5159f7-37c4-45a7-8147-51817462dc74)
+Estado 3, tiempos finales permiten dar con el ganador.
+
+Uno de los problemas que enfrentamos durante el desarrollo de este programa fue el de la capacidad computacional, ya que al ser el pestañeo un acto tan rapido, el procesamiento de los frames de una manera aletargada permitia pestañar sin que el programa alcanzara a detectarlo. esto es posible solucionarlo con mayor capacidad de computacion o un codigo mas eficiente (eliminando datos no utilizados, como por ejemplo keypoints del resto de la cara que no sean los ojos).
+Otro problema identificado fue el como hacer que los cronometros funcionaran independientemente, ya que tambien existia la opcion de desarrollar solamente un cronometro general, esta solucion es mas simple pero a la ves limita la capacidad del codigo de ser expandido como por ejemplo agregando mas jugadores (solamente se experimento con maximo 2)
 
 ## bibliografía
 
-nos basamos en el tutorial de INSERTARLINK
+tomamos el código base alojado en <https://editor.p5js.org/ml5/sketches/lCurUW1TT>
 
-tomamos el código base alojado en INSERTARLINK
-
-usamos la biblioteca p5.js vX.Y.Z. y la biblioteca ml5.js blablabla
+usamos la biblioteca ml5.js <https://docs.ml5js.org/#/reference/facemesh>
 
 ## conclusiones
 
