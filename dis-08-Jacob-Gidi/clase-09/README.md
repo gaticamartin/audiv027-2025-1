@@ -2,24 +2,22 @@
 
 viernes 09 mayo 2025
 
-## NOMBREDELPROYECTO
+## Arbitro de Pestañeo
 
 integrantes:
 
-* NOMBRE <LINK A GITHUB>
-* NOMBRE <LINK A GITHUB>
+* NOMBRE Martín Gatica <https://github.com/Jacob-Gidi/audiv027-2025-1/tree/main/arq-03-gaticamartin/clase-09>
+* NOMBRE Giuliano <https://github.com/Jacob-Gidi/audiv027-2025-1/tree/main/arq-01-Giulianocam/clase-09>
 
 ```md
-mi equipo de trabajo es <https://github.com/NOMBRE> y <https://github.com/NOMBRE>, entregamos en el repositorio en este enlace <https://github.com/ETC>.
+mi equipo de trabajo es <https://github.com/gaticamartin> y <https://github.com/Giulianocam>, entregamos en el repositorio en este enlace <https://github.com/ETC>.
 ```
 
 ## acerca del proyecto
 
-descripción breve del proyecto, qué hace, para qué sirve, cómo funciona, para un público no experto en inteligencia artificial.
+Nuestro proyecto es IA de competencia de miradas, entre dos personas maximo, donde ambos ven a la cámara, conextada al computador, de frente y el programa IA, que puede distinguir sus rostros y sobre todo sus ojos, y señalar quien parpadea primero para decir que este perdió y su contrincante gano.
 
-el proyecto hace qué, cómo, cuándo, por qué, en qué contexto.
-
-descripción de las herramientas utilizadas, la base que usaron, y cuáles fueron sus contribuciones a este campo.
+Se uso un programa que identifica el rostro de la persona, que fue modificado para que pueda identificar hasta dos personas, pero se centra más a los ojos e identificar quien de los cierra primero. Para ello se necesita una camara funcional y conextada a la computadora para que los dos usuarios puedan usar el programa.
 
 ## código del proyecto
 
