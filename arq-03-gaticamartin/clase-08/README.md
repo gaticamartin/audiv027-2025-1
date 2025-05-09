@@ -41,7 +41,7 @@ no hay clase por interferiado.
  
  Usa una variable tipo isBlinking para no contar múltiples veces un mismo pestañeo.
 
-## Cronometro
+### Cronometro
 
 https://www.youtube.com/watch?v=klSOBa_WDB0 tutorial inicial creacion de cronometro p5
 
@@ -121,7 +121,7 @@ function keyPressed() {
 }
 
 
-### ajustes de color al cronometro
+#### ajustes de color al cronometro
 
 aqui hay otra version que principalmente agrega cambios de color al cronometro dependiendo de si esta andando o no.
 ![image](https://github.com/user-attachments/assets/d03a225a-89bb-4195-90d2-b667cbac65b1)
@@ -184,14 +184,14 @@ function keyPressed() {
   }
 }
 
-## Siguiente paso
+### Siguiente paso
 
 A esta altura me gustaria lograr que al apretar el espacio primero se iniciara una cuenta atras desde tres segundos hasta cero antes de comenzar a contar el tiempo transcurrido.
 
 https://editor.p5js.org/marynotari/sketches/S1T2ZTMp- Countdown Timer definicion
 https://www.youtube.com/watch?app=desktop&v=rKhwDhp9dcs tutorial
 
-### Funciona !
+#### Funciona !
 
 let startTime;     
 let running = false;  
