@@ -572,6 +572,11 @@ Tomamos el código base alojado en <https://editor.p5js.org/ml5/sketches/lCurUW1
 
 Usamos la biblioteca ml5.js <https://docs.ml5js.org/#/reference/facemesh>
 
+https://www.youtube.com/watch?v=klSOBa_WDB0 tutorial inicial creacion de cronometro p5
+
+https://editor.p5js.org/marynotari/sketches/S1T2ZTMp- Countdown Timer definicion
+https://www.youtube.com/watch?app=desktop&v=rKhwDhp9dcs tutorial
+
 ## conclusiones
 
 El desarrollo de nuestra IA para el juego de "Quien pestañea primero" fue un reto técnico donde aplicamos visión por computadora y procesamiento en tiempo real, usando FaceMesh de ml5. js. El sistema identifica rostros, rastrea los ojos y detecta parpadeos con precisión. Implementamos un cronómetro para cada jugador, creando una experiencia competitiva. Enfrentamos problemas de capacidad computacional que afectaron la precisión, aunque logramos un sistema funcional y expandible. Esto nos dio un profundo entendimiento de la visión artificial y la optimización de recursos.
