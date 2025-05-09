@@ -10,7 +10,7 @@ integrantes:
 * Francys Vásquez <https://github.com/Francys-vs>
 
 ```md
-mi equipo de trabajo es <https://github.com/Francys-vs> y <https://github.com/VicentilloTF>, entregamos en el repositorio en este enlace <https://github.com/ETC>.
+mi equipo de trabajo es <https://github.com/Francys-vs> y <https://github.com/VicentilloTF>, entregamos en el repositorio en este enlace <https://github.com/Francys-vs/HoldYourPet>
 ```
 
 ## acerca del proyecto
