@@ -321,7 +321,7 @@ Uno de los principales desafíos fue tener que crear a la mascota desde 0, puest
 ![image](https://github.com/user-attachments/assets/3af77ca2-a379-404d-b178-e1281185239d)
 ![image](https://github.com/user-attachments/assets/f3d1c42d-7b7d-42a6-9cac-6564aa61f155)
 
-Las razones del porqué fucionan la detección de manos, es que a los dedos se les asignan ciertos números es porque en el formato del HandPose, cada parte de la mano y dedos posee un número, en nuestro caso, usamos los números del índice y el pulgar(8 y 4) que específicamente serían la punta de los dedos.
+Las razones del porqué fuciona la detección de manos, es que a los dedos se les asignan ciertos números es porque en el formato del HandPose, cada parte de la mano y dedos posee un número, en nuestro caso, usamos los números del índice y el pulgar(8 y 4) que específicamente serían la punta de los dedos.
 
 ![image](https://github.com/user-attachments/assets/b875820e-8914-4539-9f13-fe166c01562b)
 
