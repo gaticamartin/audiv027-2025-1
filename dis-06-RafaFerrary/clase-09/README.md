@@ -48,9 +48,10 @@ Si el label es "silencio", el anciano aparece sin expresión.
 
 Esta lógica permite una interacción en tiempo real entre la música del entorno y la reacción humorística del personaje.
 
+![unnamed](https://github.com/user-attachments/assets/2c5ea838-7b5d-4def-9e0f-13eecb9091cd)
+![unnamed (1)](https://github.com/user-attachments/assets/4627680b-ec56-401c-b846-a2f743ee0b6d)
+![unnamed (2)](https://github.com/user-attachments/assets/557a13ed-1663-4b0f-aa17-fe2645c9124b)
 
-![unnamed (1)](https://github.com/user-attachments/assets/05b4df28-882d-475d-9248-fa0ef9afb207) ![unnamed (2)](https://github.com/user-attachments/assets/f3b03982-1216-4d2e-b241-9fd47d9000f3)  
-![unnamed](https://github.com/user-attachments/assets/e984999d-c8bf-48a6-9b24-e0eaa47e6f1a)
 
 
 Luego de exportar el código de la Teachable Machine lo incluimos en nuestro panel de p5.
