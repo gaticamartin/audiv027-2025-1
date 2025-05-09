@@ -41,6 +41,12 @@ no hay clase por interferiado.
  
  Usa una variable tipo isBlinking para no contar múltiples veces un mismo pestañeo.
 
-##Cronometro
+## Cronometro
 
 https://www.youtube.com/watch?v=klSOBa_WDB0 tutorial inicial creacion de cronometro p5
+
+Seria bueno agregar controles de inicio, a partir de el que se genere un countDown 3, 2, 1 antes del comienzo de el cronometraje de el tiempo sin pestañear.
+Sonido Semaforo MarioKart ?? 
+
+![image](https://github.com/user-attachments/assets/e8f0655a-01c6-4de5-8a6a-fb8a215b4777)
+
