@@ -215,12 +215,5 @@ usamos la biblioteca ml5.js <https://docs.ml5js.org/#/reference/facemesh>
 
 ## conclusiones
 
-la IA sirve para X, pero no sirve para Y.
-
-esto nos pareció adecuado, esto nos pareción exclusivo
-
-esto nos causó alegría / incomodidad.
-
-posibles usos futuros que sean positivos, o negativos, o sociales, o personales.
-
-agregar dimensión ética.
+A lo largo del desarrollo de este proyecto, se ha avanzado desde la creación de un cronómetro básico en p5.js hasta la implementación de una cámara y un sistema de cuenta regresiva para el juego "Quién pestañea primero". El sistema ahora incluye controles de inicio, pausa y reinicio, junto con un diseño de texto mejorado para el cronómetro y la cuenta regresiva. Sin embargo, quedan pendientes desafíos clave, como la correcta detección de pestañeos mediante FaceMesh y la optimización del diseño visual. Los próximos pasos se centrarán en perfeccionar la detección facial y ajustar el diseño de texto para mejorar la experiencia visual y funcional del juego.
+la inteligencia artificial ha mostrado ser una herramienta muy eficiente para problemas de poca abstraccion y sin complejidad etica.
