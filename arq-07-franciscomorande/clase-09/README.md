@@ -40,6 +40,13 @@ https://github.com/user-attachments/assets/f25f6fce-5a20-4ede-b292-0972b63ce162
 
 ### Generacion de circulos y colision de objetos
 
+  <details>
+<summary> video emergencia </summary>
+    
+<https://youtu.be/pxopdv1Fab0?si=YjMt-wMbLhyrY8kR>
+
+</details>
+
 El primer intento de realizar la colisión entre dedo (en pruebas iniciales el mouse) y círculo se hace mediante un boolean, sin embargo esto no nos resultó principalmente a la falta de encontrar una forma de detectar la colisión. Por otra parte, debido a la aleatoriedad el círculo inicial podría parcialmente generarse fuera del límite del canvas.
 
 
@@ -367,12 +374,7 @@ El trabajo fue repartido en tres distintas partes siendo:
 
 Una vez finalizado se ensamblan las partes
 [proceso de trabajo](https://www.youtube.com/shorts/E-5cLjuRhV4)
-  <details>
-<summary> video emergencia </summary>
-    
-<https://youtu.be/pxopdv1Fab0?si=YjMt-wMbLhyrY8kR>
 
-</details>
    
 ## Bibliografía
 
