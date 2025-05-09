@@ -367,7 +367,7 @@ El trabajo fue repartido en tres distintas partes siendo:
 
 Una vez finalizado se ensamblan las partes
 * [proceso de trabajo](https://www.youtube.com/shorts/E-5cLjuRhV4)
-<details>
+* <details>
 <summary> video emergencia </summary>
     
 <https://youtu.be/pxopdv1Fab0?si=YjMt-wMbLhyrY8kR>
