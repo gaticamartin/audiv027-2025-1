@@ -1,7 +1,3 @@
-
-
-https://github.com/user-attachments/assets/d8bef788-9af5-44ab-b02d-c4fe0e372745
-
 # clase-09
 
 viernes 09 mayo 2025
