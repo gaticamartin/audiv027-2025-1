@@ -378,7 +378,7 @@ Una vez finalizado se ensamblan las partes
 
 * Tambien inspiramos el codigo en el juego [Circle Clicker](https://p5js.org/examples/games-circle-clicker/)
   
-* * Para la pantalla de inicio, nos basamos en un tutorial desarrollado por Coding Adventures en [Codeguppy](https://codeguppy.com/code.html?QlkPptXLAzVpXxnR3Qy7)  
+* Para la pantalla de inicio, nos basamos en un tutorial desarrollado por Coding Adventures en [Codeguppy](https://codeguppy.com/code.html?QlkPptXLAzVpXxnR3Qy7)  
 
 * El código usado para la primera fase de detección es ["HandPose-Draw with Index Finger" by re7l](https://editor.p5js.org/re7l/sketches/pd-SZ8lfA)
   
