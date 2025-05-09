@@ -50,3 +50,8 @@ Sonido Semaforo MarioKart ??
 
 ![image](https://github.com/user-attachments/assets/e8f0655a-01c6-4de5-8a6a-fb8a215b4777)
 
+Hasta aqui este codigo sirve para crear un cronometro con los controles 
+- Start = barra espaciadora
+- Pausa = p
+- Reinicio = c
+
