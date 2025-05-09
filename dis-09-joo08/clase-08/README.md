@@ -3,7 +3,7 @@
 no hay clase por interferiado.
 ## bitácora de proceso
 
-cambiamos la idea original del proyecto, puesto que nos pareció más atractivo hacer un filtro que cambiara los accesorios cada vez que la persona parpadee
+cambiamos la idea original del proyecto, puesto que nos pareció más atractivo hacer un filtro que cambiara los accesorios cada vez que la persona parpadee, pero seguimos manteniendo la idea que sea con accesorios de Barbie y Ken
 primera visualización del código (carpeta sketch.js):
 
 let video;
