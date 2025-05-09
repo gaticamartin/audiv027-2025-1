@@ -386,12 +386,6 @@ Una vez finalizado se ensamblan las partes
 
 ## conclusiones
 
-la IA sirve para X, pero no sirve para Y.
+Para concluir, si bien la IA dentro del ambito del reconocimiento (en este caso el dedo indice) funciona, este no llega a ser lo suficientemente sofisticado como quisieramos. 
+Incluso al momento de tener realizado el codigo en su forma mas basica, el reconocimiento del dedo llega a ser algo precario en ciertas condiciones, por ejemplo en la luminocidad de la habitacion, la calidad de la camara, o incluso la confusion de la IA en reconocer otro dedo dentro de la vision. Tambien en temas de optimizacion notamos que hay veces que esta se estanca o da saltos, lo cual aun no sabemos con certeza si es debido a optimizacion o al reconocimiento del dedo en si. En conclusion, la IA pareciera funcionar bastante bien para lo que es un proyecto simple, pero presenta esta muchas imperfecciones lo cual genera un poco de dudas sobre si esta podria afinarse mas para proyectos futuros o mas complejos con exactitud.
 
-esto nos pareció adecuado, esto nos pareción exclusivo
-
-esto nos causó alegría / incomodidad.
-
-posibles usos futuros que sean positivos, o negativos, o sociales, o personales.
-
-agregar dimensión ética.
