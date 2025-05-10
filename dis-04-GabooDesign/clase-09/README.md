@@ -2,62 +2,424 @@
 
 viernes 09 mayo 2025
 
-## NOMBREDELPROYECTO
+## Espejo Amargado
 
 integrantes:
 
-* NOMBRE <LINK A GITHUB>
-* NOMBRE <LINK A GITHUB>
+* [Benjamin Rivas](https://github.com/benjaminrivasm) - Desarrollador  
+* [Fernanda Navarrete](https://github.com/feff-y) - Organización y coordinadora creativa  
+* [Gabriel Castillo](https://github.com/GabooDesign) - Edición de imagenes y audios  
 
 ```md
-mi equipo de trabajo es <https://github.com/NOMBRE> y <https://github.com/NOMBRE>, entregamos en el repositorio en este enlace <https://github.com/ETC>.
+mi equipo de trabajo es <https://github.com/benjaminrivasm>, <https://github.com/feff-y> y <https://github.com/GabooDesign>, entregamos en el repositorio en este enlace <https://github.com/GabooDesign/EspejoAmargado>.
 ```
 
-## acerca del proyecto
+## Acerca del Proyecto
 
-descripción breve del proyecto, qué hace, para qué sirve, cómo funciona, para un público no experto en inteligencia artificial.
+Este código cumple la función de ser una aplicación interactiva que fue desarrollado en p5.js y ml5.js, usando las plantillas de BodyPose para detectar un cuerpo dentro del espacio interactivo y asi reaccionar con una secuencia audiovisual incomoda, absurda y sarcástica.  
 
-el proyecto hace qué, cómo, cuándo, por qué, en qué contexto.
+El "Espejo Amargado" funciona como un espejo digital que se torna cada vez mas hostil ante su usuario mientras el permanece en frente a el, ridiculizando sobre la vigilancia del usuario, la persistencia de su presencia y la incomodidad de verse a si mismo. El proyecto se centra dentro de una critica sobre una simulación de conexión emocional (empatia), pero en realidad responden con automatismos programados, desafiando la función del espejo como un reflejo pasivo.
 
-descripción de las herramientas utilizadas, la base que usaron, y cuáles fueron sus contribuciones a este campo.
+El inicio de este proyecto se basó en el mini-proyecto de [Who are you?](https://editor.p5js.org/GabooDesign/sketches/Akrgo3J42) desarrollado por [Gabriel Castillo](https://github.com/GabooDesign).  El cual cumple la función de una suerte de propiocepción simbólica, al plantear preguntas identitarias al espectador mientras qué, mediante el uso de su webcam, construye una alegoría visual en la que este no logra percibirse a sí mismo, sino que solo ve una imagen de estática.  
 
-## código del proyecto
+## Código del Proyecto
 
-el código original que citamos es
+el código fuente que desarrollamos es
 
 ```javascript
-function setup() {
-    createCanvas(400, 400);
-    background(220);    
+// Variables detección de rostro
+let video;
+let bodyPose;
+let poses = [];
+let faceTimer = 0;
+
+let debug = false;
+let playAudio;
+let mirror = null;
+
+// Variables para el efecto máquina de escribir
+let texto = "";
+let index = 0;
+let estado = null;
+let velocidad = 3;
+let mensajeMostrado = false;
+let fontSize = 24;
+
+function preload() {
+  // Cargar el modelo bodyPose
+  bodyPose = ml5.bodyPose();
+
+  // Cargar imagenes
+  backText = loadImage("images/backText.png");
+  selfieMonkey = loadImage("images/selfieMonkey.png");
+  jajaja = loadImage("images/jajaja.png");
+  punchCat = loadImage("images/punchCat.png");
+  homerGun = loadImage("images/homerGun.png");
+  disgusting = loadImage("images/disgusting.png");
+  alarm = loadImage("images/alarm.png");
+  blackCat = loadImage("images/blackCat.png");
+  clown = loadImage("images/clown.png");
+  baby = loadImage("images/baby.png");
+  eagle = loadImage("images/eagle.png");
+  bsod = loadImage("images/BSoD.png");
+  brokenMirror = loadImage("images/brokenMirror.png");
+
+  // Cargar audios
+  talkSans = loadSound("sounds/0_talksans.mp3");
+  huhCat = loadSound("sounds/1_huhcat.mp3");
+  doorKnocking = loadSound("sounds/2_doorknocking.mp3");
+  cameraFlash = loadSound("sounds/3_cameraflash.mp3");
+  brotherEww = loadSound("sounds/4_brothereww.mp3");
+  punch = loadSound("sounds/5_punch.mp3");
+  shotgun = loadSound("sounds/6_shotgun.mp3");
+  pewpew = loadSound("sounds/7_pewpew.mp3");
+  bobDisgusting = loadSound("sounds/8_bobdisgusting.mp3");
+  socialCredits = loadSound("sounds/9_socialcredits.mp3");
+  goofySound = loadSound("sounds/10_goofysound.mp3");
+  clownMusic = loadSound("sounds/11_clownmusic.mp3");
+  metalPipe = loadSound("sounds/12_metalpipe.mp3");
+  lagging = loadSound("sounds/13_lagging.mp3");
+  buzzerError = loadSound("sounds/14_buzzererror.mp3");
+  scream = loadSound("sounds/14_scream.mp3");
+  error = loadSound("sounds/15_error.mp3");
+  winXP = loadSound("sounds/16_WindowsXPBlueScreen.mp3");
+  youAreAnIdiot = loadSound("sounds/17_you-are-an-idiot.mp3");
+  breakingGlass = loadSound("sounds/breakingGlass.mp3");
 }
+
+function setup() {
+  createCanvas(640, 480);
+
+  // Crea el vídeo y lo oculta
+  video = createCapture(VIDEO);
+  video.size(640, 480);
+  video.hide();
+
+  // Comienza a detectar poses en el vídeo de la webcam
+  bodyPose.detectStart(video, gotPoses);
+}
+
+function draw() {
+  // Muestra el video de la webcam
+  image(video, 0, 0, width, height);
+
+  // Desactiva la detección de la nariz cuando no está en pantalla
+  let faceDetected = false;
+
+  // Buscar la nariz en los puntos detectados
+  for (let i = 0; i < poses.length; i++) {
+    let pose = poses[i];
+    let nose = pose.keypoints.find((k) => k.name === "nose");
+    if (nose && nose.confidence > 0.1) {
+      faceDetected = true;
+    }
+  }
+
+  // Aumenta el temporizador si la nariz está en pantalla (1 segundo = 60 cuadros)
+  if (faceDetected) {
+    if (frameCount % 60 === 0) {
+      faceTimer++;
+    }
+
+    // Mostrar mensaje según el tiempo en pantalla
+    if (faceTimer >= 10 && faceTimer < 12) {
+      image(backText, 0, 0);
+      escribirTexto("¡¿Qué haces aquí?!");
+      mensajeMostrado = true;
+    } else if (faceTimer >= 11 && faceTimer < 14) {
+      image(backText, 0, 0);
+      escribirTexto("¡Muevete!");
+      mensajeMostrado = true;
+    } else if (!playAudio && faceTimer === 15) {
+      huhCat.play();
+      playAudio = true;
+    } else if (faceTimer === 16) {
+      playAudio = false;
+    } else if (faceTimer >= 25 && faceTimer < 26) {
+      image(backText, 0, 0);
+      escribirTexto("¡Oye!");
+      mensajeMostrado = true;
+    } else if (!playAudio && faceTimer === 26) {
+      doorKnocking.play();
+      playAudio = true;
+    } else if (faceTimer >= 26 && faceTimer < 28) {
+      image(backText, 0, 0);
+      escribirTexto("Te llaman afuera");
+      mensajeMostrado = true;
+    } else if (faceTimer >= 28 && faceTimer < 30) {
+      playAudio = false;
+      image(backText, 0, 0);
+      escribirTexto("¿Acaso no escuchas?");
+      mensajeMostrado = true;
+    } else if (!playAudio && faceTimer === 35) {
+      cameraFlash.play();
+      playAudio = true;
+    } else if (faceTimer >= 35 && faceTimer < 36) {
+      for (let i = 0; i < poses.length; i++) {
+        let pose = poses[i];
+        let nose = pose.keypoints.find((k) => k.name === "nose");
+        if (nose && nose.confidence > 0.1) {
+          let x = nose.x;
+          let y = nose.y;
+          image(
+            selfieMonkey,
+            x - selfieMonkey.width / 2,
+            y - selfieMonkey.height / 2
+          );
+        }
+      }
+    } else if (faceTimer === 36) {
+      playAudio = false;
+    } else if (!playAudio && faceTimer === 38) {
+      youAreAnIdiot.play();
+      playAudio = true;
+    } else if (faceTimer === 39) {
+      playAudio = false;
+    } else if (faceTimer >= 38 && faceTimer < 43) {
+      for (let i = 0; i < poses.length; i++) {
+        let pose = poses[i];
+        let nose = pose.keypoints.find((k) => k.name === "nose");
+        if (nose && nose.confidence > 0.1) {
+          let x = nose.x;
+          let y = nose.y;
+          image(jajaja, x - jajaja.width / 2, y - jajaja.height / 2);
+        }
+      }
+    } else if (!playAudio && faceTimer === 45) {
+      buzzerError.play();
+      playAudio = true;
+    } else if (faceTimer === 46) {
+      playAudio = false;
+    } else if (!playAudio && faceTimer === 47) {
+      punch.play();
+      playAudio = true;
+    } else if (faceTimer === 48) {
+      playAudio = false;
+    } else if (faceTimer >= 47 && faceTimer < 48) {
+      for (let i = 0; i < poses.length; i++) {
+        let pose = poses[i];
+        let nose = pose.keypoints.find((k) => k.name === "nose");
+        if (nose && nose.confidence > 0.1) {
+          let x = nose.x;
+          let y = nose.y;
+          image(punchCat, x - punchCat.width / 2, y - punchCat.height / 2);
+        }
+      }
+    } else if (!playAudio && faceTimer === 49) {
+      pewpew.play();
+      playAudio = true;
+    } else if (faceTimer === 50) {
+      playAudio = false;
+      pewpew.play();
+    } else if (faceTimer >= 49 && faceTimer < 50) {
+      image(
+        homerGun,
+        width / 2 - homerGun.width / 2,
+        height / 2 - homerGun.height / 2
+      );
+    } else if (!playAudio && faceTimer === 53) {
+      bobDisgusting.play();
+      playAudio = true;
+    } else if (faceTimer >= 53 && faceTimer < 56) {
+      image(disgusting, 0, 0);
+    } else if (faceTimer === 54) {
+      playAudio = false;
+    } else if (faceTimer >= 60 && faceTimer < 65) {
+      image(backText, 0, 0);
+      velocidad = 30;
+      escribirTexto(".......");
+      mensajeMostrado = true;
+    } else if (faceTimer >= 65 && faceTimer < 67) {
+      image(backText, 0, 0);
+      velocidad = 10;
+      escribirTexto("Vamos...");
+      mensajeMostrado = true;
+    } else if (faceTimer >= 67 && faceTimer < 69) {
+      image(backText, 0, 0);
+      velocidad = 5;
+      fontSize = 40;
+      escribirTexto("¡VETE!");
+      mensajeMostrado = true;
+    } else if (!playAudio && faceTimer === 69) {
+      socialCredits.play();
+      playAudio = true;
+    } else if (faceTimer === 70) {
+      playAudio = false;
+    } else if (faceTimer >= 69 && faceTimer < 75 && faceTimer % 2 === 1) {
+      image(alarm, 0, 0);
+    } else if (!playAudio && faceTimer === 76) {
+      goofySound.play();
+      playAudio = true;
+    } else if (faceTimer === 77) {
+      playAudio = false;
+    } else if (faceTimer >= 76 && faceTimer < 79) {
+      for (let i = 0; i < poses.length; i++) {
+        let pose = poses[i];
+        let nose = pose.keypoints.find((k) => k.name === "nose");
+        if (nose && nose.confidence > 0.1) {
+          let x = nose.x;
+          let y = nose.y;
+          image(blackCat, x - blackCat.width / 2, y - blackCat.height / 2);
+        }
+      }
+    } else if (!playAudio && faceTimer === 81) {
+      clownMusic.play();
+      playAudio = true;
+    } else if (faceTimer === 82) {
+      playAudio = false;
+    } else if (faceTimer >= 81 && faceTimer < 91) {
+      for (let i = 0; i < poses.length; i++) {
+        let pose = poses[i];
+        let nose = pose.keypoints.find((k) => k.name === "nose");
+        if (nose && nose.confidence > 0.1) {
+          let x = nose.x;
+          let y = nose.y;
+          image(clown, x - clown.width / 2, y - clown.height / 2 - 100);
+        }
+      }
+    } else if (faceTimer >= 96 && faceTimer < 100) {
+      image(backText, 0, 0);
+      velocidad = 5;
+      fontSize = 24;
+      escribirTexto("Me caes mal...");
+      mensajeMostrado = true;
+    } else if (faceTimer >= 104 && faceTimer < 107) {
+      image(backText, 0, 0);
+      velocidad = 10;
+      fontSize = 24;
+      escribirTexto("¿Sabes qué?");
+      mensajeMostrado = true;
+    } else if (faceTimer >= 107 && faceTimer < 109) {
+      image(backText, 0, 0);
+      velocidad = 5;
+      fontSize = 30;
+      escribirTexto("¡Estoy harto!");
+      mensajeMostrado = true;
+    } else if (!playAudio && faceTimer === 109) {
+      scream.play();
+      playAudio = true;
+    } else if (faceTimer === 111) {
+      playAudio = false;
+    } else if (faceTimer >= 109 && faceTimer < 112) {
+      image(baby, width / 2 - baby.width / 2, height / 2 - baby.height / 2);
+    } else if (!playAudio && faceTimer === 112) {
+      lagging.play();
+      playAudio = true;
+    } else if (faceTimer === 113) {
+      playAudio = false;
+    } else if (!playAudio && faceTimer === 114) {
+      error.play();
+      playAudio = true;
+    } else if (faceTimer === 115) {
+      playAudio = false;
+    } else if (faceTimer >= 114 && faceTimer < 115) {
+      image(eagle, 0, 0);
+    } else if (!playAudio && faceTimer === 116) {
+      winXP.play();
+      playAudio = true;
+    } else if (faceTimer === 119) {
+      playAudio = false;
+    }
+  } else {
+    // Mostrar mensaje de idle solo si ya se mostró alguno antes
+    if (mensajeMostrado) {
+      image(backText, 0, 0);
+      velocidad = 3;
+      fontSize = 24;
+      escribirTexto("Uff, que alivio");
+    }
+  }
+
+  if (faceTimer === 116) {
+    mirror = "error";
+  }
+  if (faceTimer === 121) {
+    breakingGlass.play();
+    playAudio = true;
+    mirror = "broken";
+  }
+
+  if (mirror === "broken") {
+    image(bsod, 0, 0);
+    image(
+      brokenMirror,
+      width / 2 - brokenMirror.width / 2,
+      height / 2 - brokenMirror.height / 2
+    );
+  } else if (mirror === "error") {
+    image(bsod, 0, 0);
+  }
+
+  if (debug) {
+    // Muestra el temporizador en pantalla
+    fill(0);
+    rect(5, 5, 270, 30);
+    fill(255);
+    textSize(24);
+    textAlign(LEFT, TOP);
+    textFont("Arial");
+    text("Tiempo en pantalla: " + faceTimer + "s", 10, 10);
+  }
+}
+
+// Función de devolución de llamada para cuando bodyPose genera datos
+function gotPoses(results) {
+  // Guardar la salida en la variable poses
+  poses = results;
+}
+
+// Función para mostrar texto con efecto de máquina de escribir
+function escribirTexto(nuevoTexto) {
+  if (texto !== nuevoTexto) {
+    texto = nuevoTexto;
+    index = 0;
+    estado = "escribiendo";
+  }
+
+  if (estado === "escribiendo") {
+    if (frameCount % velocidad === 0 && index < texto.length) {
+      index++;
+      talkSans.play();
+    }
+    if (index === texto.length) {
+      estado = null; // Termina de escribir
+    }
+  }
+  // Formato del texto del espejo
+  fill(255);
+  textSize(fontSize);
+  textAlign(CENTER, CENTER);
+  textFont("monospace");
+  text(texto.substring(0, index), width / 2, height - 30);
+}
+
 ```
 
-## enlace del proyecto
+## Enlace del Proyecto
 
-lo hicimos en editor de p5.js
+Lo hicimos en editor de [p5.js](https://editor.p5js.org/benjaminrivasm/sketches/auo2S7tyX)
 
-## documentación multimedia / audiovisual del proyecto funcionando
+## Documentación multimedia / audiovisual del proyecto funcionando
 
-agregar imágenes, videos, gifs, etc.
+![Cara de Gorila](Avance1.png)
+![Hueles mal...](Avance2.png)
+![¡En tu cara!](Avance3.png)
+![Adios, estoy harto](Avance4.png)
 
-agregar callejones sin salida a los que llegaron y la manera en que se repartieron el trabajo.
+Nos ha pasado varias veces como equipo que no sabiamos como programar las funciones, fue asi como se decidió el utilizar funciones "if" como bifurcador de opciones, que permita hacer cambios en la continuidad y permita la fluidez de la experiencia.  
 
-## bibliografía
+Como equipo, antes de comenzar a realizar el trabajo, conversamos sobre nuestras fortalezas, fue asi como nos decidimos en definir áreas de intervención de cada uno y realizar un trabajo equitativo.  
 
-nos basamos en el tutorial de INSERTARLINK
+## Bibliografía
 
-tomamos el código base alojado en INSERTARLINK
+Nos basamos en el tutorial de [BodyPose](https://docs.ml5js.org/#/reference/bodypose)
 
-usamos la biblioteca p5.js vX.Y.Z. y la biblioteca ml5.js blablabla
+tomamos el código base alojado en [editor.p5js.org](https://editor.p5js.org/ml5/sketches/YBuqxIH1S)
 
-## conclusiones
+usamos la biblioteca p5.js v1.11.5., la biblioteca de sound.p5 y la biblioteca ml5.js
 
-la IA sirve para X, pero no sirve para Y.
+## Conclusiones
 
-esto nos pareció adecuado, esto nos pareción exclusivo
+Nos causó alegria cuando pudimos finalizar el trabajo sin ningun error de compilación. / Me incomodo cuando el espejo me pusó nariz de payaso...  
 
-esto nos causó alegría / incomodidad.
-
-posibles usos futuros que sean positivos, o negativos, o sociales, o personales.
-
-agregar dimensión ética.
+Como posible uso futuro, el proyecto podría servir para generar conciencia sobre cómo, en la actualidad, interactuamos cada vez más con inteligencias artificiales que intentan emular empatía a través de respuestas previamente programadas por humanos. Esto permite evidenciar la limitada interactividad real que ofrecen estas tecnologías y los posibles problemas sociales que pueden derivarse de estos problemas.  
