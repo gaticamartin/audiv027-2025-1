@@ -164,3 +164,89 @@ function  elipseAleatoria() {
 </html>
 
 ```
+```javascript
+let dirBotonBorrar = document.getElementById("botonBorrar");
+
+let dirParrafo = document.getElementById("parrafito");
+
+
+let diametro = 40;
+
+function setup() {
+  createCanvas(400, 400);
+  //fecha = Date();
+  setInterval(elipseAleatoria,3000);
+}
+
+function elipseAleatoriaRoja(){
+  fill(0,120,0);
+    ellipse(random(width),
+          random(height),
+          40,
+          40);
+}
+
+function elipseAleatoriaVerde(){
+    fill(180,0,0);
+    ellipse(random(width),
+          random(height),
+          60,
+          60);
+  
+  dirBotonBorrar.addEventListener("click",pintarGris)
+  
+  dirParrafo.addEventListener("mouseenter",cambiardiametro);
+}
+
+setInterval(
+elipseAleatoriaRoja,2000);
+setInterval(
+elipseAleatoriaVerde,3000);
+
+function cambiardiametro(){
+  random(10,1000)
+}
+
+function pintarGris(){
+  background(188);
+}
+
+function draw() {
+}
+
+function  elipseAleatoria() {
+  ellipse(random(width),
+          random(height),
+          diametro,
+          diametro);
+  console.log(dirBotonBorrar);
+  
+}
+
+```
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.11.5/lib/p5.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.11.3/addons/p5.sound.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta charset="utf-8" />
+
+  </head>
+  <body>
+    <main>
+    </main>
+    
+    <button id="botonBorrar" >BORRARTODO</button>
+    
+        <p id="parrafito" >misterioooooooo</p>
+    
+    <p> ooooooooiretsim </p>
+
+        <script src="sketch.js"></script>
+  </body>
+</html>
+
+```
