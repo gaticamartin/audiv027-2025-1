@@ -1,6 +1,8 @@
 # clase-10
 
 
+esto es el index.html en HTML de la web que hicimos hoy con addEventListener
+
 ```html
 <!DOCTYPE html>
 <html lang="en">
@@ -28,6 +30,8 @@
 </html>
 
 ```
+
+esto es el sketch.js en JavaScript
 
 ```js
 // let fecha;
