@@ -10,3 +10,14 @@ como hacer pasar las imagenes en el algoritmo especifico (duro), buscar con el p
 podemos buscar templates. con esto simplificamos la cantidad de computacion de la app
 
 https://codepen.io/mediapipe-preview/pen/zYamdVd *mediapipe lector de gestos de mano*# clase-1
+
+
+
+
+
+
+
+
+
+
+w3schools
