@@ -1,6 +1,6 @@
 # clase-1
 
-#000000## Investigar
+## Investigar
 
 # Center for Computer Research in Music and Acoustics
 https://ccrma.stanford.edu/
