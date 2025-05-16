@@ -2,7 +2,11 @@
 
 ## Investigar
 
-### Center for Computer Research in Music and Acoustics
+**1. Center for Computer Research in Music and Acoustics:**
 https://ccrma.stanford.edu/
 
-### Patricio de la cuadra
+**2. Patricio de la cuadra**
+
+**3. Guggenheim fellowship**
+
+**4. The coding train**
