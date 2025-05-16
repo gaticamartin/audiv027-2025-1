@@ -2,7 +2,7 @@
 
 ## Investigar
 
-# Center for Computer Research in Music and Acoustics
+### Center for Computer Research in Music and Acoustics
 https://ccrma.stanford.edu/
 
-# Patricio de la cuadra
+### Patricio de la cuadra
