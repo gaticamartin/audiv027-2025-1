@@ -22,5 +22,5 @@
 | [clase-12](00-docentes/clase-12/) | 2025-06-06 viernes      | trabajo grupal en proyecto-02                 |
 | [clase-13](00-docentes/clase-13/) | 2025-06-13 viernes      | trabajo grupal en proyecto-02                 |
 | semana de trabajo autónomo        | 2025-06-16 / 2025-06-22 | no hay clases                                 |
-| [clase-14](00-docentes/clase-13/) | 2025-06-27 viernes      | presentaciones y entrega proyecto-02          |
+| [clase-14](00-docentes/clase-14/) | 2025-06-27 viernes      | presentaciones y entrega proyecto-02          |
 | cierre acta                       | 2025-07-18 viernes      | plazo máximo envío actas                      |
