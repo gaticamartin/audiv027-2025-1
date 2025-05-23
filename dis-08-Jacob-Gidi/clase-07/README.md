@@ -336,3 +336,7 @@ function keyPressed() {
       break;
   }
 }
+
+## El proyecto elegido
+
+El proyecto elegido es una competencia de parpadeo entre dos personas a la camara
