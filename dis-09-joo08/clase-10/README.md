@@ -1,1 +1,2 @@
-# clase-1
+# clase-10
+presentaciones de los proyectos
