@@ -1,4 +1,4 @@
-# clase-09 viernes 09 mayo 2025 Presentacion de proyecto 
+# clase-09 viernes 09 mayo 2025 Presentación de proyecto 
 
 
 
@@ -29,8 +29,8 @@ Herramientas utilizadas
 * Cámara web: como sensor de entrada para captar el movimiento en tiempo real.
 * Imágenes personalizadas: se usaron imágenes propias (como la del profesor y la sala) para darle un toque humorístico y contextualizado al proyecto.
 
-## Creacion del proyecto
-### Deteccion de manos
+## Creación del proyecto
+### Detección de manos
 
 Partimos desde un ejemplo base de detección de manos. Adaptamos el modelo para seguir solo el dedo índice. Agregamos una imagen que se mueve suavemente con el dedo (suavizado con "lerp()"). Creamos un sistema de puntos al tocar objetivos ocultos que cambian de lugar, generando una dinámica tipo "búsqueda del tesoro". 
 
@@ -38,10 +38,10 @@ Partimos desde un ejemplo base de detección de manos. Adaptamos el modelo para 
 https://github.com/user-attachments/assets/f25f6fce-5a20-4ede-b292-0972b63ce162
 
 
-### Generacion de circulos y colision de objetos
+### Generación de círculos y colisión de objetos
 
   <details>
-<summary> video presentacion </summary>
+<summary> video presentación </summary>
     
 <https://youtu.be/pxopdv1Fab0?si=YjMt-wMbLhyrY8kR>
 
@@ -370,11 +370,11 @@ https://github.com/user-attachments/assets/3f97b9d9-4692-4e9b-93fa-80f6e15a1deb
 
 </details>
 
-## Reparticion de trabajo
+## Repartición de trabajo
 El trabajo fue repartido en tres distintas partes siendo:
-1. Deteccion y optimizacion del dedo indice
-2. Generacion y colision del dedo indice con los circulos
-3. Interface y ambientacion de mundo del juego
+1. Detección y optimización del dedo índice
+2. Generación y colisión del dedo índice con los círculos
+3. Interface y ambientación de mundo del juego
 
 Una vez finalizado se ensamblan las partes
 
@@ -398,10 +398,9 @@ Una vez finalizado se ensamblan las partes
   
 * [Ejemplo de suavizar movimiento con código lerp() en repositorio p5](https://p5js.org/examples/calculating-values-interpolate/?utm_source=chatgpt.com)
   
-* Dentro de otras fuentes de informacion nos basamos en proyectos vistos en clases como lo fue el de Don Francisco (if/boolean) y tambien en preguntas realizadas en clases (colision de los circulos)
-
+* Dentro de otras fuentes de información nos basamos en proyectos vistos en clases como lo fue el de Don Francisco (if/boolean) y también en preguntas realizadas en clases (colisión de los círculos)
+  
 ## Conclusiones
 
-Para concluir, si bien la IA dentro del ambito del reconocimiento (en este caso el dedo indice) funciona, este no llega a ser lo suficientemente sofisticado como quisieramos. 
-Incluso al momento de tener realizado el codigo en su forma mas basica, el reconocimiento del dedo llega a ser algo precario en ciertas condiciones, por ejemplo en la luminocidad de la habitacion, la calidad de la camara, o incluso la confusion de la IA en reconocer otro dedo dentro de la vision. Tambien en temas de optimizacion notamos que hay veces que esta se estanca o da saltos, lo cual aun no sabemos con certeza si es debido a optimizacion o al reconocimiento del dedo en si. En conclusion, la IA pareciera funcionar bastante bien para lo que es un proyecto simple, pero presenta esta muchas imperfecciones lo cual genera un poco de dudas sobre si esta podria afinarse mas para proyectos futuros o mas complejos con exactitud.
+Para concluir, si bien la IA dentro del ámbito del reconocimiento (en este caso el dedo índice) funciona, este no llega a ser lo suficientemente sofisticado como quisiéramos. Incluso al momento de tener realizado el código en su forma más básica, el reconocimiento del dedo llega a ser algo precario en ciertas condiciones, por ejemplo en la luminosidad de la habitación, la calidad de la cámara, o incluso la confusión de la IA en reconocer otro dedo dentro de la visión. También en temas de optimización notamos que hay veces que esta se estanca o da saltos, lo cual aún no sabemos con certeza si es debido a optimización o al reconocimiento del dedo en si. En conclusión, la IA pareciera funcionar bastante bien para lo que es un proyecto simple, pero presenta muchas imperfecciones lo cual genera un poco de dudas sobre si esta podría afinarse más para proyectos futuros o más complejos con exactitud.
 
