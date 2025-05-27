@@ -13,37 +13,37 @@ integrantes:
 mi equipo de trabajo es <https://github.com/Francys-vs> y <https://github.com/VicentilloTF>, entregamos en el repositorio en este enlace <https://github.com/Francys-vs/HoldYourPet>
 ```
 
-## acerca del proyecto
+## Acerca del proyecto
 
 "Hold your Pet" es un juego interactivo en donde el principal objetivo es pasear a un perrito mediante la interacción de detección de dedos, el jugador tendrá a su disposición un menú en donde se explicará el objetivo y función principal del juego, en donde luego de apretar teclas para navegar por el menú e instrucciones, se activará la cámara, aparecerá la mascota (un perrito) y el usuario podrá interactuar con su dedo índice y pulgar con el animal, este pidiendo desplazarse por el espacio disponible.</p>
 Fue desarrollado en p5.js y ml5.js, en el primer caso, siendo usado el primer motor de programación para la activación de cámara, crfeación de personaje, y diseño de juego, mientra que, con ml5.js se utilizó la plantilla de HandPose para la detección de manos, dedos e interacción de ojeto y usuario.
 
 "Hold your Pet" funciona en base a dos creaciones de código distintas, la primera es de Sidney Gardner, quien creó el juego "Space Shooters", donde utilizamos principalmente su parte del código para poder generar un menú seleccionador mediante teclas del computador. Luego utilizamos el código de "Patt vira" quien creó la forma de generar detección de objetos y agarre de estos con los dedos, usando esa base y adaptándola para el caso del perrito.
 
-## código del proyecto
+## Código del proyecto
 
 el código original que desarrollamos es:
 
 Primera parte: Creación mascota y detección como "objeto".
 
 ```javascript
-class Mascota {
-  constructor() {
-    this.t = "🐶"; 
-    this.x = random(100, 300);
+class Mascota { // Creamos la "función" que mantendrá todas las partes unidas de la mascota.
+  constructor() { // Con "Constructor()" podremos mantener todo el dibujo geométrico usado.
+    this.t = "🐶"; // Aquí seguimos el paso a paso del tutorial de referencia de p5js.
+    this.x = random(100, 300); // Aquí están las posiciones x e y del perrito.
     this.y = random(100, 300);
-    this.angle = random(TWO_PI);
+    this.angle = random(TWO_PI); // Aquí puede rotar en distintas posiciones al aparecer en pantalla.
     this.c = color(255);
 
-    this.pos = createVector(this.x, this.y);
+    this.pos = createVector(this.x, this.y); // Vectores de movimiento.
     this.w = 80;
     this.h = 80;
     
-    this.fingerx = 0;
+    this.fingerx = 0; // Detección de los posicionamiento x e y de los dedos.
     this.fingery = 0;
   }
   
-  display() {
+  display() { // Aquí aplica el desplazamiento del perrito.
     push();
     translate(this.pos.x, this.pos.y);
     rotate(this.angle);
@@ -55,51 +55,52 @@ class Mascota {
     fill(255, 0, 0);
     ellipse(this.fingerx, this.fingery, 10, 10);
   }
- dibujarPerrito() {
+ dibujarPerrito() { // Aquí está el dibujo en base a figuras geométricas del perrito.
     rectMode(RADIUS);
     ellipseMode(RADIUS);
     noStroke();
 
-    // orejas
+    // Orejas.
     fill(76, 43, 32);
-    rect(-25, -30, 15, 20, 14); // izquierda
-    rect(25, -30, 15, 20, 14);  // derecha
+    rect(-25, -30, 15, 20, 14); // Izquierda.
+    rect(25, -30, 15, 20, 14);  // Derecha.
     fill(80, 35, 30);
-    rect(-37, -40, 13, 12, 8); // interna izquierda
-    rect(37, -40, 13, 12, 8);  // interna derecha
+    rect(-37, -40, 13, 12, 8); // Parte arriba izquierda.
+    rect(37, -40, 13, 12, 8);  // Parte arriba derecha.
 
-    // cuerpo
+    // Cuerpo.
     fill(155, 103, 60);
     ellipse(0, 0, 35, 35);
 
-    // ojos
+    // Ojos.
     fill(80);
     ellipse(-25, -15, 13, 13); // ojo izq
     ellipse(25, -15, 13, 13);  // ojo der
 
-    // brillos ojos
+    // Brillo ojos.
     fill(250);
     ellipse(-32, -20, 3, 3);   // brillo arriba izq
     ellipse(-27, -17, 5, 5);   // brillo abajo izq
     ellipse(32, -20, 3, 3);    // brillo arriba der
     ellipse(27, -17, 5, 5);    // brillo abajo der
 
-    // nariz
+    // Nariz
     fill(100);
     ellipse(0, 5, 10, 9);
 
-    // patas
+    // Patas
     fill(139, 69, 19);
     ellipse(-20, 35, 11, 11); // pata izq
     ellipse(20, 35, 11, 11);  // pata der
   }
-  
+
+// Aquí comienza la interacción y detección del perrito junto a los dedos índice y pulgar.
   touch(thumbx, thumby, indexx, indexy) {
     let distBetweenFingers = dist(thumbx, thumby, indexx, indexy);
     this.fingerx = abs(thumbx - indexx) + min(thumbx, indexx);
     this.fingery = abs(thumby - indexy) + min(thumby, indexy);
     
-    let distFromFingers = dist(this.pos.x, this.pos.y, this.fingerx, this.fingery);
+    let distFromFingers = dist(this.pos.x, this.pos.y, this.fingerx, this.fingery); //
     
     if (distBetweenFingers < 40 && distFromFingers < this.w/2) {
       this.c = color(255, 0, 0);
@@ -320,6 +321,11 @@ Uno de los principales desafíos fue tener que crear a la mascota desde 0, puest
 ![image](https://github.com/user-attachments/assets/3af77ca2-a379-404d-b178-e1281185239d)
 ![image](https://github.com/user-attachments/assets/f3d1c42d-7b7d-42a6-9cac-6564aa61f155)
 
+Las razones del porqué fuciona la detección de manos, es que a los dedos se les asignan ciertos números es porque en el formato del HandPose, cada parte de la mano y dedos posee un número, en nuestro caso, usamos los números del índice y el pulgar(8 y 4) que específicamente serían la punta de los dedos.
+
+![image](https://github.com/user-attachments/assets/b875820e-8914-4539-9f13-fe166c01562b)
+
+
 
 
 ## bibliografía
@@ -329,7 +335,9 @@ Uno de los principales desafíos fue tener que crear a la mascota desde 0, puest
 **link 3** (otro referente del uso de p5js):<https://www.youtube.com/@TheCodingTrain/videos></p>
 **link 4** (referente de interactividad 2):<https://www.youtube.com/watch?v=K7b5MEhPCuo&t=251s></p>
 **link 6** (guías de teclas):<https://p5js.org/es/reference/p5/keyPressed/></p>
+**link 7** (guía del uso de Class() y Constructor()): <https://p5js.org/reference/p5/class/></p>
+**link 8** (Crear vectores): <https://p5js.org/reference/p5/createVector/></p>
 
 ## conclusiones
 
-Es difícil que al detección de objetos de IA es mucho más complicado cuando se trata de querer detectar objetos más complejos como un dibujo, a su vez, cuando queremos agregarlo a condicionales, debemos enfocarnos en mantener un mismo formato estándar para que no se corrompa o tire error. A futuro nos gustaría poder seguir jugando con el código de este proyecto, y a si, conseguir una variedad de mascotas e interacciones.
+Es difícil la detección de objetos de IA, es mucho más complicado cuando se trata de querer detectar objetos más complejos como un dibujo, a su vez, cuando queremos agregarlo a condicionales, debemos enfocarnos en mantener un mismo formato estándar para que no se corrompa o tire error. A futuro nos gustaría poder seguir jugando con el código de este proyecto, y a si, conseguir una variedad de mascotas e interacciones.
