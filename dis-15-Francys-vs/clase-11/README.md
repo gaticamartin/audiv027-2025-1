@@ -5,12 +5,10 @@ link: <https://medium.com/processing-foundation/from-simple-to-advanced-ml5-js-7
 link: <https://github.com/fiebrink1>  
 link: <https://docs.ml5js.org/#/reference/neural-network>  
 link: <https://www.youtube.com/watch?v=3MqJzMvHE3E> (ejemplo de NeuralNetwork)  
-link: <https://www.scaler.com/topics/cpp/procedural-programming/> 
-link: <https://en.wikipedia.org/wiki/Printer_Command_Language>    
-link: <https://developer.zebra.com/products/printers/zpl> 
-link: <https://www.koloronline.es/trucos-y-consejos/postscript-que-es-y-por-que-es-tan-importante/?srsltid=AfmBOooew0GSHLNOnDyltEm2wud0UEunUQoZlGVN-VXBJw7uXi0DJhcC> 
-link: <> 
-link: <> 
+link: <https://www.scaler.com/topics/cpp/procedural-programming/>   
+link: <https://en.wikipedia.org/wiki/Printer_Command_Language>      
+link: <https://developer.zebra.com/products/printers/zpl>   
+link: <https://www.koloronline.es/trucos-y-consejos/postscript-que-es-y-por-que-es-tan-importante/?srsltid=AfmBOooew0GSHLNOnDyltEm2wud0UEunUQoZlGVN-VXBJw7uXi0DJhcC>   
 
 #### Código para poder crear una línea con el mouse y el programa detecta hacia donde va (derecha, izquierda, arriba o abajo)  
 ```javascript
