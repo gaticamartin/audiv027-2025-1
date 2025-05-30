@@ -8,7 +8,7 @@ link: <https://developer.mozilla.org/en-US/>  <https://developer.mozilla.org/en-
 link: <https://www.w3schools.com/> (guía javascript)  
 link: <https://www.w3schools.com/jsref/met_document_addeventlistener.asp>  
 
-´´´´ javascript
+ ```javascript
 // https://www.w3schools.com/js/js_dates.asp
 //let fecha;
 
@@ -62,4 +62,4 @@ function pintarGris() {
 function cambiarDiametro(){
   diametro = random(10, 500);
 }
-´´´´
+```
