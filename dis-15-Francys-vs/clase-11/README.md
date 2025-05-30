@@ -5,12 +5,15 @@ link: <https://medium.com/processing-foundation/from-simple-to-advanced-ml5-js-7
 link: <https://github.com/fiebrink1>  
 link: <https://docs.ml5js.org/#/reference/neural-network>  
 link: <https://www.youtube.com/watch?v=3MqJzMvHE3E> (ejemplo de NeuralNetwork)  
+link: <https://www.scaler.com/topics/cpp/procedural-programming/> 
+link: <https://en.wikipedia.org/wiki/Printer_Command_Language>    
+link: <https://developer.zebra.com/products/printers/zpl> 
+link: <https://www.koloronline.es/trucos-y-consejos/postscript-que-es-y-por-que-es-tan-importante/?srsltid=AfmBOooew0GSHLNOnDyltEm2wud0UEunUQoZlGVN-VXBJw7uXi0DJhcC> 
 link: <> 
-link: <>  
-link: <>  
+link: <> 
 
-´´´ javascript
-
+#### Código para poder crear una línea con el mouse y el programa detecta hacia donde va (derecha, izquierda, arriba o abajo)  
+```javascript
 // Step 1: load data or create some data
 let data = [
   { x: 0.99, y: 0.02, label: "right" },
@@ -97,15 +100,41 @@ function gotResults(results) {
   label = results[0].label;
   console.log(results);
 }
-
-
-´´´
-
-
-
-
-Recordatorio: "for" es para repeteición, iteración de datos.  
-epoch = son "época", cantidad de veces que se entrena el programa (enoch = 50, se entrena 50 veces con el comando otorgado).  
+```
+*Recordatorio*: "for" es para repeteición, iteración de datos.  
+epoch = son "época", cantidad de veces que se entrena el programa (epoch = 50, se entrena 50 veces con el comando otorgado).  
 ¿Por qué se llaman bug? Los computadores eran grandes y se metió una polilla (funfact), por eso los errores computacionales se les denomina "bug".  
-debug: proceso de quitar los fallos en la consola, ejemplo afinando las épocas.
+debug: proceso de quitar los fallos en la consola, ejemplo afinando las épocas.  
+Función llamada "finishedTraining" sirve para que una vez que termine el entrenamiento continúe lo siguiente del código (paso 1: entrenar, paso 2: que aplique a algo lo entrenado)    
+![image](https://github.com/user-attachments/assets/3e2b4b6d-a3c5-44da-924c-a7f01dee8382)  
+![image](https://github.com/user-attachments/assets/7d538bbe-14b4-41ea-b5bd-ba5dde3207c4)
+![image](https://github.com/user-attachments/assets/fef6ae6e-b71a-4e73-aef8-2507a8d92646)
+
+label = es la etiqueta, en donde se escribe o muestra algo dentro.  
+classifier = clasificador, empaqueta las instrucciones almacenadas dentro del porgrama al entrenarlo (literal clasifica).  
+frontend = la página web, lo que veo.  
+backend = el servidor, lo que ocurre detrás para que la web funcione.  
+
+**let data una forma de almacenar grupos de datos, entre números y textos.**    
+
+``` javascript
+ let data = [
+  { r: 255, g: 0, b: 0, color: "red-ish" },
+  { r: 254, g: 0, b: 0, color: "red-ish" },
+  { r: 253, g: 0, b: 0, color: "red-ish" },
+  { r: 0, g: 255, b: 0, color: "green-ish" },
+  { r: 0, g: 254, b: 0, color: "green-ish" },
+  { r: 0, g: 253, b: 0, color: "green-ish" },
+  { r: 0, g: 0, b: 255, color: "blue-ish" },
+  { r: 0, g: 0, b: 254, color: "blue-ish" },
+  { r: 0, g: 0, b: 253, color: "blue-ish" },
+];
+
+  for (let i = 0; i < data.length; i++) {
+    let item = data[i];
+    let inputs = [item.r, item.g, item.b];
+```  
+
+
+
 
