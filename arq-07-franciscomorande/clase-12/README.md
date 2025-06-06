@@ -18,7 +18,7 @@ misma jugabilidad, pero se trata sobre evadir obstaculos. El juego tendra un tem
 shake ball bounce p5js
 
 
-
+https://kellylougheed.medium.com/make-your-first-game-with-p5-js-38bfb308a671
 https://stackoverflow.com/questions/50394422/adding-new-levels-to-p5-game
 https://www.youtube.com/watch?v=FZlpuQeCvlk
 https://www.youtube.com/watch?v=JHBuRkJObIg
