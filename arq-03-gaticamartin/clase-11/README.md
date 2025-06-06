@@ -20,7 +20,9 @@ al ejecutar el proyecto se revela el primer (?) pixel de una imagen (superior iz
 
 ### de vuelta con los terremotos:
 
-https://api.gael.cloud/#clima-por-codigo <- API informacion sismologiaca en formato JSON  
+https://api.gael.cloud/#clima-por-codigo <- API informacion sismologiaca en formato JSON 
+https://www.bing.com/videos/riverview/relatedvideo?q=work+p5+with+apis&mid=83CEBE7DE72312A3607B83CEBE7DE72312A3607B&FORM=VIRE
+https://www.bing.com/videos/riverview/relatedvideo?q=work+p5+with+apis&mid=240DC19264D5B2548584240DC19264D5B2548584&FORM=VIRE
 
     "Fecha": "2025-06-06 15:04:30",
     "Profundidad": "253",
@@ -198,4 +200,9 @@ Pero que no sea de Pablo Neruda jaja
       datosCargados = true;
       console.error("Error :c", err);
     }
+
+
+  ####ACOTACIONES
+
+  - falta convertir datos en lenguaje grafico
 
