@@ -5,18 +5,20 @@ El juego se plantea como en una en una fase principal de supervivencia, el jugad
 
 CONFIGURACIÓN NIVEL
 Dificultad
-Constante - Bombas
-Constante - Tiempo
-Variable - Dedos
-Variable - Mirror eje x
-Variable - Mirror eje y
-Variable - Visibilidad
-Variable - Tamaño del jugador
+* Constante - Bombas (F)
+* Constante - Tiempo (I)
+* Variable - Dedos (B)
+* Variable - Mirror eje x
+* Variable - Mirror eje y
+* Variable - Visibilidad
+* Variable - Tamaño del jugador
+* Variable - Tamaño del jugador según ditancia de cámara
+* Variable - Enemigo que te sigue
 
 FACILIDAD
-Variable - Relojes
-Variable - Objeto de puntuación
-Variable - Bonus Map
+* Variable - Relojes
+* Variable - Objeto de puntuación
+* Variable - Bonus Map
 
 LIMITACIONES
 Cuando no te toma el dedo que suecede
