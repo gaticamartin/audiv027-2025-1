@@ -5,7 +5,11 @@ link: <https://www.youtube.com/watch?v=9laAjDyy1Ac>
 link: <https://www.youtube.com/watch?v=FzKAc4ZZ5h0>  
 link: <https://www.youtube.com/watch?v=S_OEFQepSEU>  
 link: <https://www.youtube.com/watch?v=nicMAoW6u1g>  
+link: <https://www.youtube.com/watch?v=vfNHdVbE-l4>  
+link: <https://www.youtube.com/watch?v=Ba8D6pMA1p8>  
 link: <>  
+link: <>  
+
 
 
 testeo manos: <[https://editor.p5js.org/francys.vasquez/full/3atUox5PL](https://editor.p5js.org/francys.vasquez/full/3atUox5PL)>  
