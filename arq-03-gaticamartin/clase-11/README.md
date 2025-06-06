@@ -171,31 +171,31 @@ Pero que no sea de Pablo Neruda jaja
       //en el caso remoto de que no se registren sismos en las ultimas 24h
     } else {
       text(":o", width / 2, height / 2);
+        }
+      }
     }
-  }
-}
+    
+    // responde al hacer click
+    function mousePressed() {
+      if (!datosCargados && !cargando) {
+        cargando = true; // empezamos a cargar
+        let url = 'https://corsproxy.io/?https://api.gael.cloud/general/public/sismos';
+        loadJSON(url, gotData, 'json', errorCarga);
+      }
+    }
 
-// responde al hacer click
-function mousePressed() {
-  if (!datosCargados && !cargando) {
-    cargando = true; // empezamos a cargar
-    let url = 'https://corsproxy.io/?https://api.gael.cloud/general/public/sismos';
-    loadJSON(url, gotData, 'json', errorCarga);
-  }
-}
+    // API responde exitosamente
+    function gotData(data) {
+      sismos = data;
+      datosCargados = true;
+      cargando = false;
+      console.log(sismos);
+    }
 
-// API responde exitosamente
-function gotData(data) {
-  sismos = data;
-  datosCargados = true;
-  cargando = false;
-  console.log(sismos);
-}
-
-// en caso de error
-function errorCarga(err) {
-  cargando = false;
-  datosCargados = true;
-  console.error("Error :c", err);
-}
+    // en caso de error
+    function errorCarga(err) {
+      cargando = false;
+      datosCargados = true;
+      console.error("Error :c", err);
+    }
 
