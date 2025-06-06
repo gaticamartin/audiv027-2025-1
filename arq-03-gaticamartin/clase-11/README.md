@@ -33,4 +33,7 @@ Reales datos de interes:
     "Fecha": "2025-06-06 15:04:30",
     "Magnitud": "3.5",
 
+*En el centro de la pantalla podria haber un texto que explicara la relacion de la geografia de chile con los movimientos teluricos.*
+
+
    
