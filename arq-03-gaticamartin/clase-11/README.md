@@ -206,3 +206,5 @@ Pero que no sea de Pablo Neruda jaja
 
   - falta convertir datos en lenguaje grafico
 
+##AGREGAR FUNCIONES IA
+
