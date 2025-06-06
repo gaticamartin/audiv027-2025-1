@@ -18,3 +18,11 @@
 al ejecutar el proyecto se revela el primer (?) pixel de una imagen (superior izquierdo), cada vez q se clickea o se hace tap sobre la pantalla se revela un pixel aleatorio de la imagen 
 ((desarrollar)).
 
+### de vuelta con los terremotos:
+
+https://api.gael.cloud/#clima-por-codigo <- API informacion sismologiaca en formato JSON     
+    "Fecha": "2025-06-06 15:04:30",
+    "Profundidad": "253",
+    "Magnitud": "3.5",
+    "RefGeografica": "53 km al S de Socaire",
+    "FechaUpdate": "2025-06-06T15:55:01.343Z"
