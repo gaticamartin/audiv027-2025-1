@@ -47,25 +47,25 @@ Pero que no sea de Pablo Neruda jaja
 
     //En base a la base de datos API de Gael Cloud "https://api.gael.cloud/general/public/sismos"
 
-let sismos = [];
+    let sismos = [];
 
-function setup() {
-  // Lienzo en 1080p
-  createCanvas(1920,1080);
+    function setup() {
+      // Lienzo en 1080p
+      createCanvas(1920,1080);
 
-  //Investigar Bien lo siguiente: No lo entiendo.
+      //Investigar Bien lo siguiente: No lo entiendo.
   
-  // URL del proxy para evitar problemas de CORS al acceder a la API externa
-  // CORSProxy.io actúa como intermediario entre el navegador y la API real
-  let url = 'https://corsproxy.io/?https://api.gael.cloud/general/public/sismos';
+      // URL del proxy para evitar problemas de CORS al acceder a la API externa
+      // CORSProxy.io actúa como intermediario entre el navegador y la API real
+      let url = 'https://corsproxy.io/?https://api.gael.cloud/general/public/sismos';
 
-  // Cargamos el JSON desde la URL (con proxy) y especificamos qué hacer cuando cargue
-  // 'gotData' es la función que se ejecutará si carga bien
-  // 'errorCarga' se ejecuta si hay un error
-  loadJSON(url, gotData, 'json', errorCarga);
-}
+      // Cargamos el JSON desde la URL (con proxy) y especificamos qué hacer cuando cargue
+      // 'gotData' es la función que se ejecutará si carga bien
+      // 'errorCarga' se ejecuta si hay un error
+      loadJSON(url, gotData, 'json', errorCarga);
+    }
 
-// Esta función se ejecuta cuando los datos JSON se han cargado correctamente
+    // Esta función se ejecuta cuando los datos JSON se han cargado correctamente
 function gotData(data) {
   // Guardamos los datos de sismos en la variable global
   sismos = data;
