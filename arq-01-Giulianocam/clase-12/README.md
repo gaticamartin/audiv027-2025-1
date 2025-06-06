@@ -4,8 +4,7 @@
 
 ### Instrumento Musical Controlado Mediante Posiciones de la Mano
 
-##### El objetivo de este proyecto sera crear un instrumento musical capas de ser controlado completamente mediante la webcam y las manos. 
-para llevar a cabo este proyecto es necesario conseguir 1. Sonido y 2. Respueta a la gesticulacion de las manos, ambas trabajando en conjunto y sincronizadas.
+##### El objetivo de este proyecto sera crear un instrumento musical capas de ser controlado completamente mediante la webcam y las manos. para llevar a cabo este proyecto es necesario conseguir 1. Sonido y 2. Respueta a la gesticulacion de las manos, ambas trabajando en conjunto y sincronizadas.
 
 #### 1. Sonido
 
