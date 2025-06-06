@@ -123,3 +123,74 @@ Pero que no sea de Pablo Neruda jaja
    - aun hay que convertir estos datos a el lenguaje visual deseado.
    - quizas programar que los datos se muestren a partir de un click o tap en la pantalla, y antes de eso solo mostrar una determinada cita que haga referencia a la relacion de el paisaje nacional con su naturaleza sismica.
    - 
+
+    // En base a la base de datos API de Gael Cloud "https://api.gael.cloud/general/public/sismos"
+
+    let sismos = [];
+
+    function setup() {
+      // Lienzo en 1080p
+      createCanvas(1920, 1080);
+
+      //Investigar Bien lo siguiente: No lo entiendo.
+  
+      // URL del proxy para evitar problemas de CORS al acceder a la API externa
+      // corsproxy.io actúa como intermediario entre el navegador y la API real
+      let url = 'https://corsproxy.io/?https://api.gael.cloud/general/public/sismos';
+
+      // Cargamos el JSON desde la URL (con proxy)
+      loadJSON(url, gotData, 'json', errorCarga);
+    }
+
+    // Esta función se ejecuta cuando los datos JSON se han cargado correctamente
+    function gotData(data) {
+      sismos = data;
+      console.log(sismos);
+    }
+
+    // en caso de error al cargar los datos
+    function errorCarga(err) {
+      console.error("Error al cargar los sismos:", err);
+    }
+
+    // VISUALIZACION
+    function draw() {
+      background(0); // fondo negro
+
+      textSize(22);
+      fill(255); // texto blanco
+      textAlign(LEFT, TOP);
+
+      if (sismos.length > 0) {
+        // FECHA Y HORA ACTUAL
+        let ahora = new Date();
+
+        // FECHA Y HORA HACE 24H
+        let hace24Horas = new Date(ahora.getTime() - (24 * 60 * 60 * 1000));
+
+        // Iterar todos los sismos disponibles
+        for (let i = 0; i < sismos.length; i++) {
+          let sismo = sismos[i];
+
+          // Convertir la fecha del sismo (string) a objeto Date
+          let fechaSismo = new Date(sismo.Fecha);
+
+          // Filtrar solo sismos últimas 24 horas
+          if (fechaSismo > hace24Horas) {
+          // Texto en pantalla de fecha y magnitud
+          //  para agregar ubicación: - ${sismo.RefGeografica}
+          text(`${sismo.Fecha} - M${sismo.Magnitud}`, 10, 30 + i * 20);
+          }
+        }
+
+        // mensaje en el caso de que no se hayan registrado sismos en las ultimas 24h
+        if (yOffset === 30) {
+          text(":c", 10, yOffset);
+        }
+
+      } else {
+        // MENSAJE DE CARGA
+        text("Siguiendo las vibraciones en la tierra...", 100, 100);
+    
+      }
+    }
