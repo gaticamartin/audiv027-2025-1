@@ -124,26 +124,26 @@ Pero que no sea de Pablo Neruda jaja
    - quizas programar que los datos se muestren a partir de un click o tap en la pantalla, y antes de eso solo mostrar una determinada cita que haga referencia a la relacion de el paisaje nacional con su naturaleza sismica.
    - 
 
-// En base a la base de datos API de Gael Cloud "https://api.gael.cloud/general/public/sismos"
+    // En base a la base de datos API de Gael Cloud "https://api.gael.cloud/general/public/sismos"
 
-function draw() {
-  background(0); // fondo negro
+    function draw() {
+      background(0); // fondo negro
 
-  // Si aún no se ha hecho click
-  if (!datosCargados && !cargando) {
-    text("Otra vez, otra vez el caballo iracundo patea el planeta\n" +
-              "y escoge la patria delgada, la orilla del páramo andino,\n" +
-              "la tierra que dio en su angostura la uva celeste y el cobre absoluto,\n" +
-              "otra vez...\n" +
-              "...y padece otra vez el espanto y la grieta.", width / 2, height / 2);
-    return;
-  }
+      // Si aún no se ha hecho click
+      if (!datosCargados && !cargando) {
+        text("Otra vez, otra vez el caballo iracundo patea el planeta\n" +
+                  "y escoge la patria delgada, la orilla del páramo andino,\n" +
+                  "la tierra que dio en su angostura la uva celeste y el cobre absoluto,\n" +
+                  "otra vez...\n" +
+                  "...y padece otra vez el espanto y la grieta.", width / 2, height / 2);
+        return;
+      }
 
-  // Si está cargando datos
-  if (cargando) {
-    text("Cargando datos sísmicos...", width / 2, height / 2);
-    return;
-  }
+      // Si está cargando datos
+      if (cargando) {
+        text("Cargando datos sísmicos...", width / 2, height / 2);
+        return;
+      }
 
   // Si los datos ya están cargados y listos
   if (sismos.length > 0) {
