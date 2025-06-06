@@ -126,66 +126,76 @@ Pero que no sea de Pablo Neruda jaja
 
 // En base a la base de datos API de Gael Cloud "https://api.gael.cloud/general/public/sismos"
 
-let sismos = [];
-
-function setup() {
-  createCanvas(1920, 1080);
-
-  // URL con proxy para evitar CORS
-  let url = 'https://corsproxy.io/?https://api.gael.cloud/general/public/sismos';
-  loadJSON(url, gotData, 'json', errorCarga);
-}
-
-function gotData(data) {
-  sismos = data;
-  console.log(sismos);
-}
-
-function errorCarga(err) {
-  console.error("Error al cargar los sismos:", err);
-}
-
 function draw() {
   background(0); // fondo negro
-  textSize(22);
-  fill(255);     // texto blanco
-  textAlign(CENTER, TOP); // texto centrado horizontalmente
 
+  // Si aún no se ha hecho click
+  if (!datosCargados && !cargando) {
+    text("Otra vez, otra vez el caballo iracundo patea el planeta\n" +
+              "y escoge la patria delgada, la orilla del páramo andino,\n" +
+              "la tierra que dio en su angostura la uva celeste y el cobre absoluto,\n" +
+              "otra vez...\n" +
+              "...y padece otra vez el espanto y la grieta.", width / 2, height / 2);
+    return;
+  }
+
+  // Si está cargando datos
+  if (cargando) {
+    text("Cargando datos sísmicos...", width / 2, height / 2);
+    return;
+  }
+
+  // Si los datos ya están cargados y listos
   if (sismos.length > 0) {
     let ahora = new Date();
     let hace24Horas = new Date(ahora.getTime() - (24 * 60 * 60 * 1000));
 
-    // sismos de las últimas 24 horas
-    let recientes = [];
-    for (let i = 0; i < sismos.length; i++) {
-      let fechaSismo = new Date(sismos[i].Fecha);
-      if (fechaSismo > hace24Horas) {
-        recientes.push(sismos[i]);
-      }
-    }
+    // Filtrar sismos de las últimas 24 horas
+    let recientes = sismos.filter(sismo => {
+      let fecha = new Date(sismo.Fecha);
+      return fecha > hace24Horas;
+    });
 
-    // Cálculo del alto total del bloque de texto
-    let lineaAltura = 30; // altura entre líneas
+    let lineaAltura = 30;
     let bloqueAltura = recientes.length * lineaAltura;
-
-    // Posición Y inicial para centrar verticalmente el bloque
     let startY = (height - bloqueAltura) / 2;
 
-    // Si hay sismos, los mostramos centrados
     if (recientes.length > 0) {
       for (let i = 0; i < recientes.length; i++) {
         let sismo = recientes[i];
+      // Texto en pantalla de fecha y magnitud
+      //  para agregar ubicación: - ${sismo.RefGeografica}
         let texto = `${sismo.Fecha} - M${sismo.Magnitud}`;
-        text(texto, width / 2, startY + i * lineaAltura);
+        text(texto, width / 2, startY + i * lineaAltura); //texto centrado
       }
+      //en el caso remoto de que no se registren sismos en las ultimas 24h
     } else {
-      // Si no hay sismos en las últimas 24 horas
-      text(":c", width / 2, height / 2);
+      text(":o", width / 2, height / 2);
     }
-
-  } else {
-    // Texto mientras carga
-    text("Siguiendo las vibraciones en la tierra...", width / 2, height / 2);
   }
+}
+
+// responde al hacer click
+function mousePressed() {
+  if (!datosCargados && !cargando) {
+    cargando = true; // empezamos a cargar
+    let url = 'https://corsproxy.io/?https://api.gael.cloud/general/public/sismos';
+    loadJSON(url, gotData, 'json', errorCarga);
+  }
+}
+
+// API responde exitosamente
+function gotData(data) {
+  sismos = data;
+  datosCargados = true;
+  cargando = false;
+  console.log(sismos);
+}
+
+// en caso de error
+function errorCarga(err) {
+  cargando = false;
+  datosCargados = true;
+  console.error("Error :c", err);
 }
 
