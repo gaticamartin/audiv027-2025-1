@@ -8,5 +8,6 @@ link: <https://www.youtube.com/watch?v=nicMAoW6u1g>
 link: <>  
 
 
-testeo manos: <https://editor.p5js.org/francys.vasquez/full/3atUox5PL>
+testeo manos: <https://editor.p5js.org/francys.vasquez/full/3atUox5PL>  
+manos original: <https://editor.p5js.org/francys.vasquez/full/B46IxElXG>
 
