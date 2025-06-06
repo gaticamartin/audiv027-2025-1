@@ -124,73 +124,68 @@ Pero que no sea de Pablo Neruda jaja
    - quizas programar que los datos se muestren a partir de un click o tap en la pantalla, y antes de eso solo mostrar una determinada cita que haga referencia a la relacion de el paisaje nacional con su naturaleza sismica.
    - 
 
-    // En base a la base de datos API de Gael Cloud "https://api.gael.cloud/general/public/sismos"
+// En base a la base de datos API de Gael Cloud "https://api.gael.cloud/general/public/sismos"
 
-    let sismos = [];
+let sismos = [];
 
-    function setup() {
-      // Lienzo en 1080p
-      createCanvas(1920, 1080);
+function setup() {
+  createCanvas(1920, 1080);
 
-      //Investigar Bien lo siguiente: No lo entiendo.
-  
-      // URL del proxy para evitar problemas de CORS al acceder a la API externa
-      // corsproxy.io actúa como intermediario entre el navegador y la API real
-      let url = 'https://corsproxy.io/?https://api.gael.cloud/general/public/sismos';
+  // URL con proxy para evitar CORS
+  let url = 'https://corsproxy.io/?https://api.gael.cloud/general/public/sismos';
+  loadJSON(url, gotData, 'json', errorCarga);
+}
 
-      // Cargamos el JSON desde la URL (con proxy)
-      loadJSON(url, gotData, 'json', errorCarga);
-    }
+function gotData(data) {
+  sismos = data;
+  console.log(sismos);
+}
 
-    // Esta función se ejecuta cuando los datos JSON se han cargado correctamente
-    function gotData(data) {
-      sismos = data;
-      console.log(sismos);
-    }
+function errorCarga(err) {
+  console.error("Error al cargar los sismos:", err);
+}
 
-    // en caso de error al cargar los datos
-    function errorCarga(err) {
-      console.error("Error al cargar los sismos:", err);
-    }
+function draw() {
+  background(0); // fondo negro
+  textSize(22);
+  fill(255);     // texto blanco
+  textAlign(CENTER, TOP); // texto centrado horizontalmente
 
-    // VISUALIZACION
-    function draw() {
-      background(0); // fondo negro
+  if (sismos.length > 0) {
+    let ahora = new Date();
+    let hace24Horas = new Date(ahora.getTime() - (24 * 60 * 60 * 1000));
 
-      textSize(22);
-      fill(255); // texto blanco
-      textAlign(LEFT, TOP);
-
-      if (sismos.length > 0) {
-        // FECHA Y HORA ACTUAL
-        let ahora = new Date();
-
-        // FECHA Y HORA HACE 24H
-        let hace24Horas = new Date(ahora.getTime() - (24 * 60 * 60 * 1000));
-
-        // Iterar todos los sismos disponibles
-        for (let i = 0; i < sismos.length; i++) {
-          let sismo = sismos[i];
-
-          // Convertir la fecha del sismo (string) a objeto Date
-          let fechaSismo = new Date(sismo.Fecha);
-
-          // Filtrar solo sismos últimas 24 horas
-          if (fechaSismo > hace24Horas) {
-          // Texto en pantalla de fecha y magnitud
-          //  para agregar ubicación: - ${sismo.RefGeografica}
-          text(`${sismo.Fecha} - M${sismo.Magnitud}`, 10, 30 + i * 20);
-          }
-        }
-
-        // mensaje en el caso de que no se hayan registrado sismos en las ultimas 24h
-        if (yOffset === 30) {
-          text(":c", 10, yOffset);
-        }
-
-      } else {
-        // MENSAJE DE CARGA
-        text("Siguiendo las vibraciones en la tierra...", 100, 100);
-    
+    // sismos de las últimas 24 horas
+    let recientes = [];
+    for (let i = 0; i < sismos.length; i++) {
+      let fechaSismo = new Date(sismos[i].Fecha);
+      if (fechaSismo > hace24Horas) {
+        recientes.push(sismos[i]);
       }
     }
+
+    // Cálculo del alto total del bloque de texto
+    let lineaAltura = 30; // altura entre líneas
+    let bloqueAltura = recientes.length * lineaAltura;
+
+    // Posición Y inicial para centrar verticalmente el bloque
+    let startY = (height - bloqueAltura) / 2;
+
+    // Si hay sismos, los mostramos centrados
+    if (recientes.length > 0) {
+      for (let i = 0; i < recientes.length; i++) {
+        let sismo = recientes[i];
+        let texto = `${sismo.Fecha} - M${sismo.Magnitud}`;
+        text(texto, width / 2, startY + i * lineaAltura);
+      }
+    } else {
+      // Si no hay sismos en las últimas 24 horas
+      text(":c", width / 2, height / 2);
+    }
+
+  } else {
+    // Texto mientras carga
+    text("Siguiendo las vibraciones en la tierra...", width / 2, height / 2);
+  }
+}
+
