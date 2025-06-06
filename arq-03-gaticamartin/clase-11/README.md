@@ -35,11 +35,11 @@ Reales datos de interes:
 
 En el centro de la pantalla podria haber un texto que explicara la relacion de la geografia de chile con los movimientos teluricos como:
 
-    *Otra vez, otra vez el caballo iracundo patea el planeta*
-     *y escoge la patria delgada, la orilla del páramo andino,*
-     *la tierra que dio en su angostura la uva celeste y el cobre absoluto,*
-     *otra vez, otra vez la herradura en el rostro*
-     *de la pobre familia que nace y padece otra vez el espanto y la grieta.*
+*Otra vez, otra vez el caballo iracundo patea el planeta
+y escoge la patria delgada, la orilla del páramo andino,
+la tierra que dio en su angostura la uva celeste y el cobre absoluto,
+otra vez, otra vez la herradura en el rostro
+de la pobre familia que nace y padece otra vez el espanto y la grieta.*
 
 Pero que no sea de Pablo Neruda jaja
 
