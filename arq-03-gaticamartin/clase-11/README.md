@@ -27,3 +27,10 @@ https://api.gael.cloud/#clima-por-codigo <- API informacion sismologiaca en form
     "Magnitud": "3.5",
     "RefGeografica": "53 km al S de Socaire",
     "FechaUpdate": "2025-06-06T15:55:01.343Z"
+
+Reales datos de interes:
+
+    "Fecha": "2025-06-06 15:04:30",
+    "Magnitud": "3.5",
+
+   
