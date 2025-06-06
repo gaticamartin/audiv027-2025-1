@@ -43,4 +43,75 @@ de la pobre familia que nace y padece otra vez el espanto y la grieta.*
 
 Pero que no sea de Pablo Neruda jaja
 
+### primer intento codigo
+
+    //En base a la base de datos API de Gael Cloud "https://api.gael.cloud/general/public/sismos"
+
+let sismos = [];
+
+function setup() {
+  // Lienzo en 1080p
+  createCanvas(1920,1080);
+
+  //Investigar Bien lo siguiente: No lo entiendo.
+  
+  // URL del proxy para evitar problemas de CORS al acceder a la API externa
+  // CORSProxy.io actúa como intermediario entre el navegador y la API real
+  let url = 'https://corsproxy.io/?https://api.gael.cloud/general/public/sismos';
+
+  // Cargamos el JSON desde la URL (con proxy) y especificamos qué hacer cuando cargue
+  // 'gotData' es la función que se ejecutará si carga bien
+  // 'errorCarga' se ejecuta si hay un error
+  loadJSON(url, gotData, 'json', errorCarga);
+}
+
+// Esta función se ejecuta cuando los datos JSON se han cargado correctamente
+function gotData(data) {
+  // Guardamos los datos de sismos en la variable global
+  sismos = data;
+  // Mostramos los datos en la consola del navegador para inspeccionarlos
+  console.log(sismos);
+}
+
+// si ocurre un error al cargar los datos
+function errorCarga(err) {
+  // Mostramos el error en la consola para diagnóstico
+  console.error("Error al cargar los sismos:", err);
+}
+
+// Visualizacion
+
+function draw() {
+  // color Lienzo
+  background(0); //negro(?)
+
+  // estilo texto
+  textSize(22);
+  fill(255); //blanco(?)
+  textAlign(LEFT, TOP);
+
+  // Verificar si ya se han cargado los datos de sismos
+  if (sismos.length > 0) {
+    // Iterar primeros 10 sismos para mostrarlos 
+    for (let i = 0; i < sismos.length; i++) {
+      let sismo = sismos[i]; // Obtenemos el sismo actual
+
+ //Seleccion de datos     
+      
+      // Texto en pantalla de fecha y magnitud
+      //  para agregar ubicación: - ${sismo.RefGeografica}
+      text(`${sismo.Fecha} - M${sismo.Magnitud}`, 10, 30 + i * 20);
+      
+
+      // Limitar la cantidad de sismos, en este caso hasta 10
+      if (i > 10) break;
+    }
+  } else {
+    // Mensaje de carga, PENSAR UNO MEJOR.
+    text("Siguiendo las vibraciones en la tierra...", 10, 10);
+      // estilo texto
+  
+  }
+}
+
    
