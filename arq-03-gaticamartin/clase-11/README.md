@@ -66,52 +66,52 @@ Pero que no sea de Pablo Neruda jaja
     }
 
     // Esta función se ejecuta cuando los datos JSON se han cargado correctamente
-function gotData(data) {
-  // Guardamos los datos de sismos en la variable global
-  sismos = data;
-  // Mostramos los datos en la consola del navegador para inspeccionarlos
-  console.log(sismos);
-}
-
-// si ocurre un error al cargar los datos
-function errorCarga(err) {
-  // Mostramos el error en la consola para diagnóstico
-  console.error("Error al cargar los sismos:", err);
-}
-
-// Visualizacion
-
-function draw() {
-  // color Lienzo
-  background(0); //negro(?)
-
-  // estilo texto
-  textSize(22);
-  fill(255); //blanco(?)
-  textAlign(LEFT, TOP);
-
-  // Verificar si ya se han cargado los datos de sismos
-  if (sismos.length > 0) {
-    // Iterar primeros 10 sismos para mostrarlos 
-    for (let i = 0; i < sismos.length; i++) {
-      let sismo = sismos[i]; // Obtenemos el sismo actual
-
- //Seleccion de datos     
-      
-      // Texto en pantalla de fecha y magnitud
-      //  para agregar ubicación: - ${sismo.RefGeografica}
-      text(`${sismo.Fecha} - M${sismo.Magnitud}`, 10, 30 + i * 20);
-      
-
-      // Limitar la cantidad de sismos, en este caso hasta 10
-      if (i > 10) break;
+    function gotData(data) {
+      // Guardamos los datos de sismos en la variable global
+      sismos = data;
+      // Mostramos los datos en la consola del navegador para inspeccionarlos
+      console.log(sismos);
     }
-  } else {
-    // Mensaje de carga, PENSAR UNO MEJOR.
-    text("Siguiendo las vibraciones en la tierra...", 10, 10);
-      // estilo texto
+
+    // si ocurre un error al cargar los datos
+    function errorCarga(err) {
+      // Mostramos el error en la consola para diagnóstico
+      console.error("Error al cargar los sismos:", err);
+    }
+
+     // Visualizacion
+
+    function draw() {
+      // color Lienzo
+      background(0); //negro(?)
+
+       // estilo texto
+      textSize(22);
+      fill(255); //blanco(?)
+      textAlign(LEFT, TOP);
+
+      // Verificar si ya se han cargado los datos de sismos
+      if (sismos.length > 0) {
+        // Iterar primeros 10 sismos para mostrarlos 
+        for (let i = 0; i < sismos.length; i++) {
+          let sismo = sismos[i]; // Obtenemos el sismo actual
+
+     //Seleccion de datos     
+      
+          // Texto en pantalla de fecha y magnitud
+          //  para agregar ubicación: - ${sismo.RefGeografica}
+          text(`${sismo.Fecha} - M${sismo.Magnitud}`, 10, 30 + i * 20);
+      
+
+          // Limitar la cantidad de sismos, en este caso hasta 10
+          if (i > 10) break;
+        }
+      } else {
+        // Mensaje de carga, PENSAR UNO MEJOR.
+        text("Siguiendo las vibraciones en la tierra...", 10, 10);
+          // estilo texto
   
-  }
-}
+      }
+    }
 
    
