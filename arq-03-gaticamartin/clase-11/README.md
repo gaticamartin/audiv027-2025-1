@@ -145,10 +145,10 @@ Pero que no sea de Pablo Neruda jaja
         return;
       }
 
-  // Si los datos ya están cargados y listos
-  if (sismos.length > 0) {
-    let ahora = new Date();
-    let hace24Horas = new Date(ahora.getTime() - (24 * 60 * 60 * 1000));
+      // Si los datos ya están cargados y listos
+      if (sismos.length > 0) {
+        let ahora = new Date();
+        let hace24Horas = new Date(ahora.getTime() - (24 * 60 * 60 * 1000));
 
     // Filtrar sismos de las últimas 24 horas
     let recientes = sismos.filter(sismo => {
