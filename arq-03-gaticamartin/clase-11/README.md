@@ -20,7 +20,8 @@ al ejecutar el proyecto se revela el primer (?) pixel de una imagen (superior iz
 
 ### de vuelta con los terremotos:
 
-https://api.gael.cloud/#clima-por-codigo <- API informacion sismologiaca en formato JSON     
+https://api.gael.cloud/#clima-por-codigo <- API informacion sismologiaca en formato JSON  
+
     "Fecha": "2025-06-06 15:04:30",
     "Profundidad": "253",
     "Magnitud": "3.5",
