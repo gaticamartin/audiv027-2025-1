@@ -114,4 +114,11 @@ Pero que no sea de Pablo Neruda jaja
       }
     }
 
-   
+   #### ACOTACIONES
+
+   - en este codigo ya se reproducen los datos de interes y se solucionaron posibles problemas de proxy
+   - aun hay que convertir estos datos a el lenguaje visual deseado.
+   - falta agregar a la definicion la nocion de hora y fecha actual para generar la relacion entre el tiempo transcurrido y la fecha/hora de el sismo
+   - centrar los textos
+   - quizas programar que los datos se muestren a partir de un click o tap en la pantalla, y antes de eso solo mostrar una determinada cita que haga referencia a la relacion de el paisaje nacional con su naturaleza sismica.
+   - 
