@@ -1,6 +1,6 @@
 # clase-13
 
-# BItácora trabajo número 2
+# Bitácora trabajo número 2
 
 Nuestro trabajo número 1 constaba de realizar un filtro de accesorios que cambiaba al momento de mirar la pantalla y pestañear,
 donde diseñamos y creamos los accesorios con un diseño temático, utilizando vectores y posicionado los accesorios con medidas para que se vea "realista".
