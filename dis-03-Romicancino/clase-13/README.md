@@ -33,7 +33,7 @@ la versión de p5 que vamos a ocupar es la 1.11.7
 
 ------------------------------------------------
 
-en la imágen se logra hacer el botón con la cámara dentro del canvas, y se le aplica un degradado al momento de apretar el botón o sacar la foto 
+en la imagen se logra hacer el botón con la cámara dentro del canvas, y se le aplica un degradado al momento de apretar el botón o sacar la foto 
 ![image](https://github.com/user-attachments/assets/3999d886-4423-42c0-95dd-57c4a278485b)
 cambio de color del botón
 ![image](https://github.com/user-attachments/assets/8e32b381-0b98-438f-8ab3-706cf6eefb50)
