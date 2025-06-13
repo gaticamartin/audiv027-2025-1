@@ -6,14 +6,14 @@ El juego se plantea como en una en una fase principal de supervivencia, el jugad
 CONFIGURACIÓN NIVEL
 
 Dificultad
-* Constante - Bombas (F)
-* Constante - Tiempo (I)
-* Variable - Dedos (B)
+* Constante - Bombas (Fran)
+* Constante - Tiempo (Ignacia)
+* Variable - Dedos (Benja)
 * Variable - Mirror eje x
 * Variable - Mirror eje y
 * Variable - Visibilidad
 * Variable - Tamaño del jugador
-* Variable - Tamaño del jugador según ditancia de cámara
+* Variable - Tamaño del jugador según distancia de cámara
 * Variable - Enemigo que te sigue
 
 FACILIDAD
