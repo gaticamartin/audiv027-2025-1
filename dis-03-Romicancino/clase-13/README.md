@@ -22,7 +22,7 @@ botón:  *revisar si se requieren permisos* ---> no se piden permisos por el mom
 2.- que se guarde  en el formato png --> se puede elegir entre png y jpg según el codigo, pero se guardará en png.
 3.- que se combine con el código y funcione. 
 
-marco: marco que cambia de colores o estilo, siguiendo la temática (colores, brillos, etc) creado por nosotras en ilustrator o photoshop. 
+marco: marco que cambia de colores o estilo, siguiendo la temática (colores, brillos que se agrandan y achican , etc) creado por nosotras en ilustrator o photoshop. 
 1- verificar si el marco se hará en Photoshop o adobe ilustrator en formato gif.
 2- realizar un gif del marco que esté en cosntante movimiento o imágenes estáticas en caso de que no funcione 
 3- verificar que el formato sea compatible con p5 
