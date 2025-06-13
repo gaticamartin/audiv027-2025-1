@@ -29,6 +29,8 @@ marco: marco que cambia de colores o estilo, siguiendo la temática (colores, br
 
 combinar el marco, el botón y los filtros para que se guarde la imagen como corresponda (etapa final).
 
+la versión de p5 que vamos a ocupar es la 1.11.7
+
 ------------------------------------------------
 
 en la imágen se logra hacer el botón con la cámara dentro del canvas, y se le aplica un degradado al momento de apretar el botón o sacar la foto 
