@@ -34,12 +34,16 @@ la versión de p5 que vamos a ocupar es la 1.11.7
 ------------------------------------------------
 
 en la imágen se logra hacer el botón con la cámara dentro del canvas, y se le aplica un degradado al momento de apretar el botón o sacar la foto 
-![image](https://github.com/user-attachments/assets/044f68f3-21ff-40e0-9ca0-beb50fbf5c99)
+![image](https://github.com/user-attachments/assets/3999d886-4423-42c0-95dd-57c4a278485b)
 cambio de color del botón
-![image](https://github.com/user-attachments/assets/9d0ba781-b6ca-4b45-b543-a2a11b8a1e4c)
+![image](https://github.com/user-attachments/assets/8e32b381-0b98-438f-8ab3-706cf6eefb50)
 
 Código del botón con fondo plano 
 https://editor.p5js.org/Romicancino/sketches/A1fnXUtzD 
+
+evidencia de que si se guarda la imagen 
+![image](https://github.com/user-attachments/assets/a2be0230-aebf-4706-b60b-5703a0757a66)
+
 
 
 
