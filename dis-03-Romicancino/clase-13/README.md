@@ -17,9 +17,9 @@ Entonces para resumir, nuestro proyecto 2 convertirá "Barbie world" en una expe
 
 indicaciones: si no se pestañea no se cambia el filtro, si parpadeo *n* cantidad de veces se da la vuelta completa, el ciclo será el mismo, no se van a relaizar cambios.
 
-botón:  *revisar si se requieren permisos*
-1- que se guarde en el computador.
-2.- que se guarde  en el formato png
+botón:  *revisar si se requieren permisos* ---> no se piden permisos por el momento 
+1- que se guarde en el computador. 
+2.- que se guarde  en el formato png --> se puede elegir entre png y jpg según el codigo, pero se guardará en png.
 3.- que se combine con el código y funcione. 
 
 marco: marco que cambia de colores o estilo, siguiendo la temática (colores, brillos, etc) creado por nosotras en ilustrator o photoshop. 
@@ -28,6 +28,18 @@ marco: marco que cambia de colores o estilo, siguiendo la temática (colores, br
 3- verificar que el formato sea compatible con p5 
 
 combinar el marco, el botón y los filtros para que se guarde la imagen como corresponda (etapa final).
+
+------------------------------------------------
+
+en la imágen se logra hacer el botón con la cámara dentro del canvas, y se le aplica un degradado al momento de apretar el botón o sacar la foto 
+![image](https://github.com/user-attachments/assets/044f68f3-21ff-40e0-9ca0-beb50fbf5c99)
+cambio de color del botón
+![image](https://github.com/user-attachments/assets/9d0ba781-b6ca-4b45-b543-a2a11b8a1e4c)
+
+Código del botón con fondo plano 
+https://editor.p5js.org/Romicancino/sketches/A1fnXUtzD 
+
+
 
 
 
