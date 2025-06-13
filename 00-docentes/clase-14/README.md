@@ -47,28 +47,30 @@ la pauta es:
 mi equipo de trabajo es <https://github.com/NOMBRE> y <https://github.com/NOMBRE>, entregamos en el repositorio en este enlace <https://github.com/ETC>.
 ```
 
-<!-- día de entrega y presentaciones del proyecto-02
+día de entrega y presentaciones del proyecto-02
 
 ## horario
 
-* 03:00pm - 03:20pm: montaje
-* 03:20pm - 03:40pm: presentación de grupo01
-* 03:40pm - 04:00pm: presentación de grupo02
-* 04:00pm - 04:20pm: presentación de grupo03
-* 04:20pm - 04:40pm: presentación de grupo04
-* 04:40pm - 05:00pm: pausa
-* 05:00pm - 05:30pm: presentación de grupo05
-* 05:30pm - 05:50pm: presentación de grupo06
-* 05:50pm - 06:10pm: presentación de grupo07
-* 06:10pm - 06:30pm: presentación de grupo08
+- 03:00pm - 03:20pm: presentación de grupo01
+- 03:20pm - 03:40pm: presentación de grupo02
+- 03:40pm - 04:00pm: presentación de grupo03
+- 04:00pm - 04:20pm: presentación de grupo04
+- 04:20pm - 04:40pm: presentación de grupo05
+- 04:40pm - 05:00pm: presentación de grupo06
+- 05:00pm - 05:20pm: presentación de grupo07
+- 05:20pm - 05:40pm: presentación de grupo08
+- 05:40pm - 06:00pm: presentación de grupo09
 
 ## grupos
 
-1. Giulianocam gaticamartin Jacob-Gidi
-2. BenjaminGonzalezFAU franciscomorande  IgnaciaUch
-3. PatoMerino nachofau fuhua486
-4. ValentinaAbarcia annibustamante erleafuentealba
+ANTES
+
+1. VicentilloTF Francys-vs
+2. GabooDesign feff-y benjaminrivasm
+3. RafaFerrary antoniapozo
+4. PatoMerino nachofau fuhua486
 5. Romicancino joo08
-6. GabooDesign feff-y benjaminrivasm
-7. VicentilloTF Francys-vs
-8. RafaFerrary antoniapozo -->
+6. Jacob-Gidi
+7. ValentinaAbarcia annibustamante erleafuentealba
+8. BenjaminGonzalezFAU franciscomorande  IgnaciaUch
+9. Giulianocam gaticamartin
