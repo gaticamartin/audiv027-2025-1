@@ -279,3 +279,30 @@ function keyPressed() {
       break;
   }
 }
+
+# Linea de color
+
+function setup() {
+  // Crea el lienzo
+  createCanvas(710, 400);
+
+  // Establecer el fondo en negro
+  background(0);
+
+  // Establecer el ancho de las líneas
+  strokeWeight(10);
+
+  // Establezca el modo de color en tono-saturación-brillo (HSB)
+  colorMode(HSB);
+
+  // Establecer una descripción accesible para el lector de pantalla
+  describe('A blank canvas where the user draws by dragging the mouse');
+}
+
+function mouseDragged() {
+  // Establezca el color según la posición del mouse y dibuje una línea
+  // desde la posición anterior a la posición actual
+  let lineHue = mouseX - mouseY;
+  stroke(lineHue, 90, 90);
+  line(pmouseX, pmouseY, mouseX, mouseY);
+}
