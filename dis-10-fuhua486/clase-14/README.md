@@ -770,3 +770,11 @@ Nos basamos en el código de [The Coding Train](https://editor.p5js.org/codingtr
 Fuentes de información sobre Lengua de Señas Chilena usada en nuestro proyecto: https://www.biobiochile.cl/noticias/servicios/toma-nota/2024/09/24/12-palabras-en-lengua-de-senas-chilena-que-deberias-aprender-te-sabes-alguna.shtml
 
 ## Conclusión
+
+Comparado con el modelo de imagen de Teachable Machine utilizado en el proyecto TeachSeñas, el modelo de HandPose Skeletal Connections y NeuralNetwork Train and Save que hemos utilizado esta vez tiene una detección mucho más precisa. Ya no se ve afectado por factores como el color, el tamaño o el fondo, sino que detecta con precisión la mano.
+
+Este proyecto solo seleccionó cinco letras del lenguaje de señas (A, B, C, D, E) para la prueba. En el futuro, según el desarrollo del proyecto y las necesidades, se pueden agregar más letras (solamente necesita copiar y modificar parte del código según los requisitos de la letra).
+
+Al principio, el proyecto también tenía un plan para mostrar las letras detectadas en un cuadro de texto y formar gradualmente una oración, pero debido a dificultades técnicas y limitaciones de tiempo, finalmente no se pudo implementar.Pero basándonos en este proyecto, pudimos comprender mejor qué partes del código pueden modificarse según nuestras necesidades, y empezar a ver la programación como una herramienta conveniente más que una lenguaje compleja.
+
+Muchas gracias!!!
