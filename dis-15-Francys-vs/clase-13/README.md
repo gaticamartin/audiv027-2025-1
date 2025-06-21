@@ -1,5 +1,8 @@
 # clase-13
 
+### Juego: Mucha Lucha  
+El juego consiste en que el jugador podrá simular ser un peleador profesional, en el que mediante la detección de movimiento de brazos, el jugador podrá pelear con un muñeco de práctica, el objetivo será dar la mayor cantidad de golpes durante un tiempo en específico, cuando el temporizador se acabe, el juego termina y muestra el puntaje obtenido, este se irá clasificando del más alto al más bajo.  
+
 link: <https://www.youtube.com/watch?v=T99fNXTUUaQ> (detección de cuerpo)  
 link: <https://docs.ml5js.org/#/reference/bodypose> (bodypose ml5js)  
 link: <https://www.youtube.com/watch?v=bPD8lL0hiLs> (detección cuerpo e interacción con cosas, aplica la física)
@@ -153,3 +156,7 @@ function draw() {
   
 }
 ```
+En base a la creación de gif, crearemos animación de personaje para: posición de comienzo, golpe brazo izquierdo, golpe brazo derecho y una pose de victoria. El gif se realizó mediante un diseño vectorizado, comenzamos la prueba de testeo de detección de movimiento de persona + animación del personaje.  
+![ezgif-86bd6767c25bad](https://github.com/user-attachments/assets/4ed7df50-9233-483d-818e-cdcba16c229e)  
+
+
