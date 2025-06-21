@@ -3,7 +3,7 @@
 ### Juego: Mucha Lucha  
 El juego consiste en que el jugador podrá simular ser un peleador profesional, en el que mediante la detección de movimiento de brazos, el jugador podrá pelear con un muñeco de práctica, el objetivo será dar la mayor cantidad de golpes durante un tiempo en específico, cuando el temporizador se acabe, el juego termina y muestra el puntaje obtenido, este se irá clasificando del más alto al más bajo.  
 
-link: <https://www.youtube.com/watch?v=T99fNXTUUaQ> (detección de cuerpo)  
+link: <https://www.youtube.com/watch?v=T99fNXTUUaQ> (detección de cuerpo)  <https://www.youtube.com/watch?v=T99fNXTUUaQ>  
 link: <https://docs.ml5js.org/#/reference/bodypose> (bodypose ml5js)  
 link: <https://www.youtube.com/watch?v=bPD8lL0hiLs> (detección cuerpo e interacción con cosas, aplica la física)
 
@@ -158,5 +158,98 @@ function draw() {
 ```
 En base a la creación de gif, crearemos animación de personaje para: posición de comienzo, golpe brazo izquierdo, golpe brazo derecho y una pose de victoria. El gif se realizó mediante un diseño vectorizado, comenzamos la prueba de testeo de detección de movimiento de persona + animación del personaje.  
 ![ezgif-86bd6767c25bad](https://github.com/user-attachments/assets/4ed7df50-9233-483d-818e-cdcba16c229e)  
+
+Se realizó un nuevo arreglo sobre la detección entre cuerpo y acción, en este caso, se hizo un cambio en el que debe aparecer un texto sobre la acción correspondiente los cuales son: "golpe izquierdo", "golpe derecho" y "quieto", sin embargo, existen problema para detectar la acción de estar quieto puesto que se confunde con movimiento de brazos aunque estén arriba o abajo.  
+
+``` javascript
+let video; //carga el video
+
+let bodyPose; //lectura de cuerpo completo
+
+let poses = []; //será el array para trabajar con ciertas partes en específico del cuerpo humano.
+
+let personaje; //aqui irá el peleador, la animacion sera un gif.
+
+let gifgolpeder;
+let leftWrist;
+let rightWrist;
+let leftShoulder;
+let rightShoulder;
+
+function preload() {
+  bodyPose = ml5.bodyPose("MoveNet", {flipped: true});
+  gifgolpeder = loadImage("golpeder.gif");  
+}
+
+function gotPoses(results) { 
+  poses = results;
+
+} 
+
+function setup() {
+  createCanvas(600, 400);
+  video = createCapture(VIDEO, {flipped: true});
+  video.hide();
+  
+  bodyPose.detectStart(video, gotPoses);
+//  connections = bodyPose.getSkeleton();
+//  console.log(connections);
+  personaje = new Personaje();
+}
+
+function draw() {
+  image(video, 0, 0);
+  if (poses.length > 0) {
+    let pose = poses[0];
+
+    leftWrist = pose.left_wrist;
+    rightWrist = pose.right_wrist;
+
+    leftShoulder = pose.left_shoulder;
+    rightShoulder = pose.right_shoulder;
+  
+    if (leftWrist.y < leftShoulder.y - 20) {
+      personaje.golpearIzquierda();
+     }
+  
+    if (rightWrist.y < rightShoulder.y - 20) {
+      personaje.golpearDerecha();
+    }
+    
+    personaje.mostrar();
+ }
+}
+
+class Personaje { //aqui será la creación del personaje y sus estados.
+  constructor() {
+    this.estado = 'quieto';
+  }
+
+  golpearIzquierda() {
+    this.estado = 'golpeIzquierda';
+  }
+
+  golpearDerecha() {
+    this.estado = 'golpeDerecha';
+  }
+  mostrar() {
+   fill(0,255,0);
+   textSize(32);
+   textAlign(CENTER, CENTER);
+    if (this.estado === 'quieto') {
+      text('está quieto', width/2, height/2);
+      //aqui va el sprite del personaje quieto
+    } else if (this.estado === 'golpeIzquierda') {
+       text('golpe izquierdo', width/2, height/2);
+      //aqui va el sprite del personaje golpeando con puño izquierdo
+    } else if (this.estado === 'golpeDerecha') {
+       text('golpe derecho', width/2, height/2);
+       image(gifgolpeder, width, height);   
+       
+  }
+  }
+}
+```
+Se siguen arreglando los problemas para que aparezcan los sprites del personaje al realizar un movimiento.  
 
 
