@@ -24,6 +24,7 @@ Se desarrolló el juego utilizando a Dorito, el gato de FAU, por ser un miembro 
 
 el código original que citamos es
 
+1. Juego Original, juego dónde se debe atrapar un copo de nieve.
 ```javascript
 /*  DXB211 A2 Brief: Creative coding project, mini game
 
@@ -223,6 +224,7 @@ function reset(){
 }
 ```
 
+2. Modelo Hand Pose de ML5
 ```javascript
 /*
  * 👋 Hello! This is an ml5.js example made and shared with ❤️.
@@ -274,6 +276,7 @@ function gotHands(results) {
 }
 ```
 
+Introducción del Juego, sacada de un tutorial de Youtube
 ```javascript
 let config = {
     x : 50,
