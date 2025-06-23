@@ -16,7 +16,7 @@ mi equipo de trabajo es <https://github.com/ValentinaAbarcia>, <LINK [https://gi
 
 ## acerca del proyecto
 
-El proyecto busca lograr un juego que pueda jugarse usando los gestos de las manos, utilizando la cámara sin tener que tocar la pantalla.
+El proyecto busca lograr un juego que pueda jugarse usando los movimientos de las manos, utilizando la cámara sin tener que tocar la pantalla.
 
 Se desarrolló el juego utilizando a Dorito, el gato de FAU, por ser un miembro muy querido e icónico de la comunidad estudiantil.
 
