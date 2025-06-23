@@ -399,20 +399,48 @@ Introducción al Juego
 ![a1](https://github.com/user-attachments/assets/ec29c0a2-4863-459a-87e1-5e47de92f700)
 
 3. Se reemplazaron los círculos por Churus.
-4. Se intentó cambiar el fondo.
-5. Se logró cambiar el fondo, probándose diferentes opciones de fondo.
+![a2](https://github.com/user-attachments/assets/742f322b-9e06-4361-a867-47ca1b77e20f)
+
+5. Se intentó cambiar el fondo.
+![a3](https://github.com/user-attachments/assets/8d3d490a-5096-4430-bf0d-3addd092eddf)
+
+7. Se logró cambiar el fondo, probándose diferentes opciones de fondo.
+![a6](https://github.com/user-attachments/assets/877e4915-f4c4-4949-96e1-7a60c0d81b35)
+![a5](https://github.com/user-attachments/assets/72bb531e-29ec-4e36-9dd0-82298bae4849)
+![a4](https://github.com/user-attachments/assets/72cb58a0-3eba-476c-a6a5-d2f61aca77c3)
+
 
 Juego
 1. Combinación entre el código de Hand Pose y el Juego de Olaf.
-2. Introducción y cierre del juego con Hand Pose ya aplicado.
-3. Cambios de apariencia en el juego, esta vez se incorpora a Dorito y la FAU de fondo.
-4. Segundo cambio de apariencia, esta es la estética final.
-5. Juego en Funcionamiento
+![b1](https://github.com/user-attachments/assets/e3f98e30-c9f5-4edc-8be1-f3f3839252aa)
+
+3. Introducción y cierre del juego con Hand Pose ya aplicado.
+![b2](https://github.com/user-attachments/assets/9e4f3379-886c-4da6-82e3-3ac1cc1e21d4)
+![b3](https://github.com/user-attachments/assets/a4f4df43-690d-444c-ae5e-0e4eca72cdab)
+
+5. Cambios de apariencia en el juego, esta vez se incorpora a Dorito y la FAU de fondo.
+![c2](https://github.com/user-attachments/assets/28755286-bf3a-4a7a-8331-c42e87109df4)
+![c1](https://github.com/user-attachments/assets/52827cf5-e571-4cca-8f23-be554d609ccd)
+
+7. Segundo cambio de apariencia, esta es la estética final.
+![c4](https://github.com/user-attachments/assets/1f28f3f4-b784-49cf-8644-d5a3a31d0e6c)
+![c3](https://github.com/user-attachments/assets/e9382adb-cd13-4182-9cbf-b0d1d42c0be5)
+
+9. Juego en Funcionamiento.
+
 
 Fusión de la Introducción y el Juego
 1. Código de la animación del incio del juego.
-2. Código del juego mezclado con Hand Pose.
-3. Transición entre el código de la introducción y el código del juego.
+![d1](https://github.com/user-attachments/assets/e189c05c-7b9f-4819-a2af-8f4d82053c72)
+
+3. Código del juego mezclado con Hand Pose.
+![d2](https://github.com/user-attachments/assets/f074f8e9-f768-4346-90fa-898bcc61889d)
+
+5. Transición entre el código de la introducción y el código del juego.
+![d3](https://github.com/user-attachments/assets/9129a9a3-de7f-4b01-a47c-42e6659cf313)
+
+6. Versión final del juego.
+
 
 ## bibliografía
 
