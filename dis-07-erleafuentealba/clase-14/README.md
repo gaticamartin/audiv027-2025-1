@@ -427,7 +427,7 @@ Juego
 ![c3](https://github.com/user-attachments/assets/e9382adb-cd13-4182-9cbf-b0d1d42c0be5)
 
 9. Juego en Funcionamiento.
-
+https://drive.google.com/file/d/1q_ukgBaikke4XZKunoK-XCXBVan144k-/view
 
 Fusión de la Introducción y el Juego
 1. Código de la animación del incio del juego.
@@ -440,6 +440,7 @@ Fusión de la Introducción y el Juego
 ![d3](https://github.com/user-attachments/assets/9129a9a3-de7f-4b01-a47c-42e6659cf313)
 
 6. Versión final del juego.
+https://drive.google.com/file/d/16mnzvoNd2vD48e18xnRg6AhEp3O6CWTy/view
 
 
 ## bibliografía
