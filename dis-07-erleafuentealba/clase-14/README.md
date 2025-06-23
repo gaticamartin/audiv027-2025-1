@@ -442,6 +442,11 @@ Fusión de la Introducción y el Juego
 6. Versión final del juego.
 https://drive.google.com/file/d/16mnzvoNd2vD48e18xnRg6AhEp3O6CWTy/view
 
+7. Se agregó musica de fondo para el juego
+
+8. Se agregó un efecto de sonido para cuando Dorito se come los churus
+
+
 
 ## bibliografía
 
