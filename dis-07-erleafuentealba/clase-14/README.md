@@ -2,7 +2,7 @@
 
 viernes 27 de Junio 2025
 
-## JUEGO DE LOS CHURU
+## SÚPER DORITO MISIÓN: CHURU
 
 integrantes:
 
@@ -387,32 +387,42 @@ function setupDecor()
 
 ## enlace del proyecto
 
-Lo hicimos en editor de p5.js: 
+Lo hicimos en editor de p5.js <https://editor.p5js.org/annais.bustamante/full/NRCjxHU75>
 
 ## documentación multimedia / audiovisual del proyecto funcionando
 
 Introducción al Juego
-Código inicial para la introducción del juego, en esta etapa solo habían círculos en blanco.
-Se reemplazaron los círculos por Churus
-Se intentó cambiar el fondo.
+1. Código inicial para la introducción del juego, en esta etapa solo habían círculos en blanco.
+2. Se reemplazaron los círculos por Churus.
+3. Se intentó cambiar el fondo.
+4. Se logró cambiar el fondo, probándose diferentes opciones de fondo.
 
 Juego
+1. Combinación entre el código de Hand Pose y el Juego de Olaf.
+2. Introducción y cierre del juego con Hand Pose ya aplicado.
+3. Cambios de apariencia en el juego, esta vez se incorpora a Dorito y la FAU de fondo.
+4. Segundo cambio de apariencia, esta es la estética final.
+5. Juego en Funcionamiento
 
-
+Fusión de la Introducción y el Juego
+1. Código de la animación del incio del juego.
+2. Código del juego mezclado con Hand Pose.
+3. Transición entre el código de la introducción y el código del juego.
 
 ## bibliografía
 
-Utilizamos el este tutorial: https://www.youtube.com/watch?v=CIBKUC4TR18
+Utilizamos este tutorial: <https://www.youtube.com/watch?v=CIBKUC4TR18>
 
-tomamos el código base de https://editor.p5js.org/Cardenb/sketches/PatqtOUlk y de https://editor.p5js.org/ml5/sketches/QGH3dwJ1A
+tomamos el código base de <https://editor.p5js.org/Cardenb/sketches/PatqtOUlk> y de <https://editor.p5js.org/ml5/sketches/QGH3dwJ1A>
 
-Las imágenes utilizadas son de elaboración propia, 
+Las imágenes utilizadas son de internet.
 
 
 ## conclusiones
 
-1. Entre el lenguaje que utilizaba el tutorial y el lenguaje de pj5 había ligeras diferencias que cambiaban completamente la programación
-2.El Hand Pose tiene programado un efecto espejo que afecta dependiendo del tipo de cámara que se utilice
+1. Entre el lenguaje que utilizaba el tutorial y el lenguaje de pj5 había ligeras diferencias que cambiaban completamente la programación.
+2. El Hand Pose tiene programado un efecto espejo que afecta dependiendo del tipo de cámara que se utilice.
+3. Para que el código funcione correctamente es necesario mantener un orden claro en los nombres de los archivos, imágenes, tipografías, etc.
+4. Para lograr que Dorito se mueva la mano se tiene que enfocar correctamente y sin ruido de fondo.
+5. Se logró el objetivo de lograr un juego en el que para interactuar no es necesario tocar la pantalla.
 
-
-agregar dimensión ética.
