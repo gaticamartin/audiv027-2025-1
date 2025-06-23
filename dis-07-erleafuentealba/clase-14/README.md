@@ -396,9 +396,11 @@ Lo hicimos en editor de p5.js <https://editor.p5js.org/annais.bustamante/full/NR
 
 Introducción al Juego
 1. Código inicial para la introducción del juego, en esta etapa solo habían círculos en blanco.
-2. Se reemplazaron los círculos por Churus.
-3. Se intentó cambiar el fondo.
-4. Se logró cambiar el fondo, probándose diferentes opciones de fondo.
+![a1](https://github.com/user-attachments/assets/ec29c0a2-4863-459a-87e1-5e47de92f700)
+
+3. Se reemplazaron los círculos por Churus.
+4. Se intentó cambiar el fondo.
+5. Se logró cambiar el fondo, probándose diferentes opciones de fondo.
 
 Juego
 1. Combinación entre el código de Hand Pose y el Juego de Olaf.
