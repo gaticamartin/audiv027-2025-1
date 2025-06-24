@@ -442,9 +442,8 @@ Fusión de la Introducción y el Juego
 6. Versión final del juego.
 https://drive.google.com/file/d/16mnzvoNd2vD48e18xnRg6AhEp3O6CWTy/view
 
-7. Se agregó musica de fondo para el juego
-
-8. Se agregó un efecto de sonido para cuando Dorito se come los churus
+7. Se agregó en el código musica de fondo y un efecto de sonido para cuando Dorito se come los churus
+![d4](https://github.com/user-attachments/assets/8a0804a7-85de-4d82-a7be-80686aa4022e)
 
 
 
@@ -465,3 +464,4 @@ Las imágenes utilizadas son de internet.
 4. Para lograr que Dorito se mueva la mano se tiene que enfocar correctamente y sin ruido de fondo.
 5. Se logró el objetivo de lograr un juego en el que para interactuar no es necesario tocar la pantalla.
 
+Dimensión etica:
