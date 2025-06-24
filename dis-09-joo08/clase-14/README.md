@@ -109,7 +109,7 @@ Repartición del trabajo: Romina-Creación de los accesorios, Josefa-Código.
 
 ## bibliografía
 
-nos basamos en el tutorial de https://www.youtube.com/watch?v=YMlhNG3YHz4 
+nos basamos en el tutorial de https://www.youtube.com/watch?v=YMlhNG3YHz4 y de https://www.youtube.com/watch?v=9WywDPOV5nA
 
 tomamos el código base alojado en https://editor.p5js.org/dongjing233/sketches/_Nyg10ve 
 
