@@ -439,11 +439,14 @@ Fusión de la Introducción y el Juego
 5. Transición entre el código de la introducción y el código del juego.
 ![d3](https://github.com/user-attachments/assets/9129a9a3-de7f-4b01-a47c-42e6659cf313)
 
-6. Versión final del juego.
+6. Ejemplo del juego funcionando con la introducción.
 https://drive.google.com/file/d/16mnzvoNd2vD48e18xnRg6AhEp3O6CWTy/view
 
-7. Se agregó en el código musica de fondo y un efecto de sonido para cuando Dorito se come los churus
+7. Se agregó en el código musica de fondo, un efecto de sonido para cuando Dorito se come los churus y sonido para cuando se pierde el juego
 ![d4](https://github.com/user-attachments/assets/8a0804a7-85de-4d82-a7be-80686aa4022e)
+
+8. Video del juego funcionando con la música.
+https://drive.google.com/file/d/1KeeddPRjgaHC9BJNsTTVfQW_t40SRXvu/view
 
 
 
