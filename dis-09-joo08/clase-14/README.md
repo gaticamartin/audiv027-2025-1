@@ -31,6 +31,169 @@ como Valor añadido, gracias a estas herramientas, nuestro proyecto logra una ex
 ## código del proyecto
 
 ```javascript
+let video;
+let facemesh;
+let predictions = [];
+
+let accesorios = [];
+let accesorioActual = 0;
+let blinkCooldown = 0;
+let earThreshold = 0.33;
+let blinked = false;
+
+let buttonX = 550;
+let buttonY = 350;
+let buttonW = 60;
+let buttonH = 40;
+let hover = false;
+let currentColor;
+let baseColor;
+let hoverColor;
+
+let marcoGIF; // 🎀 marco animado
+
+function preload() {
+  accesorios.push(loadImage('gorromujer.png'));
+  accesorios.push(loadImage('gorrohombre.png'));
+  accesorios.push(loadImage('gafasmujer.png'));
+  accesorios.push(loadImage('gafashombre.png'));
+  accesorios.push(loadImage('brillos.png'));
+
+  marcoGIF = createImg('marcoGIF.gif');
+}
+
+
+function setup() {
+  createCanvas(640, 480);
+  video = createCapture(VIDEO);
+  video.size(width, height);
+  video.hide();
+
+  facemesh = ml5.facemesh(video, modelReady);
+  facemesh.on('predict', results => {
+    predictions = results;
+  });
+
+  baseColor = color(255); // Blanco
+  hoverColor = color(255, 100, 100); // Rojo claro
+  currentColor = baseColor;
+
+  createP('Estado del modelo:').id('status-label');
+  createP('Cargando...').id('status');
+    // Mostrar el GIF animado como overlay encima del canvas
+  marcoGIF.position(0, 0);                      // alineado al canvas
+  marcoGIF.size(width, height);                // mismo tamaño del canvas
+  marcoGIF.style('pointer-events', 'none');    // que no bloquee clics
+}
+
+function modelReady() {
+  select('#status').html('¡Modelo cargado!');
+}
+
+function draw() {
+  image(video, 0, 0, width, height);
+
+  detectarParpadeo();
+  dibujarAccesorio();
+  dibujarBoton();
+
+  // Dibujar marco animado al final, encima de todo
+  image(marcoGIF, 0, 0, width, height);
+
+  if (blinkCooldown > 0) blinkCooldown--;
+}
+
+function detectarParpadeo() {
+  if (predictions.length > 0) {
+    let keypoints = predictions[0].scaledMesh;
+
+    let left = [
+      keypoints[33], keypoints[160], keypoints[158],
+      keypoints[133], keypoints[153], keypoints[144]
+    ];
+    let right = [
+      keypoints[362], keypoints[385], keypoints[387],
+      keypoints[263], keypoints[373], keypoints[380]
+    ];
+
+    let leftEAR = calculateEAR(...left);
+    let rightEAR = calculateEAR(...right);
+    let ear = (leftEAR + rightEAR) / 2;
+
+    if (ear < earThreshold && !blinked && blinkCooldown === 0) {
+      accesorioActual = (accesorioActual + 1) % accesorios.length;
+      blinkCooldown = 20;
+      blinked = true;
+    }
+
+    if (ear >= earThreshold) {
+      blinked = false;
+    }
+  }
+}
+
+function calculateEAR(p1, p2, p3, p4, p5, p6) {
+  let A = dist(p2[0], p2[1], p6[0], p6[1]);
+  let B = dist(p3[0], p3[1], p5[0], p5[1]);
+  let C = dist(p1[0], p1[1], p4[0], p4[1]);
+  return (A + B) / (2.0 * C);
+}
+
+function dibujarAccesorio() {
+  if (predictions.length > 0) {
+    let keypoints = predictions[0].scaledMesh;
+    let acc = accesorios[accesorioActual];
+
+    let leftEye = keypoints[33];
+    let rightEye = keypoints[263];
+    let x = (leftEye[0] + rightEye[0]) / 2;
+    let y = (leftEye[1] + rightEye[1]) / 2;
+    let eyeDist = dist(leftEye[0], leftEye[1], rightEye[0], rightEye[1]);
+
+    switch (accesorioActual) {
+      case 0: // Gorro mujer
+        image(acc, x - eyeDist * 1.0, y - eyeDist * 1.6, eyeDist * 2.0, eyeDist * 1.3);
+        break;
+      case 1: // Gorro hombre
+        image(acc, x - eyeDist * 1.1, y - eyeDist * 1.6, eyeDist * 2.2, eyeDist * 1.5);
+        break;
+      case 2: // Gafas mujer
+      case 3: // Gafas hombre
+        image(acc, x - eyeDist * 1.1, y - eyeDist * 0.5, eyeDist * 2.2, eyeDist);
+        break;
+      case 4: // Brillos
+        let ear = keypoints[234];
+        image(acc, ear[0] - 40, ear[1] - 40, 80, 80);
+        break;
+    }
+  }
+}
+
+function dibujarBoton() {
+  hover = mouseX > buttonX && mouseX < buttonX + buttonW &&
+          mouseY > buttonY && mouseY < buttonY + buttonH;
+
+  currentColor = lerpColor(currentColor, hover ? hoverColor : baseColor, 0.1);
+
+  fill(currentColor);
+  noStroke();
+  rect(buttonX, buttonY, buttonW, buttonH, 10);
+
+  fill(0);
+  textAlign(CENTER, CENTER);
+  textSize(20);
+  text("📸", buttonX + buttonW / 2, buttonY + buttonH / 2);
+}
+
+function mousePressed() {
+  if (hover) {
+    guardarImagen();
+  }
+}
+
+function guardarImagen() {
+  saveCanvas('captura', 'png');
+}
 
 ```
 
