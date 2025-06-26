@@ -16,5 +16,7 @@
 
 ![objeto estrella  y bufo](https://github.com/user-attachments/assets/edf19c8c-8359-4aec-9a74-a869208588de)
 
+### textos, puntajes y temporizadores
+
 ![7 textos](https://github.com/user-attachments/assets/e72de891-a43b-4850-92ae-ff5e9f6150da)
 
