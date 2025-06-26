@@ -209,6 +209,15 @@ https://github.com/user-attachments/assets/5a91bf70-0606-47a8-b66e-29679517afdf
 
 
 
-Para la siguiente parte busque en varias paginas como en ml5js para ayudarme en hacer otro programa donde se pueda identificar las manos y en qué dirección apunta (arriba, abajo, izquierda y derecha). Con el fin de combinar este programa para que reemplace a la parte del programa donde la serpiente es controlada por el teclado por la detección de dirección de la mano.
+Para la siguiente parte busque en varias paginas como en ml5js para ayudarme en hacer otro programa donde se pueda identificar las manos y en qué dirección apunta (arriba, abajo, izquierda y derecha). Con el fin de combinar este programa para que reemplace a la parte del programa donde la serpiente es controlada por el teclado por la detección de dirección de la mano. Otro detalle del programa es que desactive la función de mostrar lo que ve la cámara, ya que al momento de juntarla con Serpiente Pintada solo estorbaría.
 
+# Otras ideas descartadas.
+
+Durante el proceso se me ocurrió un par de ideas de como hacer mover la serpiente. Estas fueron los otros intentos.
+1.	Movimiento con un solo dedo.
+2.	Movimiento con la Voz.
+Ninguno funciono muy bien ya que siempre la serpiente se termina confusa o no reaccionaba a tiempo de la orden.
+
+
+https://github.com/user-attachments/assets/48830712-705a-4d54-b6ce-1c492f17389e
 
