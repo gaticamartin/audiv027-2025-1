@@ -219,5 +219,6 @@ Durante el proceso se me ocurrió un par de ideas de como hacer mover la serpien
 Ninguno funciono muy bien ya que siempre la serpiente se termina confusa o no reaccionaba a tiempo de la orden.
 
 
-https://github.com/user-attachments/assets/48830712-705a-4d54-b6ce-1c492f17389e
+https://github.com/user-attachments/assets/d8e6bbc7-ed94-4f8d-b82e-73dcb4afd4f0
+
 
