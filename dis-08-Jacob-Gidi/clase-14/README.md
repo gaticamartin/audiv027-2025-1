@@ -200,3 +200,6 @@ function keyPressed() {
 https://github.com/user-attachments/assets/f23b24b2-01eb-4004-a9e7-8082caae8a88
 
 
+Esta seria mi primera fase para el trabajo final.
+
+# Movimiento indicado por 
