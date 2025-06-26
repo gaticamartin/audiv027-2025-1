@@ -204,4 +204,11 @@ Esta seria mi primera fase para el trabajo final.
 
 # Movimiento indicado por la mano.
 
+
+https://github.com/user-attachments/assets/5a91bf70-0606-47a8-b66e-29679517afdf
+
+
+
 Para la siguiente parte busque en varias paginas como en ml5js para ayudarme en hacer otro programa donde se pueda identificar las manos y en qué dirección apunta (arriba, abajo, izquierda y derecha). Con el fin de combinar este programa para que reemplace a la parte del programa donde la serpiente es controlada por el teclado por la detección de dirección de la mano.
+
+
