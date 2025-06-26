@@ -17,4 +17,7 @@
 ![objeto estrella](https://github.com/user-attachments/assets/dc192d71-da39-4c68-8c65-d254782ef969)
 
 
-![objeto estrella  y bufo](https://github.com/user-attachments/assets/edf19c8c-8359-4aec-9a74-a869208588de)
+![objeto estrella  y bufo](https://github.com/user-attachments/assets/edf19c8c-8359-4aec-9a74-a869208588de
+
+![7 textos](https://github.com/user-attachments/assets/e72de891-a43b-4850-92ae-ff5e9f6150da)
+)
