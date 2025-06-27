@@ -14,6 +14,7 @@ Mi programa base sería el juego original de la serpiente combinado a uno llamad
 
 # Serpiente Pintada.
 
+```javascript
 let gridWidth = 30;
 let gridHeight = 30;
 
@@ -196,7 +197,7 @@ function keyPressed() {
       break;
   }
 }
-
+```
 
 
 https://github.com/user-attachments/assets/f23b24b2-01eb-4004-a9e7-8082caae8a88
