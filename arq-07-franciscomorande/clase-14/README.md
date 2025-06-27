@@ -652,7 +652,853 @@ Al unificar el código en sus diversas partes nos encontramos con varios problem
 <details>
 <summary> Código del proyecto </summary>
 
+let video;
+let hands = [];
+let dedoImg;
+let handPoseModel;
 
+// Dedo que comienza a ser detectado
+let activeFinger = 2;
+
+// Intervalo de tiempo para cambiar el dedo activo (en ms)
+let changeInterval = 10000;
+let lastChangeTime = 0;
+
+// Duración del efecto de fade in/out del dedo (en ms)
+let fadeDuration = 1000;
+
+// Nombres de los dedos para mostrar en pantalla
+const fingerNames = {
+    1: "Pulgar",
+    2: "Índice",
+    3: "Medio",
+    4: "Anular",
+    5: "Meñique"
+};
+
+// Puntos clave de los dedos usados por ml5.handPose
+const fingerKeypoints = {
+    1: "thumb_tip",
+    2: "index_finger_tip",
+    3: "middle_finger_tip",
+    4: "ring_finger_tip",
+    5: "pinky_finger_tip"
+};
+
+// Colores asociados a cada dedo
+const fingerColors = {
+    1: [255, 100, 100],    // Pulgar
+    2: [100, 255, 100],    // Índice
+    3: [100, 100, 255],    // Medio
+    4: [255, 255, 100],    // Anular
+    5: [255, 100, 255]     // Meñique
+};
+
+//  VARIABLES GLOBALES PARA ESTRELLAS (BUFFS/DEBUFFS) 
+let stars = []; // Arreglo para almacenar las estrellas
+let yellowColor; // Color amarillo fijo para las estrellas
+let lastStarAddTime = 0; // Última vez que se añadió una estrella
+const STAR_SPAWN_DELAY_INITIAL = 15000; // 15 segundos para la primera estrella
+let firstStarSpawned = false; // Bandera para la primera estrella
+const SUBSEQUENT_STAR_SPAWN_DELAY = 20000; // Estrellas subsiguientes aparecen cada 20 segundos
+const STAR_BORDER_PADDING = 100; // 100 píxeles de límite desde el borde para estrellas
+
+// Arreglo donde se guardarán todas las pelotas
+let balls = [];
+
+// Variable booleana que indica si el juego terminó
+let juegoTerminado = false;
+
+// Variables para el retardo de spawn de las pelotas
+const BALL_SPAWN_DELAY = 10000; // 10 segundos
+let gameStartTime; // Tiempo en que el juego realmente comienza
+let ballsSpawned = false; // Bandera para saber si las pelotas ya fueron creadas
+let displayGameInfo = false; // Controla cuándo se muestra el tiempo y el puntaje
+let showLoadingText = true; // Controla la visibilidad del texto de carga
+
+// TIEMPO Y PUNTUACIÓN 
+let gameTime = 30; // Temporizador que parte desde 30 segundos
+let lastSecondUpdate = 0; // Para el incremento de puntaje por segundo
+let score = 0; // Puntaje del juego
+
+//  MECÁNICAS DE BUFF/DEBUFF 
+let activeBuff = null; // Almacena el buff activo: 'mirrorX', 'mirrorY', 'lowVisibility', 'cameraDistance', 'enemyFollower'
+const BUFF_DURATION = 10000; // Duración para todos los buffs (10 segundos)
+let buffStartTime = 0; // Tiempo en que comenzó el buff actual
+let buffDisplayName = "Ninguno"; // Texto para mostrar el buff activo
+
+// Buff: Eje X invertido
+let mirrorXActive = false;
+// Buff: Eje Y invertido
+let mirrorYActive = false;
+// Buff: Visibilidad Reducida
+let lowVisibilityActive = false;
+let radioVision = 200;    // Tamaño del círculo visible
+let opacidadOscuridad = 220;    // Opacidad del fondo oscuro (0 a 255)
+let suavizadoBorde = 100;       // Difuminado del borde visible
+
+// Buff: Tamaño Variable (cambio de tamaño del jugador según la distancia a la cámara)
+let cameraDistanceActive = false;
+let usarEscaladoPorProfundidad = false;
+let escalaBase = 1.0;          // Tamaño por defecto
+let escalaMaxima = 2.5;        // Tamaño si está muy cerca
+let escalaMinima = 0.1;        // Tamaño si está muy lejos
+let distanciaCerca = 200;      // px (si es mayor a esto, está muy cerca)
+let distanciaLejos = 100;       // px (si es menor a esto, está muy lejos)
+let currentScale = 1;          // Almacena la escala actual del dedo
+
+// Buff: Enemigo Acechando
+let enemy = {
+    x: 0,
+    y: 0,
+    startTime: 0,
+    active: false, // Estado inicial, se activará con el buff
+    speed: 2, // Velocidad de persecución
+    radius: 40, // Radio del enemigo
+    color: [255, 0, 0] // Color del enemigo
+};
+
+// dELAYS Y TEXTOS DE RETROALIMENTACIÓN 
+// Delay para la reducción del temporizador al tocar una pelota blanca
+let lastBallHitTime = 0;
+const BALL_HIT_COOLDOWN = 1000; // 1 segundo
+
+// Variables para el texto de colisión de pelota
+let showCollisionText = false;
+let collisionTextStartTime = 0;
+const COLLISION_TEXT_DURATION = 1000; // 1 segundo
+const COLLISION_DISPLAY_COOLDOWN = 1000; // 1 segundo de enfriamiento para el texto
+
+//  RELOJES DE ARENA 
+let hourglasses = [];
+let lastHourglassAddTime = 0;
+const HOURGLASS_SPAWN_DELAY_INITIAL = 10000; // La primera aparece a los 10 segundos
+let firstHourglassSpawned = false; // Bandera para controlar la primera aparición
+const SUBSEQUENT_HOURGLASS_SPAWN_DELAY = 2000; // Aparecen cada 2 segundos después
+const HOURGLASS_LIFETIME = 5000; // 5 segundos antes de desaparecer
+let showHourglassText = false;
+let hourglassTextStartTime = 0;
+const HOURGLASS_TEXT_DURATION = 1000; // 1 segundo
+const HOURGLASS_BORDER_PADDING = 30; // 30 píxeles de límite desde el borde
+
+//  BARRAS DE ORO 
+let goldBars = [];
+let lastGoldBarAddTime = 0;
+const GOLDBAR_SPAWN_DELAY = 10000; // 10 segundos
+const GOLDBAR_LIFETIME = 5000; // 5 segundos antes de desaparecer
+let showGoldBarText = false;
+let goldBarTextStartTime = 0;
+const GOLDBAR_TEXT_DURATION = 1000; // 1 segundo
+const GOLDBAR_BORDER_PADDING = 50; // 50 píxeles de límite desde el borde
+
+// Variables para el texto de estrella (puntos)
+let showStarText = false;
+let starTextStartTime = 0;
+const STAR_TEXT_DURATION = 1000; // 1 segundo
+
+// Variables para el texto de nuevo efecto
+let showNewEffectText = false;
+let newEffectTextStartTime = 0;
+let newEffectName = "";
+const NEW_EFFECT_TEXT_DURATION = 3000; // 3 segundos
+
+// Objeto para almacenar los puntos clave suavizados de todas las partes de la mano
+let smoothedPoints = {};
+const BASE_DEDO_RADIO = 40; // Radio base del dedo para colisiones
+
+
+function preload() {
+    dedoImg = loadImage("profesonriendo.png",
+        () => console.log("Imagen cargada correctamente"),
+        (err) => console.error("Error cargando la imagen:", err)
+    );
+}
+
+function setup() {
+    createCanvas(windowWidth, windowHeight);
+    
+    video = createCapture(VIDEO, () => {
+        console.log("Video capturado correctamente");
+        handPoseModel = ml5.handPose(video, () => {
+            console.log("Modelo de handPose cargado");
+        });
+    });
+
+    video.size(windowWidth, windowHeight);
+    video.hide();
+    lastChangeTime = millis();
+    gameStartTime = millis(); // Almacenar el tiempo de inicio del juego para el spawn de pelotas
+
+    // Inicializar temporizador y puntaje
+    gameTime = 30; // Inicia en 30 segundos
+    lastSecondUpdate = millis(); // Inicializar para actualizaciones de puntaje/tiempo
+    score = 0; // Inicia el puntaje en 0
+
+    yellowColor = color(255, 255, 0); // Color amarillo para las estrellas
+    lastStarAddTime = millis(); // Inicializar el tiempo para añadir estrellas
+    lastCollisionTextDisplayTime = millis(); // Inicializar el enfriamiento para el texto de colisión
+    lastHourglassAddTime = millis(); // Inicializar para el spawn de relojes de arena
+    lastGoldBarAddTime = millis(); // Inicializar para el spawn de barras de oro
+}
+
+// Callback cuando se detectan manos
+function gotHands(results) {
+    hands = results;
+    if (hands.length > 0) {
+        let hand = hands[0];
+        // Suavizar todos los puntos clave de la mano
+        for (let keypoint of hand.keypoints) {
+            let name = keypoint.name;
+            if (!smoothedPoints[name]) {
+                smoothedPoints[name] = { x: keypoint.x, y: keypoint.y };
+            } else {
+                smoothedPoints[name].x = lerp(smoothedPoints[name].x, keypoint.x, 0.2);
+                smoothedPoints[name].y = lerp(smoothedPoints[name].y, keypoint.y, 0.2);
+            }
+        }
+    }
+}
+
+// Función auxiliar para verificar la inmunidad del dedo
+function isFingerImmune() {
+    let elapsedReal = millis() - lastChangeTime;
+    // El dedo es inmune durante el fade-in después de un cambio y durante el fade-out antes de un cambio.
+    if (elapsedReal < fadeDuration) return true;
+    if (elapsedReal > changeInterval - fadeDuration && elapsedReal < changeInterval) return true;
+    return false;
+}
+
+// Función para activar un buff aleatorio al tocar una estrella
+function activateRandomBuff() {
+    const buffs = ['enemyFollower', 'lowVisibility', 'mirrorX', 'mirrorY', 'cameraDistance'];
+    let newBuff = random(buffs);
+    activeBuff = newBuff;
+    buffStartTime = millis();
+
+    // Desactivar todos los buffs primero para asegurar un estado limpio
+    mirrorXActive = false;
+    mirrorYActive = false;
+    lowVisibilityActive = false;
+    cameraDistanceActive = false;
+    usarEscaladoPorProfundidad = false;
+    enemy.active = false;
+
+    console.log("Activando buff: " + newBuff);
+
+    // Activar el buff elegido
+    switch (newBuff) {
+        case 'mirrorX':
+            mirrorXActive = true;
+            buffDisplayName = "eje x invertido";
+            break;
+        case 'mirrorY':
+            mirrorYActive = true;
+            buffDisplayName = "eje y invertido";
+            break;
+        case 'lowVisibility':
+            lowVisibilityActive = true;
+            buffDisplayName = "Visibilidad Reducida";
+            break;
+        case 'cameraDistance':
+            cameraDistanceActive = true;
+            usarEscaladoPorProfundidad = true;
+            buffDisplayName = "Tamaño Variable";
+            break;
+        case 'enemyFollower':
+            enemy.active = true;
+            enemy.startTime = millis();
+            enemy.x = random(width);
+            enemy.y = random(height);
+            buffDisplayName = "enemigo acechando";
+            break;
+        default:
+            buffDisplayName = "Ninguno";
+            break;
+    }
+    // Establecer texto para mostrar el nuevo efecto
+    newEffectName = buffDisplayName;
+    showNewEffectText = true;
+    newEffectTextStartTime = millis();
+}
+
+function draw() {
+    // Verificar y desactivar el buff si su duración ha pasado
+    if (activeBuff !== null && millis() - buffStartTime >= BUFF_DURATION) {
+        console.log("Desactivando buff: " + activeBuff);
+        activeBuff = null;
+        buffDisplayName = "Ninguno"; // Reiniciar nombre para mostrar
+        mirrorXActive = false;
+        mirrorYActive = false;
+        lowVisibilityActive = false;
+        cameraDistanceActive = false;
+        usarEscaladoPorProfundidad = false;
+        enemy.active = false;
+    }
+
+    // === VERIFICACIÓN DE FIN DE JUEGO ===
+    if (gameTime <= 0) { // Verificar si el tiempo de juego llegó a 0
+        juegoTerminado = true;
+    }
+
+    // Si el juego ha terminado, detener el dibujo y mostrar la pantalla de fin de juego.
+    if (juegoTerminado) {
+        background(0); // Fondo negro
+        fill(255); // Color de texto blanco
+        textSize(64);
+        textAlign(CENTER, CENTER);
+        text("¡Juego Terminado!\nPuntaje: " + score, width / 2, height / 2); // Mostrar puntaje final
+        noLoop(); // Detener el bucle de dibujo
+        return; // Salir de la función draw
+    }
+
+    background(0); // Pintar fondo negro en cada frame
+
+    // Verificar si las pelotas deben aparecer y si la información del juego debe mostrarse
+    if (!ballsSpawned && millis() - gameStartTime >= BALL_SPAWN_DELAY) {
+        // Crear 10 pelotas y añadirlas al arreglo
+        for (let i = 0; i < 6; i++) {
+            balls.push(new Ball());
+        }
+        ballsSpawned = true; // Marcar que las pelotas han sido creadas
+        displayGameInfo = true; // Empezar a mostrar el tiempo y el puntaje
+        showLoadingText = false; // Ocultar texto de carga
+    }
+
+    translate(width, 0); // Efecto espejo horizontal para la cámara
+    scale(-1, 1);
+
+    let elapsedReal = millis() - lastChangeTime;
+
+    // Cambiar dedo activo cuando se complete el intervalo
+    if (elapsedReal >= changeInterval) {
+        let newFinger;
+        do {
+            newFinger = floor(random(1, 6));
+        } while (newFinger === activeFinger);
+        activeFinger = newFinger;
+        lastChangeTime = millis();
+        elapsedReal = 0; // Reiniciar para propósitos de visualización
+    }
+
+    // Barra visual del tiempo restante
+    let barHeight = 200;
+    let barWidth = 20;
+    noStroke();
+    fill(...fingerColors[activeFinger]);
+    let currentHeight = barHeight * (1 - elapsedReal / changeInterval);
+    let currentY = height / 2 - barHeight / 2 + (barHeight - currentHeight);
+    rect(width - 30, currentY, barWidth, currentHeight);
+
+    resetMatrix(); // Reiniciar matriz para dibujar texto sin espejo
+    fill(...fingerColors[activeFinger]);
+    textSize(24);
+    textAlign(CENTER, TOP);
+    text("Dedo Activo: " + fingerNames[activeFinger], width / 2, 20);
+
+    textAlign(LEFT, TOP);
+    textSize(64);
+    fill(...fingerColors[activeFinger]);
+    text(activeFinger, 10, 10);
+
+    // === MOSTRAR TIEMPO Y PUNTAJE ===
+    if (displayGameInfo) { // Solo mostrar si la bandera es verdadera
+        fill(255);
+        textSize(24);
+        textAlign(LEFT, TOP);
+        text("Tiempo: " + gameTime, 20 + 60, 20);
+        text("Puntaje: " + score, 20 + 60, 50);
+    } else if (showLoadingText) { // Mostrar texto de carga solo antes de que aparezca la info del juego
+        fill(255);
+        textSize(48);
+        textAlign(CENTER, CENTER);
+        let timeToStart = Math.ceil((BALL_SPAWN_DELAY - (millis() - gameStartTime)) / 1000);
+        if (timeToStart < 0) timeToStart = 0;
+        text("Cargando en " + timeToStart + "...", width / 2, height / 2);
+    }
+
+    // Mostrar nombre del buff activo
+    fill(255); // Color blanco para el texto del buff
+    textSize(20);
+    textAlign(RIGHT, TOP);
+    text("Efecto: " + buffDisplayName, width - 20, 20); // Esquina superior derecha
+
+    translate(width, 0); // Volver al espejo horizontal para la detección
+    scale(-1, 1);
+
+    let playerDisplayX = 0;
+    let playerDisplayY = 0;
+    let currentDedoRadius = BASE_DEDO_RADIO; // Radio actual del dedo para colisiones
+
+    if (handPoseModel && handPoseModel.model) {
+        handPoseModel.detect(video, gotHands);
+    }
+
+    if (hands.length > 0) {
+        let targetKey = fingerKeypoints[activeFinger];
+
+        if (smoothedPoints[targetKey]) {
+            let xFinger = smoothedPoints[targetKey].x;
+            let yFinger = smoothedPoints[targetKey].y;
+
+            // Calcular escala si el buff de Tamaño Variable está activo
+            currentScale = escalaBase;
+            if (usarEscaladoPorProfundidad && smoothedPoints["wrist"] && smoothedPoints["index_finger_tip"]) {
+                let d = dist(
+                    smoothedPoints["wrist"].x, smoothedPoints["wrist"].y,
+                    smoothedPoints["index_finger_tip"].x, smoothedPoints["index_finger_tip"].y
+                );
+                currentScale = map(d, distanciaLejos, distanciaCerca, escalaMinima, escalaMaxima, true);
+            }
+            currentDedoRadius = BASE_DEDO_RADIO * currentScale; // Actualizar radio según la escala
+
+            // Aplicar buff de espejo en X si está activo
+            if (mirrorXActive) {
+                playerDisplayX = width - xFinger;
+            } else {
+                playerDisplayX = xFinger;
+            }
+            // Aplicar buff de espejo en Y si está activo
+            if (mirrorYActive) {
+                playerDisplayY = height - yFinger;
+            } else {
+                playerDisplayY = yFinger;
+            }
+
+            // Calcular alfa para fade in y fade out
+            let alpha = 255;
+            if (elapsedReal < fadeDuration) {
+                alpha = map(elapsedReal, 0, fadeDuration, 0, 255);
+            } else if (elapsedReal > changeInterval - fadeDuration) {
+                alpha = map(elapsedReal, changeInterval - fadeDuration, changeInterval, 255, 0);
+            }
+
+            imageMode(CENTER);
+            tint(255, alpha);
+            image(dedoImg, playerDisplayX, playerDisplayY, 80 * currentScale, 80 * currentScale);
+            noTint();
+
+            // Círculo de colisión
+            noFill();
+            stroke(...fingerColors[activeFinger]);
+            strokeWeight(2);
+            ellipse(playerDisplayX, playerDisplayY, 80 * currentScale);
+        }
+    }
+
+    // --- LÓGICA DE COLISIÓN Y ACTUALIZACIÓN DE PELOTAS ---
+    // Solo procesar pelotas si ya han aparecido
+    if (ballsSpawned) {
+        // Verificar si el DEDO detectado está tocando alguna pelota
+        // Aplicar la verificación de inmunidad aquí
+        if (hands.length > 0 && !juegoTerminado && !isFingerImmune()) {
+            for (let ball of balls) {
+                // Ahora verificar colisión con la posición suavizada del dedo
+                if (ball.isCollidingWithFinger(playerDisplayX, playerDisplayY, currentDedoRadius)) {
+                    // Aplicar retardo a la reducción del temporizador
+                    if (millis() - lastBallHitTime > BALL_HIT_COOLDOWN) {
+                        gameTime = max(0, gameTime - 5); // Reducir tiempo en 5 segundos
+                        lastBallHitTime = millis(); // Actualizar último tiempo de golpe
+                        
+                        // Aplicar retardo a la visualización del texto de colisión
+                        if (millis() - lastCollisionTextDisplayTime > COLLISION_DISPLAY_COOLDOWN) {
+                            showCollisionText = true; // Mostrar texto de colisión
+                            collisionTextStartTime = millis(); // Registrar tiempo
+                            lastCollisionTextDisplayTime = millis(); // Actualizar enfriamiento del texto
+                        }
+                        console.log("¡Colisión con pelota blanca! Tiempo restante: " + gameTime);
+                    }
+                }
+            }
+        }
+
+        // Si no hay colisión, actualizar y dibujar las pelotas
+        for (let ball of balls) {
+            ball.move();      // Actualizar posición
+            ball.bounce();    // Rebota si toca los bordes
+            ball.display();   // Dibujar la pelota
+        }
+    }
+
+    // --- LÓGICA DE ESTRELLAS (BUFFS/DEBUFFS) ---
+    // Añadir nueva estrella si ha pasado suficiente tiempo y el retardo inicial ha terminado
+    if (!firstStarSpawned && millis() - gameStartTime >= STAR_SPAWN_DELAY_INITIAL) {
+        addRandomStar();
+        lastStarAddTime = millis(); // Inicializar lastStarAddTime para estrellas subsiguientes
+        firstStarSpawned = true;
+    } else if (firstStarSpawned && millis() - lastStarAddTime > SUBSEQUENT_STAR_SPAWN_DELAY) { // Estrellas subsiguientes cada 20 segundos
+        addRandomStar();
+        lastStarAddTime = millis();
+    }
+
+    // Iterar, dibujar, verificar colisión y eliminar estrellas
+    for (let i = stars.length - 1; i >= 0; i--) {
+        let s = stars[i];
+        fill(s.col);
+        noStroke();
+        star(s.x, s.y, s.d / 2); // Llamar a la función de dibujo de estrella
+
+        // Eliminar después de 5 segundos si no es tocada
+        if (millis() - s.birthTime > 5000) {
+            stars.splice(i, 1);
+        }
+        
+        // Verificar colisión con el dedo
+        if (hands.length > 0 && !isFingerImmune()) { 
+            const starOuterRadius = s.d / 2; // Radio exterior de la estrella para colisión
+            if (dist(playerDisplayX, playerDisplayY, s.x, s.y) < (currentDedoRadius + starOuterRadius)) {
+                console.log("¡Colisión con estrella de color!");
+                stars.splice(i, 1); // Eliminar la estrella al colisionar
+                activateRandomBuff(); // Activar un buff aleatorio al recoger la estrella
+                score += 20; // Sumar +20 puntaje al tocar una estrella
+                showStarText = true; // Mostrar texto "+20 puntos!"
+                starTextStartTime = millis(); // Registrar tiempo
+            }
+        }
+    }
+
+    // --- LÓGICA DEL ENEMIGO ACECHANDO ---
+    if (enemy.active) {
+        let dx = playerDisplayX - enemy.x;
+        let dy = playerDisplayY - enemy.y;
+        let angle = atan2(dy, dx);
+        enemy.x += cos(angle) * enemy.speed;
+        enemy.y += sin(angle) * enemy.speed;
+
+        fill(...enemy.color);
+        noStroke();
+        ellipse(enemy.x, enemy.y, enemy.radius * 2); // Dibujar enemigo como un círculo
+
+        // Verificar colisión con el jugador (dedo)
+        if (!isFingerImmune() && dist(enemy.x, enemy.y, playerDisplayX, playerDisplayY) < (enemy.radius + currentDedoRadius)) {
+            console.log("¡Golpeado por el enemigo!");
+            gameTime = max(0, gameTime - 5); // Reducir tiempo en 5 segundos
+            
+            // Aplicar retardo a la visualización del texto de colisión
+            if (millis() - lastCollisionTextDisplayTime > COLLISION_DISPLAY_COOLDOWN) {
+                showCollisionText = true; // Mostrar texto de colisión
+                collisionTextStartTime = millis(); // Registrar tiempo
+                lastCollisionTextDisplayTime = millis(); // Actualizar enfriamiento del texto
+            }
+            enemy.active = false; // El enemigo desaparece después de un golpe
+        } else if (millis() - enemy.startTime > BUFF_DURATION) { // El enemigo desaparece después de la duración del buff
+            enemy.active = false;
+            console.log("El enemigo desapareció por tiempo");
+        }
+    }
+
+    // --- VISIBILIDAD REDUCIDA: oscurecer todo menos el área del dedo activo ---
+    if (lowVisibilityActive) {
+        resetMatrix(); // Reiniciar transformaciones para aplicar la oscuridad a todo el canvas
+        drawingContext.save();
+
+        // Usar playerDisplayX y playerDisplayY para el centro del círculo visible
+        let gradient = drawingContext.createRadialGradient(playerDisplayX, playerDisplayY, radioVision - suavizadoBorde, playerDisplayX, playerDisplayY, radioVision);
+        gradient.addColorStop(0, `rgba(0, 0, 0, 0)`);
+        gradient.addColorStop(1, `rgba(0, 0, 0, ${opacidadOscuridad / 255})`);
+
+        drawingContext.fillStyle = gradient;
+        drawingContext.fillRect(0, 0, width, height);
+
+        drawingContext.restore();
+        translate(width, 0); // Restaurar la transformación de espejo original
+        scale(-1, 1);
+    }
+
+    // --- LÓGICA DE RELOJ DE ARENA ---
+    // Añadir nuevo reloj de arena si ha pasado suficiente tiempo y el retardo inicial ha terminado
+    if (!firstHourglassSpawned && millis() - gameStartTime >= HOURGLASS_SPAWN_DELAY_INITIAL) {
+        addRandomHourglass();
+        lastHourglassAddTime = millis(); // Inicializar lastHourglassAddTime para relojes subsiguientes
+        firstHourglassSpawned = true;
+    } else if (firstHourglassSpawned && millis() - lastHourglassAddTime > SUBSEQUENT_HOURGLASS_SPAWN_DELAY) { // Aparece cada 2 segundos
+        addRandomHourglass();
+        lastHourglassAddTime = millis();
+    }
+
+    // Iterar, dibujar, verificar colisión y eliminar relojes de arena
+    for (let i = hourglasses.length - 1; i >= 0; i--) {
+        let hr = hourglasses[i];
+        fill(255, 165, 0); // Color naranja
+        noStroke();
+        drawHourglass(hr.x, hr.y, hr.d); // Dibujar el reloj de arena
+
+        // Eliminar después de 5 segundos si no es tocado
+        if (millis() - hr.birthTime > HOURGLASS_LIFETIME) {
+            hourglasses.splice(i, 1);
+        }
+        
+        // Verificar colisión con el dedo
+        if (hands.length > 0 && !isFingerImmune()) { 
+            const hourglassRadius = hr.d / 2; // Radio aproximado para colisión
+            if (dist(playerDisplayX, playerDisplayY, hr.x, hr.y) < (currentDedoRadius + hourglassRadius)) {
+                console.log("¡Colisión con reloj de arena!");
+                gameTime = gameTime + 3; // Sumar 3 segundos al tiempo de juego
+                hourglasses.splice(i, 1); // Eliminar el reloj de arena al colisionar
+                
+                showHourglassText = true; // Mostrar texto "+3 segundos!"
+                hourglassTextStartTime = millis(); // Registrar tiempo
+            }
+        }
+    }
+
+    // --- LÓGICA DE BARRAS DE ORO ---
+    if (millis() - lastGoldBarAddTime > GOLDBAR_SPAWN_DELAY) {
+        addRandomGoldBar();
+        lastGoldBarAddTime = millis();
+    }
+
+    for (let i = goldBars.length - 1; i >= 0; i--) {
+        let gb = goldBars[i];
+        fill(255, 215, 0); // Color dorado
+        noStroke();
+        drawGoldBar(gb.x, gb.y, gb.width, gb.height); // Dibujar la barra de oro
+
+        // Eliminar después de 5 segundos si no es tocada
+        if (millis() - gb.birthTime > GOLDBAR_LIFETIME) {
+            goldBars.splice(i, 1);
+        }
+        
+        // Verificar colisión con el dedo
+        if (hands.length > 0 && !isFingerImmune()) { 
+            // Radio aproximado para colisión rectangular. Usando la diagonal/2 para simplicidad
+            const goldBarCollisionRadius = dist(0, 0, gb.width / 2, gb.height / 2); 
+            if (dist(playerDisplayX, playerDisplayY, gb.x, gb.y) < (currentDedoRadius + goldBarCollisionRadius)) {
+                console.log("¡Colisión con barra de oro!");
+                score += 10; // Sumar 10 puntos
+                goldBars.splice(i, 1); // Eliminar la barra de oro al colisionar
+                
+                showGoldBarText = true; // Mostrar texto "+10 puntos!"
+                goldBarTextStartTime = millis(); // Registrar tiempo
+            }
+        }
+    }
+
+    // === ACTUALIZACIÓN DE PUNTAJE Y TIEMPO ===
+    // Solo actualizar si la información del juego se muestra (después del retardo inicial) y el juego no ha terminado
+    if (displayGameInfo && millis() - lastSecondUpdate >= 1000 && gameTime > 0) {
+        gameTime--; // Reducir tiempo en 1 segundo
+        score += 1; // Incrementar puntaje en 1 por segundo
+        lastSecondUpdate = millis();
+    }
+
+    // Mostrar texto de colisión si está activo
+    if (showCollisionText && millis() - collisionTextStartTime < COLLISION_TEXT_DURATION) {
+        resetMatrix();
+        fill(255, 0, 0); // Color rojo
+        textSize(36);
+        textAlign(CENTER, CENTER);
+        text("¡COLISIÓN -5 SEGUNDOS!", width / 2, height / 2 + 100);
+        translate(width, 0);
+        scale(-1, 1);
+    } else if (showCollisionText) {
+        showCollisionText = false;
+    }
+
+    // Mostrar texto de reloj de arena si está activo
+    if (showHourglassText && millis() - hourglassTextStartTime < HOURGLASS_TEXT_DURATION) {
+        resetMatrix();
+        fill(0, 255, 0); // Color verde
+        textSize(36);
+        textAlign(CENTER, CENTER);
+        text("¡+3 SEGUNDOS!", width / 2, height / 2 + 150);
+        translate(width, 0);
+        scale(-1, 1);
+    } else if (showHourglassText) {
+        showHourglassText = false;
+    }
+
+    // Mostrar texto de estrella si está activo
+    if (showStarText && millis() - starTextStartTime < STAR_TEXT_DURATION) {
+        resetMatrix();
+        fill(255, 255, 0); // Color amarillo
+        textSize(36);
+        textAlign(CENTER, CENTER);
+        text("¡+20 PUNTOS!", width / 2, height / 2 + 200);
+        translate(width, 0);
+        scale(-1, 1);
+    } else if (showStarText) {
+        showStarText = false;
+    }
+
+    // Mostrar texto de nuevo efecto si está activo
+    if (showNewEffectText && millis() - newEffectTextStartTime < NEW_EFFECT_TEXT_DURATION) {
+        resetMatrix();
+        fill(255, 0, 0); // Color rojo
+        textSize(72);
+        textAlign(CENTER, CENTER);
+        text("NUEVO EFECTO:\n" + newEffectName, width / 2, height / 2);
+        translate(width, 0);
+        scale(-1, 1);
+    } else if (showNewEffectText) {
+        showNewEffectText = false;
+    }
+
+    // Mostrar texto de barra de oro si está activo
+    if (showGoldBarText && millis() - goldBarTextStartTime < GOLDBAR_TEXT_DURATION) {
+        resetMatrix();
+        fill(255, 255, 0); // Color amarillo
+        textSize(36);
+        textAlign(CENTER, CENTER);
+        text("¡+10 PUNTOS!", width / 2, height / 2 + 250);
+        translate(width, 0);
+        scale(-1, 1);
+    } else if (showGoldBarText) {
+        showGoldBarText = false;
+    }
+}
+
+// Función para terminar el juego
+function terminarJuego() {
+    juegoTerminado = true;
+    noLoop();
+    console.log("¡Juego Terminado!");
+}
+
+// Función para añadir una estrella aleatoria
+function addRandomStar() {
+    // Posición aleatoria, respetando el padding del borde
+    let x = random(STAR_BORDER_PADDING, width - STAR_BORDER_PADDING);
+    let y = random(STAR_BORDER_PADDING, height - STAR_BORDER_PADDING);
+
+    // Diámetros predefinidos
+    let d = random(50, 70); // Tamaño aleatorio
+    let col = yellowColor; // Color amarillo fijo
+
+    stars.push({ x, y, d, col, birthTime: millis() });
+}
+
+// Función auxiliar para dibujar una estrella
+function star(x, y, radius) {
+  let points = 5; // Estrella de 5 puntas
+  let innerRadius = radius * 0.4; // Radio de los puntos interiores
+  let outerRadius = radius; // Radio de los puntos exteriores
+
+  let angle = TWO_PI / points;
+  let halfAngle = angle / 2.0;
+  beginShape();
+  for (let a = 0; a < TWO_PI; a += angle) {
+    let sx = x + cos(a) * outerRadius;
+    let sy = y + sin(a) * outerRadius;
+    vertex(sx, sy);
+    sx = x + cos(a + halfAngle) * innerRadius;
+    sy = y + sin(a + halfAngle) * innerRadius;
+    vertex(sx, sy);
+  }
+  endShape(CLOSE);
+}
+
+// Función auxiliar para dibujar un reloj de arena
+function drawHourglass(x, y, size) {
+    let halfSize = size / 2;
+    let quarterSize = size / 4;
+
+    beginShape();
+    // Esquina superior izquierda
+    vertex(x - halfSize, y - halfSize);
+    // Esquina superior derecha
+    vertex(x + halfSize, y - halfSize);
+    // Centro derecho (cintura)
+    vertex(x + quarterSize, y);
+    // Esquina inferior derecha
+    vertex(x + halfSize, y + halfSize);
+    // Esquina inferior izquierda
+    vertex(x - halfSize, y + halfSize);
+    // Centro izquierdo (cintura)
+    vertex(x - quarterSize, y);
+    endShape(CLOSE);
+}
+
+// Función para añadir un reloj de arena aleatorio
+function addRandomHourglass() {
+    // Asegurar que el reloj de arena aparezca dentro de los límites
+    let x = random(HOURGLASS_BORDER_PADDING, width - HOURGLASS_BORDER_PADDING);
+    let y = random(HOURGLASS_BORDER_PADDING, height - HOURGLASS_BORDER_PADDING);
+    let d = random(40, 60); // Tamaño aleatorio para el reloj de arena
+    hourglasses.push({ x, y, d, birthTime: millis() });
+}
+
+// Función auxiliar para dibujar una barra de oro (rectángulo horizontal)
+function drawGoldBar(x, y, barWidth, barHeight) {
+    rectMode(CENTER);
+    rect(x, y, barWidth, barHeight, 5); // Esquinas redondeadas
+    rectMode(CORNER); // Restablecer al modo predeterminado
+}
+
+// Función para añadir una barra de oro aleatoria
+function addRandomGoldBar() {
+    let barWidth = random(50, 70); // Ancho similar al tamaño del reloj de arena
+    let barHeight = random(30, 50); // Altura más pequeña para ser horizontal
+    // Asegurar que aparezca dentro de los límites, considerando el ancho y la altura
+    let x = random(GOLDBAR_BORDER_PADDING + barWidth / 2, width - GOLDBAR_BORDER_PADDING - barWidth / 2);
+    let y = random(GOLDBAR_BORDER_PADDING + barHeight / 2, height - GOLDBAR_BORDER_PADDING - barHeight / 2);
+    goldBars.push({ x, y, width: barWidth, height: barHeight, birthTime: millis() });
+}
+
+// Clase que define el comportamiento de cada pelota
+class Ball {
+    constructor() {
+        this.x = random(width);      // Posición X aleatoria
+        this.y = random(height);     // Posición Y aleatoria
+        this.d = random(15, 40);     // Diámetro aleatorio
+        this.xspeed = random(-2, 2); // Velocidad X aleatoria
+        this.yspeed = random(-2, 2); // Velocidad Y aleatoria
+        this.color = [255, 255, 255]; // Color de la pelota es blanco fijo
+    }
+
+    move() {
+        // Añadir una pequeña variación aleatoria a la velocidad
+        this.xspeed += random(-0.1, 0.1);
+        this.yspeed += random(-0.1, 0.1);
+
+        // Limitar la velocidad para evitar que sea demasiado alta
+        this.xspeed = constrain(this.xspeed, -3, 3);
+        this.yspeed = constrain(this.yspeed, -3, 3);
+
+        // Actualizar la posición usando la velocidad
+        this.x += this.xspeed;
+        this.y += this.yspeed;
+    }
+
+    bounce() {
+        // Calcular el radio para la colisión
+        let r = this.d / 2;
+
+        // Invertir la dirección X y ajustar la posición si golpea los bordes horizontales
+        if (this.x < r) {
+            this.x = r; // Establecer la posición exactamente en el borde
+            this.xspeed *= -1;
+        } else if (this.x > width - r) {
+            this.x = width - r; // Establecer la posición exactamente en el borde
+            this.xspeed *= -1;
+        }
+
+        // Invertir la dirección Y y ajustar la posición si golpea los bordes verticales
+        if (this.y < r) {
+            this.y = r; // Establecer la posición exactamente en el borde
+            this.yspeed *= -1;
+        } else if (this.y > height - r) {
+            this.y = height - r; // Establecer la posición exactamente en el borde
+            this.yspeed *= -1;
+        }
+    }
+
+    display() {
+        fill(...this.color);       // Color de la pelota (siempre blanco)
+        noStroke();                // Sin contorno
+        ellipse(this.x, this.y, this.d); // Dibujar la elipse
+    }
+
+    // Método adaptado para verificar colisión con la posición del dedo
+    isCollidingWithFinger(fingerX, fingerY, fingerRadius) {
+        // Verificar si la distancia entre el dedo y el centro de la pelota es menor que la suma de sus radios
+        return dist(fingerX, fingerY, this.x, this.y) < (this.d / 2 + fingerRadius);
+    }
+}
+
+
+<details>
+
+        
 ## Repartición del Trabajo
 
 De forma inicial, el desarrollo del proyecto se estructuró en torno a una fase base destinada a implementar y validar las funciones esenciales sobre las que se construiría el resto de la experiencia interactiva:
