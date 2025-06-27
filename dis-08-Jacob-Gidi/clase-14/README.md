@@ -240,3 +240,4 @@ https://github.com/user-attachments/assets/b6867151-1301-499a-ba0a-82a8588a01e1
 He tenido varios tropiezos que involucraría tanto como lograr el desplazamiento de la serpiente como el fondo donde se ubica la pantalla.
 Como por ejemplo cuando la serpiente por voz no responde de inmediato, sino mucho después.
 En otro cuando tanto la pantalla y fondo al ser negra me confundía y no sabia cual era el limite de la pantalla. 
+En otras a veces tuve que arreglar o ajustar lo mejor posible la parte del movimiento porque no reaccionaba a tiempo cuando cambiaba de dirección con la mano.
