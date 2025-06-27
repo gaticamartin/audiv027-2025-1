@@ -456,6 +456,8 @@ Utilizamos este tutorial: <https://www.youtube.com/watch?v=CIBKUC4TR18>
 
 tomamos el código base de <https://editor.p5js.org/Cardenb/sketches/PatqtOUlk> y de <https://editor.p5js.org/ml5/sketches/QGH3dwJ1A>
 
+Las ideas las sacamos de los siguientes videos: <https://www.youtube.com/watch?v=vfNHdVbE-l4>, <https://www.youtube.com/watch?v=K7b5MEhPCuo>, <https://www.youtube.com/watch?v=72pAzuD8tqE>, <https://github.com/AVAniketh0905/HandPose_Scrolling?utm_source=chatgpt.com>
+
 Las imágenes utilizadas son de internet.
 
 
@@ -467,4 +469,4 @@ Las imágenes utilizadas son de internet.
 4. Para lograr que Dorito se mueva la mano se tiene que enfocar correctamente y sin ruido de fondo.
 5. Se logró el objetivo de lograr un juego en el que para interactuar no es necesario tocar la pantalla.
 
-Dimensión etica:
+Dimensión etica: Comprendiendo que se trata de un juego que manipula datos sensibles al tener acceso a la cámara de un dispositivo resulta de vital importancia la protección de éstos para que el usuario del juego no vea comprometida su privacidad o su imagen. También es importante recalcar que no se lleve a cabo ningún tipo de almacenamiento de lo que sea registrado por la cámara o que dichos registros no sean usados con ningún fin, a menos que esto sea declarado con anterioridad de forma clara y directa (véase para ayudar a entrenar al modelo incorporado en el juego o cualquier otro).
