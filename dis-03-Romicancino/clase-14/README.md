@@ -264,7 +264,11 @@ lo hicimos en el editor de p5.js
 
 ## documentación multimedia / audiovisual del proyecto funcionando
 
+Código de Prueba del botón dentro del canvas y guardado de imágen 
+https://editor.p5js.org/Romicancino/sketches/A1fnXUtzD 
+
 https://github.com/user-attachments/assets/e1a056be-8911-4e14-a0a7-80cc2e08bcae
+
 
 creación del gif mediante vectores en Ilustrator y animado en Photoshop
 ![gif proyecto](https://github.com/user-attachments/assets/e70b3e1a-f47f-4578-8b70-d403cae86c97)
