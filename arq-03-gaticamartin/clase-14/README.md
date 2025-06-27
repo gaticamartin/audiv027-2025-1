@@ -114,7 +114,7 @@ API DE GAEL #GRACIASGAEL
       }
     }
 ```
-    ![image](https://github.com/user-attachments/assets/a9b88b45-a228-4a6e-8f2f-f1ca3748a70f)
+![image](https://github.com/user-attachments/assets/a9b88b45-a228-4a6e-8f2f-f1ca3748a70f)
 
 
    #### ACOTACIONES
