@@ -1522,7 +1522,7 @@ Una vez validado el correcto funcionamiento de la experiencia base, se procedió
 1. [ml5js HandPose](https://docs.ml5js.org/#/reference/handpose)
 2. [p5js Mask](https://p5js.org/reference/p5.Image/mask/)
 3. [p5js circle](https://p5js.org/reference/p5/circle/)
-4. [Shake Ball Bounce] (https://p5js.org/examples/classes-and-objects-shake-ball-bounce/)
+4. [Shake Ball Bounce](https://p5js.org/examples/classes-and-objects-shake-ball-bounce/)
  
 * Entre otras bibliotecas tambien usamos las siguientes fuentes de informacion: 
 [MDN web docs](https://developer.mozilla.org/en-US/)
