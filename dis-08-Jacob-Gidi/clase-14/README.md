@@ -496,6 +496,10 @@ function detectDirectionFromHand() {
 
 Pagina p5.js: https://editor.p5js.org/Jacob-Gidi/sketches/4qaAd7CBP
 
+# Conclusion
+
+Quería modificar un juego clásico con métodos de programación actuales de hoy en día que no existía en aquellos tiempos. Serpiente Arcoíris moderniza el clásico al integrar control por movimiento de la mano usando IA con ml5.js. A pesar de los desafíos técnicos —como problemas de respuesta y visibilidad— he de decir que disfruté el proceso y aún más cuando conseguí al final una jugabilidad fluida, eliminando colisiones con los bordes y dando prioridad a la experiencia del usuario. Aún faltan alguno que otro detalle, pero el resultado final me satisface. El juego resultante es visualmente atractivo, accesible e innovador, que combina creatividad y tecnología de forma efectiva.
+
 # Referentes.
 
 Snake Game: https://p5js.org/examples/games-snake/
