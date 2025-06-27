@@ -1,6 +1,12 @@
 ## clase-14
 
 # Juego: Kyu Fight! 
+
+Integrantes:
+
+* Vicente Tapia https://github.com/VicentilloTF  
+* Francys Vásquez https://github.com/Francys-vs  
+
 El juego consiste en que el jugador podrá simular ser un peleador profesional, en el que mediante la detección de movimiento de brazos, el jugador podrá pelear contra "Kyu" un muñeco de práctica (bastante "adorable"), Kyu tiene una barra de vida, el objetivo será dar la mayor cantidad de golpes durante un tiempo en específico, si logras derrotar a Kyu, se gana la partida, de lo contrario pierdes. 
 
 link: <https://www.youtube.com/watch?v=T99fNXTUUaQ> (detección de cuerpo)  
