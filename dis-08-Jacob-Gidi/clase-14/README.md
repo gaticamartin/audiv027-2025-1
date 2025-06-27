@@ -1,6 +1,6 @@
 # clase-14
 
-# Serpiente arcoiris
+# Serpiente arcoiris.
 
 Mi proyecto final se trata de hacer un juego de la serpiente que se mueve mediante los movimientos de la mano mediante la punta de los dedos. 
 
@@ -10,7 +10,7 @@ Mi proyecto final se trata de hacer un juego de la serpiente que se mueve median
 
 Mi programa base sería el juego original de la serpiente combinado a uno llamado Drawing Lines, el cual concibió a la serpiente pintada, donde la serpiente cambia de color al moverse.  
 
-# Serpiente Pintada
+# Serpiente Pintada.
 
 let gridWidth = 30;
 let gridHeight = 30;
@@ -241,3 +241,5 @@ He tenido varios tropiezos que involucraría tanto como lograr el desplazamiento
 Como por ejemplo cuando la serpiente por voz no responde de inmediato, sino mucho después.
 En otro cuando tanto la pantalla y fondo al ser negra me confundía y no sabia cual era el limite de la pantalla. 
 En otras a veces tuve que arreglar o ajustar lo mejor posible la parte del movimiento porque no reaccionaba a tiempo cuando cambiaba de dirección con la mano.
+
+# Detalles finales.
