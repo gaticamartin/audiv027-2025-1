@@ -227,3 +227,16 @@ https://github.com/user-attachments/assets/d8e6bbc7-ed94-4f8d-b82e-73dcb4afd4f0
 
 # Tropiezos.
 
+
+https://github.com/user-attachments/assets/b6867151-1301-499a-ba0a-82a8588a01e1
+
+
+
+
+![Captura de pantalla 2025-06-20 232431](https://github.com/user-attachments/assets/b45ce25f-bf0e-4000-9bb9-d8c613f88506)
+
+
+
+He tenido varios tropiezos que involucraría tanto como lograr el desplazamiento de la serpiente como el fondo donde se ubica la pantalla.
+Como por ejemplo cuando la serpiente por voz no responde de inmediato, sino mucho después.
+En otro cuando tanto la pantalla y fondo al ser negra me confundía y no sabia cual era el limite de la pantalla. 
