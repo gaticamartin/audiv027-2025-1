@@ -1,13 +1,13 @@
 # clase-14
 
-## Asistente para personas tímidas en conciertos
+# Asistente para personas tímidas en conciertos
 
-# Introducción
+## Introducción
 En un comienzo, nuestra intención era trabajar con una adaptación de la obra Shape Shifter de la artista Maya Man, ya que nos interesaba su enfoque lúdico sobre el cuerpo y las formas generativas. Sin embargo, al analizar su estructura, nos dimos cuenta de que la implementación era más compleja de lo que esperábamos. Consideramos como alternativa utilizar la Basic Demo de ml5.js, pero tampoco logramos encontrar una dirección clara a partir de ella.
 Durante la clase siguiente decidimos cambiar el enfoque del proyecto y orientarnos hacia algo más cercano a nuestras posibilidades técnicas y creativas. Retomamos el uso de Teachable Machine, como en el proyecto anterior, pero esta vez usando el modelo de imagen para trabajar directamente con la cámara en tiempo real.
 Así surgió la idea de crear un asistente para personas tímidas en conciertos, una especie de representación sonora y gestual para quienes sienten incomodidad al expresarse en público. La propuesta combina tecnología de aprendizaje automático con una interfaz visual y sonidos pregrabados, generando una experiencia humorística e interactiva.
 
-# Primera fase
+## Primera fase
 Decidimos construir una interfaz muy simple, con un mensaje inicial claro y un solo botón, para enfatizar la idea de que el “asistente” es quien toma el protagonismo: es este quien, una vez activado, interpretará por ti acciones como aplaudir, gritar o celebrar. Es una forma irónica de “delegar” la emoción en una máquina.
 Durante el desarrollo, optamos por combinar entradas de imagen con salidas de audio. Aunque el modelo solo reconoce imágenes, estas activan sonidos según la acción detectada. Para lograrlo, grabamos cerca de mil imágenes por cada categoría que el asistente puede identificar:
 aplauso
@@ -23,14 +23,14 @@ aplauso
 Este volumen de datos permitió entrenar el modelo con suficiente precisión para distinguir expresiones similares entre sí, como aplaudir y celebrar, que a menudo se confunden porque implican movimientos parecidos con las manos.
 
 
-# Proceso de entrenamiento - Teachable machine
+## Proceso de entrenamiento - Teachable machine
 
 ![unnamed](https://github.com/user-attachments/assets/840674ef-72c4-4fae-b173-65f6ae9339f7)
 
 ![unnamed (1)](https://github.com/user-attachments/assets/b8d305f7-a3ad-46d6-90df-555a154eb5da)
 
 
-# División del trabajo
+## División del trabajo
 El proyecto, durante la primera fase, lo trabajamos colaborativamente para definir y entrenar el modelo de Teachable Machine con las imágenes necesarias. Posteriormente, dividimos las tareas para avanzar en paralelo:
 @RafaFerrari: responsable del manejo de audio, selección y asociación de sonidos para cada gesto reconocido.
 
@@ -47,7 +47,7 @@ Esta división permitió un desarrollo más eficiente y un aporte equilibrado de
 
 
 
-# Código
+## Código
 
 // Variables globales para cámara, clasificación y sonidos
 let cam; // Entrada de video desde la cámara
@@ -228,7 +228,8 @@ function playSoundForLabel(label) {
 }
 
 
-Conclusiones
+## Conclusiones
+
 Una de las decisiones más importantes que tomamos fue priorizar la cantidad y calidad de información que entregamos al modelo de Teachable Machine, ya que varias de las expresiones que queríamos representar se parecen entre sí (por ejemplo, aplaudir y celebrar, o gritar y asombrarse). Por eso, grabamos cerca de mil muestras por categoría, buscando generar una base de datos sólida y variada. Esto ayudó a mejorar la precisión del asistente y facilitó que muchas de las acciones se reconocen correctamente en tiempo real.
 Aun así, sabemos que el proyecto no es perfecto. El modelo todavía presenta algunas confusiones, especialmente entre gestos que implican movimientos similares o posiciones corporales poco diferenciadas. Reconocemos que este tipo de errores son parte del límite técnico de trabajar con un modelo de imagen simple, pero también son parte del aprendizaje del proceso.
 Más allá de eso, consideramos que el asistente es capaz de captar varias expresiones con éxito, y que en conjunto, el sistema logra comunicar su intención de manera clara. La propuesta funciona como una experiencia directa, humorística y ligera, y sentimos que logramos traducir bien esa idea a través del código, la interfaz y el entrenamiento del modelo.
