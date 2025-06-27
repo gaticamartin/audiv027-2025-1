@@ -140,7 +140,7 @@ class SismoVisual {
 *Agregar Lenguaje distintivo al registro mas reciente pulsacion(?)
 *Mover los textos al centro de la pantalla.
 
-´´´
+```python
 let sismos = [];
 let datosCargados = false;
 let cargando = false;
@@ -271,4 +271,6 @@ class SismoVisual {
     return true;
   }
 }
-´´´
+```
+
+
