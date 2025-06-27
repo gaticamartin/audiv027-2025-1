@@ -321,6 +321,8 @@ function errorCarga(err) {
 ```
 
 #### Falló. Lamentable.
+![marcelolagos](https://github.com/user-attachments/assets/5bb2d73d-8a56-4803-9c52-c2d71ef2159c)
+
 
 ### Sustitucion con modelo Dummy :(
 
@@ -363,6 +365,7 @@ function simularPrediccion() {
   };
 }
 ```
+
 
 ## Codigo Final
 
@@ -617,3 +620,5 @@ async function entrenarModelo() {
 https://editor.p5js.org/gaticamartin/full/3Hf9OdA9Y Proyecto Fullscreen
 
 ## GRACIAS
+![Marcelo_Alta-pxdpl71rxuyjmwvjruno24himeoppciny15x1bcyhw](https://github.com/user-attachments/assets/4a24fb0e-fcc5-4a5d-b630-4d715137d393)
+
