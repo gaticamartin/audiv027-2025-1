@@ -149,6 +149,8 @@ if (ball.isCollidingWithFinger(playerDisplayX, playerDisplayY, currentDedoRadius
 
 ## Constante Tiempo Y Puntuación
 Lo primero que se desarrolla es el tiempo base del juego, este reloj comienza en 30 seg y va disminuyendo a medida que transcurre el juego, ademas se implementarán elementos extras que aumentarán o disminuirán el tiempo, igualmente los buff y debuff se ordenan (aparecen) con respectos a los segundos transcurridos y aparecen durante una cierta cantidad de tiempo, con respecto a la puntuación, esta comienza en cero y va aumentando con cada segundo que pasa, además los buff y debuff tienen efecto sobre la puntuación, el código se comienza a armar de la siguiente forma: 
+
+~~~ javascript
 // Se hará un temporizador base de 30 segundos para el inicio del jugo que irá disminuyendo (el juego termina cuando el contador llega a 0).
 // Se agregan variables que suman (+4), estas aparecen cada cierto tiempo en el juego para que el jugador las tome.
 // En caso de que el jugador toque algunas de las bombas o sea alcanzado por el enemigo se le restaron -3 segundos.
@@ -208,6 +210,9 @@ function applyItemEffect(type) {
             break;
     }
 }
+
+~~~
+
 Durante el desarrollo del sistema de tiempo y puntuación del juego, uno de los principales desafíos fue lograr un equilibrio adecuado entre los distintos elementos que afectan la duración y la puntuación final. Se debieron realizar múltiples sincronizaciones para evitar que el juego se volviera demasiado fácil o injustamente difícil. Coordinar que los efectos se activen y desactiven en los momentos adecuados exigió múltiples pruebas y ajustes. Además, asegurar que el puntaje refleje fielmente el desempeño del jugador, sin errores de suma o acumulación indebida, fue clave para garantizar una experiencia de juego justa y funcional. Los elementos de tiempo y puntuación se transforman en parámetros que regulan todo el juego. Esta fue la base sobre la cual se trabajó, a medida que el código fue avanzando estos valores cambiaron , se juntaron y se agregaron o sacaron cosas para poder adecuarse a las nuevas necesidades del código completo
 
 
