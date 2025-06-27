@@ -652,6 +652,9 @@ Al unificar el código en sus diversas partes nos encontramos con varios problem
 <details>
 <summary> Código del proyecto </summary>
 
+    
+~~~javascript
+
 let video;
 let hands = [];
 let dedoImg;
@@ -1494,9 +1497,8 @@ class Ball {
         return dist(fingerX, fingerY, this.x, this.y) < (this.d / 2 + fingerRadius);
     }
 }
-
-
-<details>
+~~~
+</details>
 
         
 ## Repartición del Trabajo
