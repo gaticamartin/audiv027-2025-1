@@ -44,6 +44,7 @@ API DE GAEL #GRACIASGAEL
 
 ### Primer Intento de Codigo
 
+```python
     //En base a la base de datos API de Gael Cloud "https://api.gael.cloud/general/public/sismos"
 
     let sismos = [];
@@ -112,6 +113,9 @@ API DE GAEL #GRACIASGAEL
   
       }
     }
+```
+    ![image](https://github.com/user-attachments/assets/a9b88b45-a228-4a6e-8f2f-f1ca3748a70f)
+
 
    #### ACOTACIONES
 
@@ -121,6 +125,244 @@ API DE GAEL #GRACIASGAEL
    - centrar los textos
    - aun hay que convertir estos datos a el lenguaje visual deseado.
    - quizas programar que los datos se muestren a partir de un click o tap en la pantalla, y antes de eso solo mostrar una determinada cita que haga referencia a la relacion de el paisaje nacional con su naturaleza sismica.
+   - 
+
+### Segundo Intento
+
+    // En base a la base de datos API de Gael Cloud "https://api.gael.cloud/general/public/sismos"
+
+```python
+    function draw() {
+      background(0); // fondo negro
+
+      // Si aún no se ha hecho click
+      if (!datosCargados && !cargando) {
+        text("Otra vez, otra vez el caballo iracundo patea el planeta\n" +
+                  "y escoge la patria delgada, la orilla del páramo andino,\n" +
+                  "la tierra que dio en su angostura la uva celeste y el cobre absoluto,\n" +
+                  "otra vez...\n" +
+                  "...y padece otra vez el espanto y la grieta.", width / 2, height / 2);
+        return;
+      }
+
+      // Si está cargando datos
+      if (cargando) {
+        text("Cargando datos sísmicos...", width / 2, height / 2);
+        return;
+      }
+
+      // Si los datos ya están cargados y listos
+      if (sismos.length > 0) {
+        let ahora = new Date();
+        let hace24Horas = new Date(ahora.getTime() - (24 * 60 * 60 * 1000));
+
+    // Filtrar sismos de las últimas 24 horas
+    let recientes = sismos.filter(sismo => {
+      let fecha = new Date(sismo.Fecha);
+      return fecha > hace24Horas;
+    });
+
+    let lineaAltura = 30;
+    let bloqueAltura = recientes.length * lineaAltura;
+    let startY = (height - bloqueAltura) / 2;
+
+    if (recientes.length > 0) {
+      for (let i = 0; i < recientes.length; i++) {
+        let sismo = recientes[i];
+      // Texto en pantalla de fecha y magnitud
+      //  para agregar ubicación: - ${sismo.RefGeografica}
+        let texto = `${sismo.Fecha} - M${sismo.Magnitud}`;
+        text(texto, width / 2, startY + i * lineaAltura); //texto centrado
+      }
+      //en el caso remoto de que no se registren sismos en las ultimas 24h
+    } else {
+      text(":o", width / 2, height / 2);
+        }
+      }
+    }
+    
+    // responde al hacer click
+    function mousePressed() {
+      if (!datosCargados && !cargando) {
+        cargando = true; // empezamos a cargar
+        let url = 'https://corsproxy.io/?https://api.gael.cloud/general/public/sismos';
+        loadJSON(url, gotData, 'json', errorCarga);
+      }
+    }
+
+    // API responde exitosamente
+    function gotData(data) {
+      sismos = data;
+      datosCargados = true;
+      cargando = false;
+      console.log(sismos);
+    }
+
+    // en caso de error
+    function errorCarga(err) {
+      cargando = false;
+      datosCargados = true;
+      console.error("Error :c", err);
+    }
+```
+
+  #### ACOTACIONES
+
+  - falta convertir datos en lenguaje grafico
+
+## Desarrollo de Lenguaje Grafico
+
+#### se añade pantalla de inicio
+
+```python
+function draw() {
+  background(0);
+
+  switch (estado) {
+    case 0:
+      // Pantalla Poema Vibrante
+      let amplitud = 2;
+      let frecuencia = 0.1;
+      let offsetX = sin(frameCount * frecuencia * 1.3) * amplitud;
+      let offsetY = sin(frameCount * frecuencia * 0.9) * amplitud;
+      text(
+        
+        "...La patria delgada,\n la orilla del páramo andino,\n la tierra que dio en su angostura la uva celeste\n y el cobre absoluto...\n padece otra vez el espanto y la grieta.",
+        
+        width / 2 + offsetX,
+        height / 2 + offsetY
+        
+      );
+          text("...La patria delgada,\n la orilla del páramo andino,\n la tierra que dio en su angostura la uva celeste\n y el cobre absoluto...\n padece otra vez el espanto y la grieta.", width / 2, height / 2);
+      break;
+
+    ```
+
+![image](https://github.com/user-attachments/assets/55950772-3e70-4f21-a172-1ccd0923f6a6)
+
+#### Se implementa traduccion de magnitudes a circunferencias en pantalla 
+
+```python
+
+function procesarDatos(data) {
+  sismos = data;
+  datosCargados = true;
+  cargando = false;
+  estado = 1; // Cambiar a pantalla de visualización
+
+  let ahora = new Date();
+  let hace24Horas = new Date(ahora.getTime() - 24 * 60 * 60 * 1000);
+  sismosVisuales = [];
+
+  for (let sismo of sismos) {
+    let fechaSismo = new Date(sismo.Fecha);
+    if (fechaSismo > hace24Horas) {
+      sismosVisuales.push(new SismoVisual(sismo));
+    }
+  }
+```
+
+ #### Y se suman Datos filtrados: Mayor Magnitud y Ultimo Sismo
+
+```python
+    case 1:
+      // Pantalla de Sismos
+      sismosVisuales = sismosVisuales.filter((sv) => sv.draw());
+
+      if (sismosVisuales.length > 0) {
+        let ultimo = sismosVisuales[sismosVisuales.length - 1];
+        let masFuerte = sismosVisuales.reduce((max, sv) => {
+          return sv.sismo.Magnitud > max.sismo.Magnitud ? sv : max;
+        }, sismosVisuales[0]);
+
+        fill(255);
+        textAlign(CENTER, CENTER);
+        textSize(16);
+        text(
+          `Último Sismo: ${ultimo.sismo.Fecha} - M${ultimo.sismo.Magnitud}`,
+          width / 2,
+          height / 2 - 10
+        );
+        text(
+                  `\nMayor Magnitud: M${masFuerte.sismo.Magnitud} \n ${masFuerte.sismo.RefGeografica}`,
+          width / 2,
+          height / 2 + 15
+        );
+                fill(255, 0, 0);
+        textAlign(CENTER, CENTER);
+        textSize(20);
+
+        ```
+
+![image](https://github.com/user-attachments/assets/f8169366-9c5e-4d78-9de6-f42e497df74e)
+
+## Implementacion de IA (?)
+
+Entrenamiento de modelo TensorFlow.js
+
+Prediccion en base a ultimos 3 - 5 registros 
+Predecir MAgnitud, Fecha, Hora y ubicacion (?)
+
+https://www.google.com/search?q=tutorial+tensorflow+training&rlz=1C1YTUH_esCL1001CL1001&oq=tutorial+tensorflow+training&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIICAEQABgWGB4yBwgCEAAY7wUyBwgDEAAY7wUyBwgEEAAY7wUyBwgFEAAY7wUyBwgGEAAY7wXSAQg2MTQ1ajBqOagCALACAA&sourceid=chrome&ie=UTF-8#fpstate=ive&vld=cid:cf4662cc,vid:6_2hzRopPbQ,st:0 (????)
+
+```python
+  crearModelo()
+    .then(() => entrenarModelo())
+    .then(() => {
+      // predicción al hacer clic
+    });
+}
+
+function errorCarga(err) {
+  cargando = false;
+  datosCargados = false;
+  console.error("Error al cargar datos:", err);
+}
+```
+
+#### Falló. Lamentable.
+
+### Sustitucion con modelo Dummy :(
+
+Simula la predicción completa (PREDICCION FALSA POR AHORA)
+
+
+```python
+function errorCarga(err) {
+  cargando = false;
+  datosCargados = false;
+  console.error("Error al cargar datos:", err);
+}
+
+// Simula la predicción completa (PREDICCION FALSA POR AHORA): magnitud, fecha y ubicación
+function simularPrediccion() {
+  let magnitud = random(4, 7);
+
+  // Fecha futura entre 2 y 24 horas desde ahora
+  let fechaFutura = new Date();
+  let horasAdelanto = floor(random(2, 36));
+  fechaFutura.setHours(fechaFutura.getHours() + horasAdelanto);
+
+  // Array con posibles ubicaciones ficticias
+  let lugares = [
+    "Zona costera",
+    "Altiplano",
+    "Región central",
+    "Norte de Chile",
+    "Sur de Chile",
+    "Talca",
+    "Falla de San Ramón",
+    "Antartica Chilena"
+  ];
+  let lugar = random(lugares);
+
+  return {
+    magnitud: magnitud,
+    fecha: fechaFutura,
+    lugar: lugar,
+  };
+}
+```
 
 ## Codigo Final
 
@@ -370,3 +612,8 @@ async function entrenarModelo() {
   return;
 }
 ```
+[Stylish_height_copy_2025_06_27_19_52_58.zip](https://github.com/user-attachments/files/20956034/Stylish_height_copy_2025_06_27_19_52_58.zip)
+
+https://editor.p5js.org/gaticamartin/full/3Hf9OdA9Y Proyecto Fullscreen
+
+## GRACIAS
