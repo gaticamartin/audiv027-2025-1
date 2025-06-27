@@ -254,6 +254,7 @@ Luego de solucionar los problemas ya tengo todo listo.
 
 Index.html
 
+```javascript
 <!DOCTYPE html>
 <html lang="es">
   <head>
@@ -278,9 +279,11 @@ Index.html
     <script src="sketch.js"></script>
   </body>
 </html>
+```
 
 Sketch.js
 
+```javascript
 let gridWidth = 50;
 let gridHeight = 50;
 
@@ -496,6 +499,7 @@ function detectDirectionFromHand() {
     }
   }
 }
+```
 
 Pagina p5.js: https://editor.p5js.org/Jacob-Gidi/sketches/4qaAd7CBP
 
