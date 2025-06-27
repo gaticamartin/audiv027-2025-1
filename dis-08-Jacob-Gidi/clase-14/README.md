@@ -495,3 +495,9 @@ function detectDirectionFromHand() {
 }
 
 Pagina p5.js: https://editor.p5js.org/Jacob-Gidi/sketches/4qaAd7CBP
+
+# Referentes.
+
+Snake Game: https://p5js.org/examples/games-snake/
+Drawing Line: https://p5js.org/examples/animation-and-variables-drawing-lines/
+Handpose de ml5js: https://docs.ml5js.org/#/reference/handpose
