@@ -32,17 +32,17 @@ Para trabajar aún más el dinamismo al momento de la jugabilidad, se pensó una
 
 
 Se crean obstáculos (pelotas blancas) que están en constante movimiento alrededor del mapa, las cuales rebotan al tocar los muros. Se crea un patrón constructor en el cual se definen los parámetros de los objetos, ya sean velocidad, posición y diámetros. Se define también un delay para que las pelotas aparezcan una vez se inicie el juego. El proceso se hizo mediante:
-*generación de una pelota móvil
+* generación de una pelota móvil
 
 ![pelota hitbox](https://github.com/user-attachments/assets/e3eb3881-389a-4feb-8f0a-eaddc78fbab1)
 
-*multiplicación de estas mediante aplicación de parámetros
-*se añaden parámetros para velocidad, diámetros y spawn inicial
+* multiplicación de estas mediante aplicación de parámetros
+* se añaden parámetros para velocidad, diámetros y spawn inicial
 
 ![20 pelotas](https://github.com/user-attachments/assets/0e128b17-a4cf-4027-a937-ac8006b59705)
 
-*se agrega delays para el spawn inicial
-*se agrega efecto de colisión (esto posteriormente, una vez combinado con el hitbox de los dedos)
+* se agrega delays para el spawn inicial
+* se agrega efecto de colisión (esto posteriormente, una vez combinado con el hitbox de los dedos)
 para llegar al siguiente código: 
 
 ~~~ javascript
@@ -464,8 +464,10 @@ Al probar el código, el seguimiento es fluido y estable hacia el dedo detectado
 
 ## Spawn de objetos
 
-![spawn set interval](https://github.com/user-attachments/assets/debf6f72-f972-46b8-ab68-893503f6819a)
+![spawn set interval](https://github.com/user-attachments/assets/debf6f72-f972-46b8-ab68-893503f6819a) 
+
 Primero se prueba como se pueden spawnear objetos mediante un setinterval diferente para cada una de las pelotas. Para esto se coloca un rango de tiempo en el que puede spawnear una pelota y un tiempo que establezca el delete de pelotas tras pasado cierto tiempo de spawn. Usando el ejemplo de una sola:
+
 ~~~ javascript
 function draw() {
   background(0);
@@ -506,6 +508,8 @@ function crearElipseRoja() {
 ~~~ 
 
 ![objeto simple respawns](https://github.com/user-attachments/assets/b9038f57-94f7-4e1d-80ba-cf17fa1387e8)
+
+
 Sin embargo, para simplificar el juego, esto se reduce a crear una funcion de generar un circulo aleatorio cada cierto tiempo establecido (anteriormente aleatorio) en el cual genera una pelota random del conjunto de pelotas
 
 ~~~ javascript
@@ -550,6 +554,7 @@ function addRandomCircle() {
 }
 ~~~
 Finalmente, se decide que para mayor intuición del usuario, todos los objetos serian camuflados en forma de estrella, y que el bufo aleatorio sería descrito en la pantalla mediante texto
+
 ![objeto estrella](https://github.com/user-attachments/assets/dc192d71-da39-4c68-8c65-d254782ef969)
 
 
