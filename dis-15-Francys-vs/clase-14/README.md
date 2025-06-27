@@ -370,6 +370,8 @@ class Personaje {
   }
 }
 ```
+link para observarlo en funcionamiento: <https://editor.p5js.org/francys.vasquez/full/1Alfmpiuu>  
+
 Aquí encontramos que los personajes y movimientos se relacionan correctamente, sin embargo, se detectan errores que tienen relación a la asociación que tiene la cámara y el programa de ml5js con la detección correcta de brazo, por lo que se deben tomar ciertas precauciones.
 
 > [!TIP]
@@ -468,13 +470,11 @@ function draw() {
   personaje.mostrar();
   practica.mostrar();
 
-  // Golpe con brazo derecho
   if (practica.visible && personaje.estado === 'golpeDerecha' && !personaje.golpeDetectado) {
     let golpeX = width / 2 + 75;
     let golpeY = height / 2 + 80;
     let d = dist(golpeX, golpeY, practica.x, practica.y);
 
-    // Visualización del área de golpe (puedes quitar esto después)
     fill(0, 0, 255);
     ellipse(golpeX, golpeY, 10);
 
@@ -483,8 +483,6 @@ function draw() {
       personaje.golpeDetectado = true;
     }
   }
-
-  // (Opcional) Golpe con brazo izquierdo
   if (practica.visible && personaje.estado === 'golpeIzquierda' && !personaje.golpeDetectado) {
     let golpeX = width / 2 - 75;
     let golpeY = height / 2 + 80;
@@ -572,6 +570,7 @@ class porfiado {
   }
 }
 ```
+Link para observarlo en movimiento: <https://editor.p5js.org/francys.vasquez/full/vRB-ViYDW>    
 Aquí antes de generar la interacción entre Kyu y el peleador, se hace la prueba con una ellipse que simulará ser Kyu, esto con el propósito de lograr el contacto entre peleador y Kyu. 
 
 ### Acercamiento casi final del juego completo.
@@ -1055,6 +1054,3 @@ A pesar de esto, podemos concordar en que nos gustó demasiado el adentrarnos en
 Lo negativo de este trabajo, es que fue una dificultad poder hacer que detecte correctamente los brazos el BodyPose, lo cual es curioso, puesto que parece que se utiliza con propósitos más "sencillos" dentro de las investigaciones de referentes que buscamos, lo que cuesta que al pedirle a otra cosa que reaccione a la acción, muchas veces, no detecta nada o confunde con otras partes del cuerpo por más que se trabajen con "arrays".  
 
 Finalmente, como dúo comprendemos la responsabilidad que conlleva el crear un juego de este estilo, ya que, como nosotros no tuvimos ningún referente cercano, nuestro propio trabajo puede ser de utilidad a otras personas y que, incluso, pueden lograr llevar el juego a una mejor versión del mismo, ya sea utilizando el mismo método o no de BodyPose.
-
-
-
