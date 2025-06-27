@@ -258,7 +258,7 @@ function drawKeypoints()  {
 }
 ```
 
-## enlace del proyecto: https://editor.p5js.org/joo08/sketches/81aJS43qI
+## enlace del proyecto: https://editor.p5js.org/joo08/sketches/8tby3pE8z
 
 lo hicimos en el editor de p5.js
 
@@ -266,12 +266,15 @@ lo hicimos en el editor de p5.js
 
 https://github.com/user-attachments/assets/e1a056be-8911-4e14-a0a7-80cc2e08bcae
 
-En la primera versión del código utilizamos el comando PoseNet, lo cual hacía que el filtro en lugar de detectar el parpadeo se cambiara con cualquier movimiento de la cara, ya para la versión final decidimos utilizar FaceMesh de ml5.js en lugar de PoseNet y esto nos ayudó a mejorar la precisión, sin embargo, aún no detectaba tal cual el pestañeo, por lo tanto agregamos el comando EAR (eye aspect ratio) que nos ayuda a integrar puntos referenciales de los ojos y utilizamos el comando earTreshold para ajustar la sensibilidad. 
-
 creación del gif mediante vectores en Ilustrator y animado en Photoshop
 ![gif proyecto](https://github.com/user-attachments/assets/e70b3e1a-f47f-4578-8b70-d403cae86c97)
 
-uso del filtro 
+Proyecto 1 en uso ![image](https://github.com/user-attachments/assets/62543841-8345-4767-971c-fe75a2e86cd3)
+Proyecto 2 en uso ![image](https://github.com/user-attachments/assets/c7361bb3-12f4-47d0-851e-8adfa5f7dd9e)
+
+
+
+En la primera versión del código utilizamos el comando PoseNet, lo cual hacía que el filtro en lugar de detectar el parpadeo se cambiara con cualquier movimiento de la cara, ya para la versión final decidimos utilizar FaceMesh de ml5.js en lugar de PoseNet y esto nos ayudó a mejorar la precisión, sin embargo, aún no detectaba tal cual el pestañeo, por lo tanto agregamos el comando EAR (eye aspect ratio) que nos ayuda a integrar puntos referenciales de los ojos y utilizamos el comando earTreshold para ajustar la sensibilidad. 
 
 Repartición del trabajo: Romina-Creación de los accesorios, Josefa-Código.
 
