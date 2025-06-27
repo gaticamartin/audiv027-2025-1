@@ -243,3 +243,6 @@ En otro cuando tanto la pantalla y fondo al ser negra me confundía y no sabia c
 En otras a veces tuve que arreglar o ajustar lo mejor posible la parte del movimiento porque no reaccionaba a tiempo cuando cambiaba de dirección con la mano.
 
 # Detalles finales.
+
+Después de muchos procesos y al notar ciertos detalles que afectarían al proyecto, ya que la reacción del cambio de movimiento demora un poco más decidí quitar la limitante de perder al chocar con el final de la pantalla, para que uno siga jugando sin estresarse al chocar, y se la serpiente termine al otro lado de la pantalla.
+Luego de solucionar los problemas ya tengo todo listo. 
