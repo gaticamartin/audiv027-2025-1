@@ -365,6 +365,7 @@ function simularPrediccion() {
   };
 }
 ```
+![image](https://github.com/user-attachments/assets/a41afe1f-6c48-49e1-8c7e-1096f6a0f378)
 
 
 ## Codigo Final
