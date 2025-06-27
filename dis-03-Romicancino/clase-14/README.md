@@ -2,9 +2,9 @@
 viernes 27 junio 2025
 
 ## BARBIE WORLD 2.0
+mi equipo de trabajo es <<https://github.com/joo08>> y entregamos en el repositorio en este enlace <[https://github.com/ETC](https://github.com/Romicancino/audiv027-2025-1/edit/main/dis-03-Romicancino/clase-14/README.md)>.
 
 integrantes:
-
 * Josefa Gutierrez <https://github.com/joo08>
 * Romina Cancino <https://github.com/Romicancino>
 
@@ -276,7 +276,7 @@ Proyecto 2 en uso ![image](https://github.com/user-attachments/assets/c7361bb3-1
 
 En la primera versión del código utilizamos el comando PoseNet, lo cual hacía que el filtro en lugar de detectar el parpadeo se cambiara con cualquier movimiento de la cara, ya para la versión final decidimos utilizar FaceMesh de ml5.js en lugar de PoseNet y esto nos ayudó a mejorar la precisión, sin embargo, aún no detectaba tal cual el pestañeo, por lo tanto agregamos el comando EAR (eye aspect ratio) que nos ayuda a integrar puntos referenciales de los ojos y utilizamos el comando earTreshold para ajustar la sensibilidad. 
 
-Repartición del trabajo: Romina-Creación de los accesorios, Josefa-Código.
+Repartición del trabajo: Romina-Creación de los accesorios/gif, Josefa-Código.
 
 ## bibliografía
 
@@ -288,6 +288,7 @@ usamos la biblioteca p5.js v 1.11.5 y la biblioteca ml5.js v 0.12.2
 
 ## conclusiones
 
+Gracias a la combinación de estas herramientas, el filtro ofrece una experiencia divertida, fluida y accesible, que invita al usuario a participar mediante gestos naturales (como el parpadeo), y a interactuar con el entorno digital de manera lúdica. Además, el botón de captura añade un elemento tangible a la experiencia, permitiendo al usuario guardar un recuerdo personalizado de su paso por el filtro.
 
 
 Posibles usos:
