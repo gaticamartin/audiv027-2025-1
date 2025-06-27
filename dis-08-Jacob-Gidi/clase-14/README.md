@@ -509,6 +509,10 @@ Quería modificar un juego clásico con métodos de programación actuales de ho
 
 # Ideas y procesos descartados.
 
+1) Dirección con Voz: https://editor.p5js.org/Jacob-Gidi/sketches/m83u5jSFD
+2) Dirección con Voz + Serpiente Pintada = Serpiente por Voz: https://editor.p5js.org/Jacob-Gidi/sketches/h9Ko_LVk9
+3) Snake 2, movimiento Descoordinado: https://editor.p5js.org/Jacob-Gidi/sketches/Qi8nVwqjJ
+4) Mov. con el Dedo, Muy difícil de direccionar: https://editor.p5js.org/Jacob-Gidi/sketches/SnzKzTvhN
 # Referentes.
 
 Snake Game: https://p5js.org/examples/games-snake/
