@@ -1,5 +1,7 @@
 # clase-14
 
+Yo trabajo solo y lo entrego aquí mismo: https://github.com/Jacob-Gidi/audiv027-2025-1/edit/main/dis-08-Jacob-Gidi/clase-14/README.md
+
 # Serpiente arcoiris.
 
 Mi proyecto final se trata de hacer un juego de la serpiente que se mueve mediante los movimientos de la mano mediante la punta de los dedos. 
