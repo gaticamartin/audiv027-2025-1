@@ -228,6 +228,10 @@ function playSoundForLabel(label) {
 }
 
 
+## Link
+
+https://editor.p5js.org/rafael.ferrari/sketches/46bJhTYnd
+
 ## Conclusiones
 
 Una de las decisiones más importantes que tomamos fue priorizar la cantidad y calidad de información que entregamos al modelo de Teachable Machine, ya que varias de las expresiones que queríamos representar se parecen entre sí (por ejemplo, aplaudir y celebrar, o gritar y asombrarse). Por eso, grabamos cerca de mil muestras por categoría, buscando generar una base de datos sólida y variada. Esto ayudó a mejorar la precisión del asistente y facilitó que muchas de las acciones se reconocen correctamente en tiempo real.
