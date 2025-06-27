@@ -5,7 +5,9 @@
  -las circunferencias tienen un radio segun la magnitud del sismo
  -la opacidad de la circunferencia va bajando, del 100% apenas se reporta, hasta el 0% 24 horas despues de transcurrido.
 
- ´´´´´´let sismos = [];
+```python
+
+ let sismos = [];
 let datosCargados = false;
 let cargando = false;
 
@@ -176,3 +178,4 @@ function predecirProximoSismo() {
   prediccionTensor.dispose();
   return valorPredicho;
 }
+```
