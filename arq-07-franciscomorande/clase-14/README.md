@@ -1,3 +1,14 @@
+# nombre proyecto
+
+Integrantes:
+
+* [Benjamin Gonzalez](https://github.com/FAU-UChile/audiv027-2025-1/tree/main/arq-05-BenjaminGonzalezFAU)
+* [Ignacia Sepulveda](https://github.com/FAU-UChile/audiv027-2025-1/tree/main/arq-09-IgnaciaUch)
+* [Francisco Morande](https://github.com/FAU-UChile/audiv027-2025-1/tree/main/arq-07-franciscomorande)
+
+
+Mi equipo de trabajo es <https://github.com/FAU-UChile/audiv027-2025-1/tree/main/arq-05-BenjaminGonzalezFAU> y <https://github.com/FAU-UChile/audiv027-2025-1/tree/main/arq-09-IgnaciaUch>, entregamos en el repositorio en este [enlace](https://github.com/franciscomorande/audiv027-2025-1/tree/main/arq-07-franciscomorande/clase-09).
+
 ## Acerca del proyecto
 
 El proyecto comenzó con una idea base: reutilizar el juego basado en detectar el dedo índice para mover al “jugador”. La herramienta seleccionada de ml5.js continuó siendo su apartado de “handPose”, por su accesibilidad y fluidez al momento de limitarse al monitoreo específico de puntos de la mano.  El sistema detecta en tiempo real los puntos extremos de cada dedo del usuario mediante una cámara web, y coloca sobre él la imagen para representar al jugador, en este caso para continuar con la narrativa del trabajo pasado, una imagen del profesor que simule que lo estamos controlando. 
