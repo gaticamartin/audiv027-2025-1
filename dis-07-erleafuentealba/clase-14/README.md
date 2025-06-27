@@ -469,6 +469,6 @@ Las imágenes utilizadas son de internet.
 4. Para lograr que Dorito se mueva la mano se tiene que enfocar correctamente y sin ruido de fondo.
 5. Se logró el objetivo de lograr un juego en el que para interactuar no es necesario tocar la pantalla.
 
-## Dimensión etica
+## dimensión etica
 
 Comprendiendo que se trata de un juego que manipula datos sensibles al tener acceso a la cámara de un dispositivo resulta de vital importancia la protección de éstos para que el usuario del juego no vea comprometida su privacidad o su imagen. También es importante recalcar que no se lleve a cabo ningún tipo de almacenamiento de lo que sea registrado por la cámara o que dichos registros no sean usados con ningún fin, a menos que esto sea declarado con anterioridad de forma clara y directa (véase para ayudar a entrenar al modelo incorporado en el juego o cualquier otro).
