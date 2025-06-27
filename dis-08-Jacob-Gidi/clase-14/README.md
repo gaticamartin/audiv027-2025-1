@@ -225,3 +225,5 @@ https://github.com/user-attachments/assets/d8e6bbc7-ed94-4f8d-b82e-73dcb4afd4f0
 ![Captura de pantalla 2025-06-26 185719](https://github.com/user-attachments/assets/cd62a9fd-fe31-422f-be4a-1f74131e4687)
 
 
+# Tropiezos.
+
