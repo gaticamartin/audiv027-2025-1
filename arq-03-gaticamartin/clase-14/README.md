@@ -237,7 +237,7 @@ function draw() {
       break;
 
     ```
-
+```
 ![image](https://github.com/user-attachments/assets/55950772-3e70-4f21-a172-1ccd0923f6a6)
 
 #### Se implementa traduccion de magnitudes a circunferencias en pantalla 
@@ -293,9 +293,9 @@ function procesarDatos(data) {
         textSize(20);
 
         ```
-
+```
 ![image](https://github.com/user-attachments/assets/f8169366-9c5e-4d78-9de6-f42e497df74e)
-
+```
 ## Implementacion de IA (?)
 
 Entrenamiento de modelo TensorFlow.js
