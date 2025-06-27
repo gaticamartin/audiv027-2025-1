@@ -507,6 +507,7 @@ function crearElipseRoja() {
 ~~~ 
 
 ![objeto simple respawns](https://github.com/user-attachments/assets/b9038f57-94f7-4e1d-80ba-cf17fa1387e8)
+
 Sin embargo, para simplificar el juego, esto se reduce a crear una funcion de generar un circulo aleatorio cada cierto tiempo establecido (anteriormente aleatorio) en el cual genera una pelota random del conjunto de pelotas
 
 ~~~ javascript
@@ -551,6 +552,7 @@ function addRandomCircle() {
 }
 ~~~
 Finalmente, se decide que para mayor intuición del usuario, todos los objetos serian camuflados en forma de estrella, y que el bufo aleatorio sería descrito en la pantalla mediante texto
+
 ![objeto estrella](https://github.com/user-attachments/assets/dc192d71-da39-4c68-8c65-d254782ef969)
 
 
@@ -609,6 +611,7 @@ function activateRandomBuff() {
 ~~~
 
 ## Adición de textos
+
 ![7 textos](https://github.com/user-attachments/assets/e72de891-a43b-4850-92ae-ff5e9f6150da)
 
 Se añaden textos al interactuar con objetos, estrellas y obstáculos para que el usuario tenga un mejor claridad sobre qué está sucediendo en el juego. Esto es solamente para hacer que el juego sea más intuitivo.
