@@ -179,3 +179,13 @@ function predecirProximoSismo() {
   return valorPredicho;
 }
 ```
+
+##Modificar:
+
+
+
+*Circunferencias segun Magnitud:Magnitud 8 = Ancho maximo de pantalla.
+-20 px cuando la magnitud ≈ 0
+-1080 px cuando la magnitud = 8.0
+*Agregar Lenguaje distintivo al registro mas reciente pulsacion(?)
+*Mover los textos al centro de la pantalla.
