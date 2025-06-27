@@ -9,6 +9,8 @@ Integrantes:
 
 mi equipo de trabajo es <https://github.com/Francys-vs> y <https://github.com/VicentilloTF>, entregamos en el repositorio en este enlace <>  
 
+## Acerca del proyecto.
+
 El juego consiste en que el jugador podrá simular ser un peleador profesional, en el que mediante la detección de movimiento de brazos, el jugador podrá pelear contra "Kyu" un muñeco de práctica (bastante "adorable"), Kyu tiene una barra de vida, el objetivo será dar la mayor cantidad de golpes durante un tiempo en específico, si logras derrotar a Kyu, se gana la partida, de lo contrario pierdes. 
 
 link: <https://www.youtube.com/watch?v=T99fNXTUUaQ> (detección de cuerpo)  
@@ -17,8 +19,9 @@ link: <https://www.youtube.com/watch?v=bPD8lL0hiLs> (detección cuerpo e interac
 
 ![image](https://github.com/user-attachments/assets/02433120-4fb2-41b3-9db3-c06647a0ea95)
 
-Se trabajaría con los números 10 y 6 (brazo derecho) y 5 y 9 (brazo izquierdo), esto para detectar solo hombros y muñecas, enfocándose en que al subir la muñeca se realiza un golpe.
+Se trabajaría con los números 10 y 6 (brazo derecho) y 5 y 9 (brazo izquierdo), esto para detectar solo hombros y muñecas, enfocándose en que al subir la muñeca se realiza un golpe.  
 
+## Proceso de creación de código del proyecto.
 ### Primer acercamiento a detección de brazos.
 
 ``` javascript
@@ -769,6 +772,7 @@ class porfiado {
 Ya esta parte del código es la más completa, poseemos personajes actualizados, interacción de golpes que responden al movimiento de brazos y Kyu posee una cantidad de vida en específico que se le acaba con cada golpe, lo que nos da el objetivo principal poder derrotarlo. Ahora queda ajustar elementos como barras de vida, fondo bien visualizado, y visualizar mejor los objetivos del juego.
 
 #### Cosas que se agregaron.  
+
 * Barra de vida de Kyu.
 * Temporizador, condiciona la victoria o la derrota.
 * Mensajes de interacción de juego.
@@ -1036,6 +1040,12 @@ class porfiado {
   }
 }
 ```
+# Enlace de Kyu Fight!  
+
+El juego se realizó en la versión 1.11.7 de p5.js junto a la función BodyPose de ml5.js, este es el link para poder ver:  
+Trabajo en funcionamiento: <https://editor.p5js.org/francys.vasquez/full/CioDICJc5>  
+Juego y código: <https://editor.p5js.org/francys.vasquez/sketches/CioDICJc5>  
+
 # Conclusión.  
 
 El juego posee una semi parte de éxito, lamentablemente fue más difícil de realizar a comparación de nuestro primer proyecto, puesto que muy pocas personas se han atrevido a realizar juegos en base a los movimientos de brazos, una vez que encontramos a esas personas, resulta que los códigos no estaban ni cerca de funcionar debido a las recientes actualizaciones tanto p5.js como de ml5js. 
