@@ -47,3 +47,87 @@
 ![problema carga](https://github.com/user-attachments/assets/ed42b8ae-79fe-48ff-8896-84fc0e356579)
 
 ![problema carga solucion](https://github.com/user-attachments/assets/a11de62d-5879-4db3-bc24-e171911f9ffe)
+
+
+~~~ javascript
+        let balls = []; // almacena todas las instancias de Ball
+        const BALL_SPAWN_DELAY = 1000; // Pelotas aparecen después de 1 segundo para esta demo
+        let gameStartTime; // Tiempo de inicio del juego
+        let ballsSpawned = false; // controlar si las pelotas ya se generaron
+
+
+        // comportamiento y tamaño
+        class Ball {
+            constructor() {
+                this.x = random(width);      // Posición X aleatoria
+                this.y = random(height);     // Posición Y aleatoria
+                this.d = random(15, 40);     // Diámetro aleatorio
+                this.xspeed = random(-2, 2); // Velocidad X aleatoria
+                this.yspeed = random(-2, 2); // Velocidad Y aleatoria
+                this.color = [255, 255, 255]; // Color de la pelota es blanco fijo
+            }
+
+            // movimiento de las pelotas
+            move() {
+                this.xspeed += random(-0.1, 0.1);
+                this.yspeed += random(-0.1, 0.1);
+                this.xspeed = constrain(this.xspeed, -5, 5);
+                this.yspeed = constrain(this.yspeed, -5, 5);
+                this.x += this.xspeed;
+                this.y += this.yspeed;
+            }
+
+            // rebotes al tocar el muro
+            bounce() {
+                let r = this.d / 2;
+                if (this.x < r) {
+                    this.x = r;
+                    this.xspeed *= -1;
+                } else if (this.x > width - r) {
+                    this.x = width - r;
+                    this.xspeed *= -1;
+                }
+                if (this.y < r) {
+                    this.y = r;
+                    this.yspeed *= -1;
+                } else if (this.y > height - r) {
+                    this.y = height - r;
+                    this.yspeed *= -1;
+                }
+            }
+
+            // dibujo
+            display() {
+                fill(...this.color);
+                noStroke();
+                ellipse(this.x, this.y, this.d);
+            }
+        }
+
+       
+        function setup() {
+            createCanvas(windowWidth, windowHeight);
+            gameStartTime = millis(); // Inicializa el tiempo de inicio
+        }
+
+   
+        function draw() {
+
+            background(0); // Limpia el fondo en cada frame
+
+            // spawn de las pelotas
+            if (!ballsSpawned && millis() - gameStartTime >= BALL_SPAWN_DELAY) {
+                for (let i = 0; i < 20; i++) { // Crea 10 pelotas
+                    balls.push(new Ball());
+                }
+                ballsSpawned = true;
+            } 
+                for (let ball of balls) {
+                    ball.move();
+                    ball.bounce();
+                    ball.display();
+                }
+            }
+
+~~~
+
