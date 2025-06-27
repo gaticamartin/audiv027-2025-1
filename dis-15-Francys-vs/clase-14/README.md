@@ -7,7 +7,7 @@ Integrantes:
 * Vicente Tapia https://github.com/VicentilloTF  
 * Francys Vásquez https://github.com/Francys-vs
 
-mi equipo de trabajo es <https://github.com/Francys-vs> y <https://github.com/VicentilloTF>, entregamos en el repositorio en este enlace <>  
+mi equipo de trabajo es <https://github.com/Francys-vs> y <https://github.com/VicentilloTF>, entregamos en el repositorio en este enlace <https://github.com/Francys-vs/Kyu-Fight-/blob/main/README.md>  
 
 ## Acerca del proyecto.
 
