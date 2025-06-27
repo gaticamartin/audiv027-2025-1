@@ -1524,10 +1524,10 @@ Una vez validado el correcto funcionamiento de la experiencia base, se procedió
 3. [p5js circle](https://p5js.org/reference/p5/circle/)
 4. [Shake Ball Bounce] (https://p5js.org/examples/classes-and-objects-shake-ball-bounce/)
  
-*entre otras bibliotecas tambien usamos las siguientes fuentes de informacion: 
-[MDN web docs] (https://developer.mozilla.org/en-US/)
-[W3Schools] (https://www.w3schools.com/)
-[The Coding Train] (https://www.youtube.com/@TheCodingTrain)
+* Entre otras bibliotecas tambien usamos las siguientes fuentes de informacion: 
+[MDN web docs](https://developer.mozilla.org/en-US/)
+[W3Schools](https://www.w3schools.com/)
+[The Coding Train](https://www.youtube.com/@TheCodingTrain)
 
 * Tambien inspiramos el codigo en el juego [Circle Clicker](https://p5js.org/examples/games-circle-clicker/)
   
