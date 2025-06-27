@@ -1,7 +1,7 @@
-# clase-14
+## clase-14
 
-## Juego: Mucha Lucha  
-El juego consiste en que el jugador podrá simular ser un peleador profesional, en el que mediante la detección de movimiento de brazos, el jugador podrá pelear contra "Kyu" un muñeco de práctica (bastante "adorable"), Kyu tiene una barra de vida, el objetivo será dar la mayor cantidad de golpes durante un tiempo en específico, si logras derrotar a Kyu, se gana la partida.  
+# Juego: Kyu Fight! 
+El juego consiste en que el jugador podrá simular ser un peleador profesional, en el que mediante la detección de movimiento de brazos, el jugador podrá pelear contra "Kyu" un muñeco de práctica (bastante "adorable"), Kyu tiene una barra de vida, el objetivo será dar la mayor cantidad de golpes durante un tiempo en específico, si logras derrotar a Kyu, se gana la partida, de lo contrario pierdes. 
 
 link: <https://www.youtube.com/watch?v=T99fNXTUUaQ> (detección de cuerpo)  
 link: <https://docs.ml5js.org/#/reference/bodypose> (bodypose ml5js)  
@@ -381,7 +381,7 @@ Ahora es cuando planteamos crear con Class y Constructor() el personaje que ser�
 
 Y de paso, creamos un fondo en donde ocurre el contexto de la pelea.  
 
-![Fondo del juego/Escenario de la pelea.](https://github.com/user-attachments/assets/f49bde28-2ea7-4b23-aea7-2142bf323df0)  
+![fondojuego](https://github.com/user-attachments/assets/8181c01c-ca36-47ed-b814-edf922776190)  
 
 También se agrega mediante un archivo formato mp3, el sonido de efecto de golpe, al principio generaba un problema al activarse en bucle al levantar un brazo, sin embargo, fue corregido posteriormente para que suene con la condición de que la acción sea ejecutada.  
 
@@ -759,5 +759,284 @@ class porfiado {
 }
 ```
 Ya esta parte del código es la más completa, poseemos personajes actualizados, interacción de golpes que responden al movimiento de brazos y Kyu posee una cantidad de vida en específico que se le acaba con cada golpe, lo que nos da el objetivo principal poder derrotarlo. Ahora queda ajustar elementos como barras de vida, fondo bien visualizado, y visualizar mejor los objetivos del juego.
+
+#### Cosas que se agregaron.  
+* Barra de vida de Kyu.
+* Temporizador, condiciona la victoria o la derrota.
+* Mensajes de interacción de juego.
+
+## Resultado final.
+
+``` javascript
+//todo lo técnico de video + movimiento
+let video; 
+let bodyPose;
+let poses = [];
+
+//personaje y sus movimientos
+let personaje; 
+let practica;
+
+let gifgolpeder;
+let gifgolpeizq;
+let gifquieto;
+let kyuchill;
+let kyudolor;
+
+//diseño juego
+let fondo;
+let sonidogolpe;
+
+//movimiento de hombros y muñecas
+let leftWrist;
+let rightWrist;
+let leftShoulder;
+let rightShoulder;
+
+//tiempo de juego
+let tiempoInicio;
+let tiempoLimite = 10000; // 10 segundos (milisegundos)
+let estadoJuego = "jugando";
+
+function preload() {
+  bodyPose = ml5.bodyPose("MoveNet", {flipped: true});
+  gifgolpeder = loadImage("golpeder.gif");
+  gifgolpeizq = loadImage("golpeizq.gif");
+  gifquieto = loadImage("quieto.gif");
+  fondo = loadImage('fondojuego.jpg');
+  sonidogolpe = loadSound("golpe.mp3");
+  kyuchill = loadImage("kyunormal.png");
+  kyudolor = loadImage("kyuauch.png");
+}
+
+function gotPoses(results) {
+  poses = results;
+} 
+
+function setup() {
+  createCanvas(600, 400);
+  video = createCapture(VIDEO, {flipped: true});
+  video.hide();
+  
+  bodyPose.detectStart(video, gotPoses);
+  personaje = new Personaje();
+  practica = new porfiado(390, 320);
+  
+  tiempoI = millis();
+}
+
+function draw() {
+  image(fondo, 0, 0);
+  tint(255,255,255, 60);
+  image(video, 0, 0);
+  noTint();
+
+  if (poses.length > 0) {
+    let pose = poses[0];
+
+    leftWrist = pose.left_wrist;
+    rightWrist = pose.right_wrist;
+
+    leftShoulder = pose.left_shoulder;
+    rightShoulder = pose.right_shoulder;
+
+    if (leftWrist.y < leftShoulder.y - 20) {
+      personaje.golpearIzquierda();
+    }
+
+    if (rightWrist.y < rightShoulder.y - 20) {
+      personaje.golpearDerecha();
+    }
+  }
+
+  personaje.mostrar();
+  practica.mostrar();
+
+  
+  if (practica.visible && personaje.estado === 'golpeDerecha' && !personaje.golpeDetectado) {
+    let golpeX = width / 2 + 75;
+    let golpeY = height / 2 + 80;
+    let d = dist(golpeX, golpeY, practica.x, practica.y);
+    if (d < practica.tamaño / 2 + 30) {
+  practica.recibirGolpe();
+  personaje.golpeDetectado = true;
+}
+
+
+    fill(0, 0, 255);
+    ellipse(golpeX, golpeY, 10);
+
+    if (d < practica.tamaño / 2 + 30) {
+      practica.recibirGolpe();
+      personaje.golpeDetectado = true;
+    }
+  }
+
+  if (practica.visible && personaje.estado === 'golpeIzquierda' && !personaje.golpeDetectado) {
+    let golpeX = width / 2 - 75;
+    let golpeY = height / 2 + 80;
+    let d = dist(golpeX, golpeY, practica.x, practica.y);
+
+    fill(0, 0, 255);
+    ellipse(golpeX, golpeY, 10);
+
+    if (d < practica.tamaño / 2 + 30) {
+      practica.recibirGolpe();
+      personaje.golpeDetectado = true;
+    }
+  }
+  if (!practica.visible && !practica.derrotado) {
+    practica.derrotado = true;
+    practica.momentoDerrota = millis();
+  }
+
+  if (practica.derrotado) {
+    let tiempoDesdeKO = millis() - practica.momentoDerrota;
+  
+    if (tiempoDesdeKO < 2000) {
+      textAlign(CENTER, CENTER);
+      textSize(48);
+      fill(255, 0, 0);
+      text("FATALITY!!", width / 2, height / 2 - 100);
+  }
+}
+  if (estadoJuego === "jugando") {
+    let tiempoTranscurrido = millis() - tiempoI;
+    if (tiempoTranscurrido > tiempoLimite && practica.visible) {
+      estadoJuego = "perdido";
+  }
+    if (!practica.visible && estadoJuego === "jugando") {
+      estadoJuego = "ganado";
+  }
+    let segundosRestantes = max(0, floor((tiempoLimite - tiempoTranscurrido) / 1000));
+     fill(255);
+     textSize(24);
+     textAlign(LEFT, TOP);
+     text("Tiempo: " + segundosRestantes + "s", 10, 10);
+    
+}
+  if (estadoJuego === "ganado") {
+    fill(0, 255, 0);
+    textSize(48);
+    textAlign(CENTER, CENTER);
+    text("¡GANASTE!", width / 2, height / 2 - 50);
+}
+
+  if (estadoJuego === "perdido") {
+    fill(255, 0, 0);
+    textSize(48);
+    textAlign(CENTER, CENTER);
+    text("¡PERDISTE!", width / 2, height / 2 - 50);
+}
+}
+
+class Personaje {
+  constructor() {
+    this.estado = 'quieto';
+    this.tiempoGolpe = 0;
+    this.golpeDetectado = false;
+    this.derrotado = false;
+    this.momentoDerrota = 0;
+  }
+
+  golpearIzquierda() {
+    this.estado = 'golpeIzquierda';
+    this.tiempoGolpe = millis();
+    this.golpeDetectado = false;
+  }
+
+  golpearDerecha() {
+    this.estado = 'golpeDerecha';
+    this.tiempoGolpe = millis();
+    this.golpeDetectado = false;
+  }
+
+  mostrar() {
+    textAlign(CENTER, CENTER);
+    textSize(32);
+    fill(0, 255, 0);
+
+    if (this.estado === 'quieto') {
+      text('está quieto', width / 2, height / 2);
+      image(gifquieto, width / 2 - 75, height / 2 + 50, 150, 150);
+    } else if (this.estado === 'golpeIzquierda') {
+      text('golpe izquierdo', width / 2, height / 2);
+      image(gifgolpeizq, width / 2 - 75, height / 2 + 50, 150, 150);
+      if (!sonidogolpe.isPlaying()) {
+        sonidogolpe.play();
+      }
+    } else if (this.estado === 'golpeDerecha') {
+      text('golpe derecho', width / 2, height / 2);
+      image(gifgolpeder, width / 2 - 75, height / 2 + 50, 150, 150);
+      if (!sonidogolpe.isPlaying()) {
+        sonidogolpe.play();
+      }
+    }
+
+    if (millis() - this.tiempoGolpe > 500) {
+      this.estado = 'quieto';
+      this.golpeDetectado = false;
+    }
+  }
+}
+
+class porfiado {
+  constructor(x, y) {
+    this.x = x;
+    this.y = y;
+    this.tamaño = 80;
+    this.salud = 50;
+    this.samax = 50;
+    this.visible = true;
+    this.golpeado = false;
+    this.ultgolp = 0;
+  }
+
+  recibirGolpe() {
+    this.salud--;
+    this.golpeado = true;
+    this.ultgolp = millis();
+    
+    if (this.salud <= 0) {
+      this.visible = false;
+      this.derrotado = false;
+    }
+  }
+
+  mostrar() {
+    if (this.visible) {
+      let tdesdegolp = millis() - this.tultgolp;
+      if (this.golpeado && tdesdegolp < 200) {
+        image(kyudolor, this.x - this.tamaño / 2, this.y - this.tamaño / 2, this.tamaño, this.tamaño);
+      } else {
+        this.golpeado = false;
+        image(kyuchill, this.x - this.tamaño / 2, this.y - this.tamaño / 2, this.tamaño, this.tamaño);
+      }
+     let barancho = 60;
+     let baralto = 8;
+     let porcentaje = this.salud / this.samax;
+     let barraX = this.x - barancho / 2;
+     let barraY = this.y - this.tamaño / 2 - 15;
+
+     noStroke();
+     fill(150, 0, 0);
+     rect(barraX, barraY, barancho, baralto);
+
+     fill(0, 255, 0);
+     rect(barraX, barraY, barancho * porcentaje, baralto);
+    }
+  }
+}
+```
+# Conclusión.  
+
+El juego posee una semi parte de éxito, lamentablemente fue más difícil de realizar a comparación de nuestro primer proyecto, puesto que muy pocas personas se han atrevido a realizar juegos en base a los movimientos de brazos, una vez que encontramos a esas personas, resulta que los códigos no estaban ni cerca de funcionar debido a las recientes actualizaciones tanto p5.js como de ml5js. 
+
+A pesar de esto, podemos concordar en que nos gustó demasiado el adentrarnos en el mundo de la experimentación del "gaming" junto a la detección del cuerpo humano, esto recordándonos elemtos de consolas de videojuegos tales como la "Kinect" de la Xbox360, o los mandos de la consola "Wii". Sin dudarlo es un mundo muy abierto de posibilidades, en donde la creatividad que permite p5.js para poder crear una variedad de juegos es impresionante, definitivamente es para evaluar muchos más estilos, no solo enfocados en movimiento corporal, también con el click o cosas tan simples como el teclado.  
+
+Lo negativo de este trabajo, es que fue una dificultad poder hacer que detecte correctamente los brazos el BodyPose, lo cual es curioso, puesto que parece que se utiliza con propósitos más "sencillos" dentro de las investigaciones de referentes que buscamos, lo que cuesta que al pedirle a otra cosa que reaccione a la acción, muchas veces, no detecta nada o confunde con otras partes del cuerpo por más que se trabajen con "arrays".  
+
+Finalmente, como dúo comprendemos la responsabilidad que conlleva el crear un juego de este estilo, ya que, como nosotros no tuvimos ningún referente cercano, nuestro propio trabajo puede ser de utilidad a otras personas y que, incluso, pueden lograr llevar el juego a una mejor versión del mismo, ya sea utilizando el mismo método o no de BodyPose.
+
 
 
