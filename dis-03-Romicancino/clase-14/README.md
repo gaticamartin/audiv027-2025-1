@@ -276,9 +276,17 @@ Proyecto 2 en uso ![image](https://github.com/user-attachments/assets/c7361bb3-1
 
 En la primera versión del código utilizamos el comando PoseNet, lo cual hacía que el filtro en lugar de detectar el parpadeo se cambiara con cualquier movimiento de la cara, ya para la versión final decidimos utilizar FaceMesh de ml5.js en lugar de PoseNet y esto nos ayudó a mejorar la precisión, sin embargo, aún no detectaba tal cual el pestañeo, por lo tanto agregamos el comando EAR (eye aspect ratio) que nos ayuda a integrar puntos referenciales de los ojos y utilizamos el comando earTreshold para ajustar la sensibilidad. 
 
-En la segunda versión del trabajo nos enfocamos en como podíamos guardar la imágen que se nos estaba mostrando por lo que estuvimos aprendiendo el uso de botones para guardar nuestro proyecto
+En la segunda versión del trabajo nos enfocamos en como podíamos guardar la imagen que se nos estaba mostrando, por lo que estuvimos aprendiendo el uso de botones interactivos para guardar nuestro proyecto, también ver los aspectos básicos de nuestro proyecto que son:  
+
 •Ver si necesitan permisos del dispositivo que se está ocupando para guardar la imágen, los cuales no son requeridos.
 •Revisar si el formato de la imágen de guardado es jpg o png, solo se guarda en .png
+
+Con estos elementos resueltos solo nos quedaba ver como podriamos realizar que el botón de guardado de imágen esté dentro del canvas y no afuera, como se suele encontrar de forma "pre-definida".
+
+para conseguir que el botón de guardado esté fuera del canvas necesitabamos
+
+(explicar)
+
 
 
 Repartición del trabajo: Romina-Creación de los accesorios/gif, Josefa-Código.
@@ -289,6 +297,8 @@ nos basamos en el tutorial de https://www.youtube.com/watch?v=YMlhNG3YHz4 y de h
 
 tomamos el código base alojado en https://editor.p5js.org/dongjing233/sketches/_Nyg10ve 
 
+(link del botón) 
+
 usamos la biblioteca p5.js v 1.11.5 y la biblioteca ml5.js v 0.12.2
 
 ## conclusiones
@@ -296,11 +306,15 @@ usamos la biblioteca p5.js v 1.11.5 y la biblioteca ml5.js v 0.12.2
 Gracias a la combinación de estas herramientas, el filtro ofrece una experiencia divertida, fluida y accesible, que invita al usuario a participar mediante gestos naturales (como el parpadeo), y a interactuar con el entorno digital de manera lúdica. Además, el botón de captura añade un elemento tangible a la experiencia, permitiendo al usuario guardar un recuerdo personalizado de su paso por el filtro.
 
 
-Posibles usos:
+*Posibles usos y dimensión ética*
 
+Para nuestro proyecto 2 existen varios posibles usos, analizando mejor nuestro entorno y donde podríamos ocupar el filtro o utilizar la base de nuestro proyecto para desarrollarlo de otra forma: 
 
+• Entretenimiento: Usar filtros temáticos siempre es una fuente de entretenimiento, se podria subir la imágen obtenida a redes sociales o hacer la foto obtenida formato sticker para  otras aplicaciones como Whatsapp o Instagram. 
 
-Dimensión ética
+• Márketing : si se usa de forma publicitaria, se podria editar los accesorios con elementos de la marca a promocionar 
+
+• Educación : 
 
 
 
