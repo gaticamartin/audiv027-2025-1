@@ -94,9 +94,9 @@ function errorCarga(err) {
   console.error("Error al cargar datos:", err);
 }
 
-// ---------------------
+
 // Clase visual sismo
-// ---------------------
+
 class SismoVisual {
   constructor(sismo) {
     this.sismo = sismo;
@@ -127,55 +127,150 @@ class SismoVisual {
   }
 }
 
-// ---------------------
-// TensorFlow.js
-// ---------------------
-async function crearModelo() {
-  modelo = tf.sequential();
-  modelo.add(tf.layers.dense({ units: 10, inputShape: [3], activation: 'relu' }));
-  modelo.add(tf.layers.dense({ units: 1 }));
-  modelo.compile({ optimizer: 'adam', loss: 'meanSquaredError' });
+
+```
+
+##Modificar:
+
+
+
+*Circunferencias segun Magnitud:Magnitud 8 = Ancho maximo de pantalla.
+-20 px cuando la magnitud ≈ 0
+-1080 px cuando la magnitud = 8.0
+*Agregar Lenguaje distintivo al registro mas reciente pulsacion(?)
+*Mover los textos al centro de la pantalla.
+
+```python
+let sismos = [];
+let datosCargados = false;
+let cargando = false;
+
+let sismosVisuales = [];
+let modelo;
+let prediccion = null;
+
+function setup() {
+  createCanvas(1080, 720);
+  textAlign(CENTER, CENTER);
+  textSize(16);
+  fill(255);
 }
 
-function prepararDatos(sismos) {
-  sismos.sort((a, b) => new Date(a.Fecha) - new Date(b.Fecha));
-  let magnitudes = sismos.map(s => s.Magnitud);
+function draw() {
+  background(0);
 
-  let xs = [];
-  let ys = [];
-  for (let i = 0; i < magnitudes.length - 3; i++) {
-    xs.push(magnitudes.slice(i, i + 3));
-    ys.push(magnitudes[i + 3]);
+  if (!datosCargados && !cargando) {
+  text("...La patria delgada,\n la orilla del páramo andino,\n la tierra que dio en su angostura la uva celeste\n y el cobre absoluto...\n padece otra vez el espanto y la grieta.", width / 2, height / 2);
+    return;
   }
 
-  const xsTensor = tf.tensor2d(xs);
-  const ysTensor = tf.tensor2d(ys, [ys.length, 1]);
-  return { xsTensor, ysTensor };
+  if (cargando) {
+    text("Siguiendo las vibraciones...", width / 2, height / 2);
+    return;
+  }
+
+  sismosVisuales = sismosVisuales.filter(sv => sv.draw());
+
+  // Mostrar info en el centro
+  if (sismosVisuales.length > 0) {
+    let ultimo = sismosVisuales[sismosVisuales.length - 1];
+    let masFuerte = sismosVisuales.reduce((max, sv) => {
+      return (sv.sismo.Magnitud > max.sismo.Magnitud) ? sv : max;
+    }, sismosVisuales[0]);
+
+    fill(255);
+    textAlign(CENTER, CENTER);
+    textSize(16);
+    text(`Último Sismo: ${ultimo.sismo.Fecha} - M${ultimo.sismo.Magnitud}`, width / 2, height / 2 - 10);
+
+    text(`\nMayor Magnitud: M${masFuerte.sismo.Magnitud} \n ${masFuerte.sismo.RefGeografica}`, width / 2, height / 2 + 15);
+  }
+
+  // Predicción IA (opcional)
+  if (prediccion !== null) {
+    fill(255, 100, 100);
+    textAlign(CENTER, BOTTOM);
+    textSize(16);
+    text(`Predicción magnitud próxima: ${prediccion.toFixed(2)}`, width / 2, height - 30);
+  }
 }
 
-async function entrenarModelo() {
-  if (sismos.length < 4) return;
-  const { xsTensor, ysTensor } = prepararDatos(sismos);
-  await modelo.fit(xsTensor, ysTensor, {
-    epochs: 100,
-    callbacks: {
-      onEpochEnd: (epoch, logs) => {
-        //console.log(`Epoch ${epoch + 1}: loss = ${logs.loss.toFixed(4)}`);
-      }
+function mousePressed() {
+  if (!datosCargados && !cargando) {
+    cargando = true;
+    let url = 'https://corsproxy.io/?https://api.gael.cloud/general/public/sismos';
+    loadJSON(url, gotData, 'json', errorCarga);
+  }
+}
+
+function gotData(data) {
+  sismos = data;
+  datosCargados = true;
+  cargando = false;
+
+  let ahora = new Date();
+  let hace24Horas = new Date(ahora.getTime() - 24 * 60 * 60 * 1000);
+  sismosVisuales = [];
+
+  for (let sismo of sismos) {
+    let fechaSismo = new Date(sismo.Fecha);
+    if (fechaSismo > hace24Horas) {
+      sismosVisuales.push(new SismoVisual(sismo));
     }
-  });
-  xsTensor.dispose();
-  ysTensor.dispose();
+  }
+
+  crearModelo()
+    .then(() => entrenarModelo())
+    .then(() => {
+      prediccion = predecirProximoSismo();
+      console.log("Predicción próxima magnitud:", prediccion);
+    });
 }
 
-function predecirProximoSismo() {
-  if (sismos.length < 3) return null;
-  let ultimas3 = sismos.slice(-3).map(s => s.Magnitud);
-  let inputTensor = tf.tensor2d([ultimas3]);
-  let prediccionTensor = modelo.predict(inputTensor);
-  let valorPredicho = prediccionTensor.dataSync()[0];
-  inputTensor.dispose();
-  prediccionTensor.dispose();
-  return valorPredicho;
+function errorCarga(err) {
+  cargando = false;
+  datosCargados = false;
+  console.error("Error al cargar datos:", err);
+}
+
+
+// visual sismo
+
+class SismoVisual {
+  constructor(sismo) {
+    this.sismo = sismo;
+    this.inicio = new Date(sismo.Fecha).getTime();
+    this.radioBase = map(sismo.Magnitud, 0, 8, 10, width / 2);
+  }
+
+  draw() {
+    let ahora = Date.now();
+    let dif = ahora - this.inicio;
+    let duracion = 24 * 60 * 60 * 1000;
+
+    if (dif > duracion) return false;
+
+    let progreso = dif / duracion;
+    let alpha = map(progreso * progreso, 0, 1, 255, 0);
+    let grosor = map(progreso, 0, 1, 6, 1);
+
+    let esUltimo = this === sismosVisuales[sismosVisuales.length - 1];
+    let radioActual = this.radioBase;
+
+    // Agregar latido si es el más reciente
+    if (esUltimo) {
+      let pulso = 1 + 0.03 * sin(frameCount * 0.05); // pulso suave: primer indicador regula el rango de movimiento, framecount la velocidad con la que pulsa.
+      radioActual *= pulso;
+    }
+
+    noFill();
+    stroke(255, alpha);
+    strokeWeight(grosor);
+    ellipse(width / 2, height / 2, radioActual * 2);
+
+    return true;
+  }
 }
 ```
+
+
